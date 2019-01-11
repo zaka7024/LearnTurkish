@@ -1,5 +1,6 @@
 package learnturkish.lemonlab.com.learnturkish
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_letters_quiz.*
 import learnturkish.lemonlab.com.learnturkish.data.letterQuizData
+import learnturkish.lemonlab.com.learnturkish.keys.Keys
 import learnturkish.lemonlab.com.learnturkish.module.question_letter
 import kotlin.math.log
 
@@ -62,7 +64,7 @@ class LettersQuiz : AppCompatActivity() {
                 index++
                 setQuesstion(index)
             }else{ // user solve all problem
-                Toast.makeText(this, "Your score: ${score}", Toast.LENGTH_SHORT).show()
+                showResult()
             }
 
         }
@@ -165,5 +167,11 @@ class LettersQuiz : AppCompatActivity() {
 
         radio_ans_btn4.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn4.alpha = 1f
+    }
+
+    fun showResult(){
+        var intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(Keys.RESULT_SCORE, score)
+        startActivity(intent)
     }
 }
