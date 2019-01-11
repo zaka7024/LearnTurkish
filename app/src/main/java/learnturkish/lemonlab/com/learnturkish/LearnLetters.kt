@@ -8,6 +8,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_learn_letters.*
 import learnturkish.lemonlab.com.learnturkish.items.letter_item
+import learnturkish.lemonlab.com.learnturkish.items.start_quiz
 
 class LearnLetters : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class LearnLetters : AppCompatActivity() {
     }
 
     fun addLettersToRV(){
+        adapter.add(start_quiz("استمع الى جميع الحروف لفتح الاختبار", R.drawable.letters_icon,this))
         adapter.add(letter_item("A", "a","alaska", R.raw.a_char, this@LearnLetters))
         adapter.add(letter_item("B", "b","bravo", R.raw.b_char, this@LearnLetters))
         adapter.add(letter_item("C", "c","chat", R.raw.c_char, this@LearnLetters))
