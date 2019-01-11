@@ -61,6 +61,8 @@ class LettersQuiz : AppCompatActivity() {
                 }
                 index++
                 setQuesstion(index)
+            }else{ // user solve all problem
+                Toast.makeText(this, "Your score: ${score}", Toast.LENGTH_SHORT).show()
             }
 
         }
