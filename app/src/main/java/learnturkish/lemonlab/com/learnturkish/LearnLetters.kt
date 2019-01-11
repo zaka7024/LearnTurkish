@@ -33,7 +33,9 @@ class LearnLetters : AppCompatActivity() {
     }
 
     fun addLettersToRV(){
+
         adapter.add(start_quiz("استمع الى جميع الحروف لفتح الاختبار", R.drawable.letters_icon,this))
+
         adapter.add(letter_item("A", "a","alaska", R.raw.a_char, this@LearnLetters))
         adapter.add(letter_item("B", "b","bravo", R.raw.b_char, this@LearnLetters))
         adapter.add(letter_item("C", "c","chat", R.raw.c_char, this@LearnLetters))

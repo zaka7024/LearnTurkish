@@ -6,7 +6,7 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.start_quiz.view.*
-import learnturkish.lemonlab.com.learnturkish.LttersQuiz
+import learnturkish.lemonlab.com.learnturkish.LettersQuiz
 import learnturkish.lemonlab.com.learnturkish.R
 
 class start_quiz(var text:String, var image:Int, var context: Context?):Item<ViewHolder>(){
@@ -21,7 +21,7 @@ class start_quiz(var text:String, var image:Int, var context: Context?):Item<Vie
 
         viewHolder.itemView.start_quiz_image.setOnClickListener {
             if(context != null){
-                var intent = Intent(context,LttersQuiz::class.java)
+                var intent = Intent(context,LettersQuiz::class.java)
                 context!!.startActivity(intent)
             }
         }
