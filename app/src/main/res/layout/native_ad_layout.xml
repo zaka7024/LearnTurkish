@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <com.google.android.gms.ads.NativeExpressAdView
+            android:id="@+id/native_ad_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:adSize="280x250" android:layout_marginBottom="16dp" ads:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" ads:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+            ads:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"
+            ads:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.gms.ads.NativeExpressAdView>
+
+
+</android.support.constraint.ConstraintLayout>
