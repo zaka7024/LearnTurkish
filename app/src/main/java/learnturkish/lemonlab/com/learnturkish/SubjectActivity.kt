@@ -35,11 +35,11 @@ class SubjectActivity : AppCompatActivity() {
     fun addSubjectToRV(){
         adapter.clear()
         adapter.add(subject_item("الحروف التركية", "تعلم الحروف التركية بطريقة تفاعلية",
-            R.drawable.letters_icon, type = "letters", context = this@SubjectActivity))
+            R.drawable.letters_icon, type = "letters", activity = this@SubjectActivity))
         adapter.add(subject_item("مفردات اساسية", "تعلم المفردات الاساسية في اللغة",
-            R.drawable.chat_icon, type = "words", context = this@SubjectActivity))
+            R.drawable.chat_icon, type = "words", activity = this@SubjectActivity))
         adapter.add(subject_item("الارقام التركية", "تعلم الارقام التركية بطريقة تفاعلية",
-            R.drawable.time_icon, type = "numbers", context = this@SubjectActivity))
+            R.drawable.time_icon, type = "numbers", activity = this@SubjectActivity))
     }
 }
 
