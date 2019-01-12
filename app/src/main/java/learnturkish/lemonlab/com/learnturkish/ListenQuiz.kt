@@ -40,7 +40,7 @@ class ListenQuiz : AppCompatActivity() {
 
             // check if user select one option at least
 
-            if(!checkIfOneIsCheckedAtLeast()){
+            if(!checkIfOneIsCheckedAtLeast() && index <= question_data.size - 1){
                 Toast.makeText(this, "اختر الاجابة الصيحية للانتقال", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
