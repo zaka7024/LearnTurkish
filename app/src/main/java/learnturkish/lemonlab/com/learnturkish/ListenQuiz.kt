@@ -8,21 +8,23 @@ import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_letters_quiz.*
-import learnturkish.lemonlab.com.learnturkish.data.letterQuizData
+import learnturkish.lemonlab.com.learnturkish.data.QuizData
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
-import learnturkish.lemonlab.com.learnturkish.module.question_letter
-import kotlin.math.log
+import learnturkish.lemonlab.com.learnturkish.module.question_letter_word
 
-class LettersQuiz : AppCompatActivity() {
+class ListenQuiz : AppCompatActivity() {
 
-    lateinit var question_data:ArrayList<question_letter>
+    lateinit var question_data:ArrayList<question_letter_word>
     var sound:Int? = null
     var index = 0
     var score = 0
     var prog_change = 0
+    var type:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_letters_quiz)
+
+        type = intent?.extras?.getString(Keys.QUIZ_TYPE)!!
 
         getQuestions()
         setQuesstion(index)
@@ -39,7 +41,7 @@ class LettersQuiz : AppCompatActivity() {
             // check if user select one option at least
 
             if(!checkIfOneIsCheckedAtLeast()){
-                Toast.makeText(this, "اختر اجابة واحدة للانتقال", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "اختر الاجابة الصيحية للانتقال", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -79,7 +81,16 @@ class LettersQuiz : AppCompatActivity() {
     }
 
     fun getQuestions(){
-        question_data =  letterQuizData.question_data
+
+        // select data set
+
+        if (type == Keys.LETTER_QUIZ){
+            question_data =  QuizData.letters_question_data
+
+        }else if (type == Keys.WORDS_QUIZ){
+            question_data =  QuizData.words_question_data
+        }
+
         letter_quiz_progress.max = 100.0f
         prog_change = (letter_quiz_progress.max /question_data.size).toInt()
         letter_quiz_progress.secondaryProgress = letter_quiz_progress.max
@@ -158,15 +169,19 @@ class LettersQuiz : AppCompatActivity() {
     fun clearColor(){
         radio_ans_btn1.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn1.alpha = 1f
+        radio_ans_btn1.isChecked = false
 
         radio_ans_btn2.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn2.alpha = 1f
+        radio_ans_btn2.isChecked = false
 
         radio_ans_btn3.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn3.alpha = 1f
+        radio_ans_btn3.isChecked = false
 
         radio_ans_btn4.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn4.alpha = 1f
+        radio_ans_btn4.isChecked = false
     }
 
     fun showResult(){

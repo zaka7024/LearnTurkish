@@ -30,7 +30,7 @@
         </activity>
         <activity android:name=".LearnLetters">
         </activity>
-        <activity android:name=".LettersQuiz">
+        <activity android:name=".ListenQuiz">
         </activity>
         <activity android:name=".ResultActivity">
         </activity>

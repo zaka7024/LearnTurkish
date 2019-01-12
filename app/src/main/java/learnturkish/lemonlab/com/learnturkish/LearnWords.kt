@@ -33,7 +33,7 @@ class LearnWords : AppCompatActivity() {
 
     fun addWords(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار", R.drawable.chat_icon,this))
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار", R.drawable.chat_icon,this,"lesson_2"))
 
         adapter.add(native_ad_item(this))
 
