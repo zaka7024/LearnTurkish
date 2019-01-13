@@ -26,24 +26,13 @@ class subject_item(var title:String, var description:String,var image:Int, var t
 
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
 
-        if (type == Keys.LESSON_ONE) { // open LearnListen activity if item type is letters
-            viewHolder.itemView.setOnClickListener {
-                if(activity != null){
-                    val intent = Intent(activity, LearnListen::class.java)
-                    intent.putExtra(Keys.LESSON_TYPE, Keys.LESSON_ONE)
-                    activity!!.startActivity(intent)
-                }
-
+        viewHolder.itemView.setOnClickListener {
+            if(activity != null){
+                val intent = Intent(activity, LearnListen::class.java)
+                intent.putExtra(Keys.LESSON_TYPE, type)
+                activity!!.startActivity(intent)
             }
-        }else if (type == Keys.LESSON_TWO){
-            viewHolder.itemView.setOnClickListener {
-                if(activity != null){
-                    val intent = Intent(activity, LearnListen::class.java)
-                    intent.putExtra(Keys.LESSON_TYPE, Keys.LESSON_TWO)
-                    activity!!.startActivity(intent)
-                }
 
-            }
         }
     }
 

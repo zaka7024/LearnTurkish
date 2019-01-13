@@ -34,7 +34,9 @@ class LearnListen : AppCompatActivity() {
         }else if (lesson_type == Keys.LESSON_TWO){
             addWords()
         }else if (lesson_type == Keys.LESSON_THREE){
-            // add lesson three item in our adapter
+            addNumbers()
+        }else if (lesson_type == Keys.LESSON_FOUR){
+            addColors()
         }
 
     }
@@ -183,9 +185,17 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("üst","فوق", R.raw.word_73, this))
     }
 
+    // LESSON THREE
     fun addNumbers(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار",
+            R.drawable.time_icon,this,"lesson_3"))
+
         adapter.add(word_item("sıfır", "صفر", R.raw.zero, this))
         adapter.add(word_item("bir", "واحد", R.raw.one, this))
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(word_item("iki", "اثنين", R.raw.two, this))
         adapter.add(word_item("üç ", "ثلاث", R.raw.three, this))
         adapter.add(word_item("dört ", "اربعة", R.raw.four, this))
@@ -195,6 +205,9 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("sekiz ", "ثمانية", R.raw.eight, this))
         adapter.add(word_item("dokuz ", "تسعة", R.raw.nine, this))
         adapter.add(word_item("on ", "عشرة", R.raw.ten, this))
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(word_item("Cumarttesi", "السبت", R.raw.saturday, this))
         adapter.add(word_item("Pazar ", "الاحد", R.raw.sunday, this))
         adapter.add(word_item("Pazartesi ", "الاثنين", R.raw.monday, this))
@@ -204,6 +217,9 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("Cuma ", "الجمعة", R.raw.friday, this))
         adapter.add(word_item("Gün ", "يوم", R.raw.day, this))
         adapter.add(word_item("Hafta ", "اسبوع", R.raw.week, this))
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(word_item("Ay ", "شهر", R.raw.month, this))
         adapter.add(word_item("Sene ", "سنة", R.raw.year, this))
         adapter.add(word_item("Yaz", "صيف", R.raw.summer, this))
@@ -216,6 +232,9 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("Nisan", "نيسان", R.raw.april, this))
         adapter.add(word_item("Mayıs", "أيّار", R.raw.may, this))
         adapter.add(word_item("Haziran", "حزيران", R.raw.june, this))
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(word_item("Temmuz", "تمّوز", R.raw.july, this))
         adapter.add(word_item("Ağustos", "آب", R.raw.august, this))
         adapter.add(word_item("Eylül", "أيلول", R.raw.september, this))
@@ -223,5 +242,32 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("Kasım", "تشرين ثاني", R.raw.november, this))
         adapter.add(word_item("Aralık", "كانون أول", R.raw.december, this))
 
+    }
+
+    // LESSON FOUR
+    fun addColors(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار",
+            R.drawable.time_icon,this,"lesson_4"))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("renk","لون",R.raw.color,this))
+        adapter.add(word_item("mavi","ازرق",R.raw.blue,this))
+        adapter.add(word_item("gri","رمادي",R.raw.grey,this))
+        adapter.add(word_item("sarı","اصفر",R.raw.yellow,this))
+        adapter.add(word_item("siyah","أسود",R.raw.black,this))
+        adapter.add(word_item("turuncu","برتقالي",R.raw.orange,this))
+        adapter.add(word_item("pembe","وردي",R.raw.pink,this))
+        adapter.add(word_item("kırmızı","احمر",R.raw.red,this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("yeşil","اخضر",R.raw.green,this))
+        adapter.add(word_item("mor","ارجواني",R.raw.purple,this))
+        adapter.add(word_item("beyaz","ابيض",R.raw.white,this))
+        adapter.add(word_item("açık","فاتح",R.raw.lighter,this))
+        adapter.add(word_item("koyu","غامق",R.raw.darker,this))
+        adapter.add(word_item("parlak","لامع",R.raw.bright,this))
     }
 }

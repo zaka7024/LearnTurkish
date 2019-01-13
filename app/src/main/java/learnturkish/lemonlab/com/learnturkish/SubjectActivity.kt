@@ -41,6 +41,8 @@ class SubjectActivity : AppCompatActivity() {
             R.drawable.chat_icon, type = Keys.LESSON_TWO, activity = this@SubjectActivity))
         adapter.add(subject_item("الارقام والايام التركية", "تعلم الارقام التركية بطريقة تفاعلية",
             R.drawable.time_icon, type = Keys.LESSON_THREE, activity = this@SubjectActivity))
+        adapter.add(subject_item("الالوان في التركية", "تعلم الالوان الاساسية في اللغة التركية",
+            R.drawable.colors, type = Keys.LESSON_FOUR, activity = this@SubjectActivity))
     }
 }
 

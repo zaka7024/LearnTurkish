@@ -11,5 +11,7 @@ class Keys{
         var LESSON_ONE = "LESSON_ONE"
         var LESSON_TWO = "LESSON_TWO"
         var LESSON_THREE = "LESSON_THREE"
+        var LESSON_FOUR = "LESSON_FOUR"
+        var LESSON_FIVE = "LESSON_FIVE"
     }
 }
