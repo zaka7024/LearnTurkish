@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_letters_quiz.*
@@ -20,6 +21,7 @@ class ListenQuiz : AppCompatActivity() {
     var score = 0
     var prog_change = 0
     var type:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_letters_quiz)
@@ -57,7 +59,8 @@ class ListenQuiz : AppCompatActivity() {
                     score++
                     letter_quiz_progress.progress = letter_quiz_progress.progress + prog_change
                     letter_quiz_progress.secondaryProgress += prog_change
-                }else{
+                }
+                else{ // help user to select the correct answer
 
                     with(selectedRadioButton()!!.animate()){
                         alpha(0.5f)
@@ -66,12 +69,13 @@ class ListenQuiz : AppCompatActivity() {
                     Toast.makeText(this, "إجابة خاطئة", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
+
                 index++
                 setQuesstion(index)
-            }else{ // user solve all problem
+
+            }else if(index >= question_data.size){ // user solve all problems
                 showResult()
             }
-
         }
 
         // exit quiz
@@ -108,6 +112,8 @@ class ListenQuiz : AppCompatActivity() {
 
         if(index >= question_data.size){
             next_btn.text = "النتيجة"
+            quiz_card_view.visibility = View.GONE
+            quiz_compelte_view.visibility = View.VISIBLE
             return
         }
 
@@ -172,19 +178,19 @@ class ListenQuiz : AppCompatActivity() {
     fun clearColor(){
         radio_ans_btn1.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn1.alpha = 1f
-        radio_ans_btn1.isChecked = false
+//        radio_ans_btn1.isSelected = false
 
         radio_ans_btn2.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn2.alpha = 1f
-        radio_ans_btn2.isChecked = false
+//        radio_ans_btn2.isSelected = false
 
         radio_ans_btn3.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn3.alpha = 1f
-        radio_ans_btn3.isChecked = false
+//        radio_ans_btn3.isSelected = false
 
         radio_ans_btn4.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn4.alpha = 1f
-        radio_ans_btn4.isChecked = false
+//        radio_ans_btn4.isSelected = false
     }
 
     fun showResult(){
