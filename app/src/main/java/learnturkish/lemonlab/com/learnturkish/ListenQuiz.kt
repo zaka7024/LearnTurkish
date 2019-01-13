@@ -34,6 +34,9 @@ class ListenQuiz : AppCompatActivity() {
         question_sound_btn.setOnClickListener {
             var player = MediaPlayer.create(this, sound!!)
             player.start()
+            player.setOnCompletionListener {
+                it.release()
+            }
         }
 
         next_btn.setOnClickListener {
