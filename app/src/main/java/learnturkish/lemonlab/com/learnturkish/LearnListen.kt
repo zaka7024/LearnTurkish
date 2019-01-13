@@ -37,6 +37,8 @@ class LearnListen : AppCompatActivity() {
             addNumbers()
         }else if (lesson_type == Keys.LESSON_FOUR){
             addColors()
+        }else if (lesson_type == Keys.LESSON_FIVE){
+            addParts()
         }
 
     }
@@ -269,5 +271,58 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("açık","فاتح",R.raw.lighter,this))
         adapter.add(word_item("koyu","غامق",R.raw.darker,this))
         adapter.add(word_item("parlak","لامع",R.raw.bright,this))
+    }
+
+    // LESSON FIVE
+    fun addParts(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
+            R.drawable.brain_icon,this,"lesson_5"))
+
+        adapter.add(word_item("vucut", "جسم", R.raw.body, this))
+        adapter.add(word_item("baş", "راس", R.raw.head, this))
+        adapter.add(word_item("saç", "شغر", R.raw.hair, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("beyin", "عقل", R.raw.brian, this))
+        adapter.add(word_item("alın", "جبين", R.raw.front, this))
+        adapter.add(word_item("kulak", "اذن", R.raw.ear, this))
+        adapter.add(word_item("göz", "عين", R.raw.eye, this))
+        adapter.add(word_item("kirpik", "رمش", R.raw.eyelash, this))
+        adapter.add(word_item("kaş", "حاجب", R.raw.eyebrow, this))
+        adapter.add(word_item("burun", "انف", R.raw.nose, this))
+        adapter.add(word_item("yanak", "خد", R.raw.cheek, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("yüz", "وجه", R.raw.face, this))
+        adapter.add(word_item("omuz", "كتف", R.raw.shoulder, this))
+        adapter.add(word_item("boyun", "رقبه", R.raw.neck, this))
+        adapter.add(word_item("kol", "ذراع", R.raw.arm, this))
+        adapter.add(word_item("el", "يد", R.raw.hand, this))
+        adapter.add(word_item("parmak", "اصبح", R.raw.finger, this))
+        adapter.add(word_item("tırnak", "اظفر", R.raw.nail, this))
+        adapter.add(word_item("sırt", "ظهر", R.raw.back, this))
+        adapter.add(word_item("göğüs", "صدر", R.raw.breast, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("karın", "بطن", R.raw.abdomen, this))
+        adapter.add(word_item("yürek", "قلب", R.raw.heart, this))
+        adapter.add(word_item("kara ciğer", "كبد", R.raw.liver, this))
+        adapter.add(word_item("ak ciğer", "رئة", R.raw.lungs, this))
+        adapter.add(word_item("bıyık", "شارب", R.raw.whiskers, this))
+        adapter.add(word_item("sakal", "لحية", R.raw.beard, this))
+        adapter.add(word_item("dudak", "شفّة", R.raw.lip, this))
+        adapter.add(word_item("ağız", "فم", R.raw.month, this))
+        adapter.add(word_item("diş ", "سن", R.raw.tooth, this))
+        adapter.add(word_item("dil", "لسان", R.raw.tongue, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("ayak", "ثدم", R.raw.foot, this))
+        adapter.add(word_item("kan", "دم", R.raw.blood, this))
+        adapter.add(word_item("deri ", "جلد", R.raw.skin, this))
     }
 }

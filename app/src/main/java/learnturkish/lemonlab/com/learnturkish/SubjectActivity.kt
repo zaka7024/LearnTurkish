@@ -35,6 +35,7 @@ class SubjectActivity : AppCompatActivity() {
 
     fun addSubjectToRV(){
         adapter.clear()
+
         adapter.add(subject_item("الحروف التركية", "تعلم الحروف التركية بطريقة تفاعلية",
             R.drawable.letters_icon, type = Keys.LESSON_ONE, activity = this@SubjectActivity))
         adapter.add(subject_item("مفردات اساسية", "تعلم المفردات الاساسية في اللغة",
@@ -43,6 +44,10 @@ class SubjectActivity : AppCompatActivity() {
             R.drawable.time_icon, type = Keys.LESSON_THREE, activity = this@SubjectActivity))
         adapter.add(subject_item("الالوان في التركية", "تعلم الالوان الاساسية في اللغة التركية",
             R.drawable.colors, type = Keys.LESSON_FOUR, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("اجزاء الجسم", "تعلم اجزاء جسم الانسان بالتركية",
+            R.drawable.brain_icon, type = Keys.LESSON_FIVE, activity = this@SubjectActivity))
+
     }
 }
 

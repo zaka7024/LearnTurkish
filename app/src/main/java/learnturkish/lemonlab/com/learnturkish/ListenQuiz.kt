@@ -114,6 +114,7 @@ class ListenQuiz : AppCompatActivity() {
             next_btn.text = "النتيجة"
             quiz_card_view.visibility = View.GONE
             quiz_compelte_view.visibility = View.VISIBLE
+            quiz_end_hint_text_view.visibility = View.VISIBLE
             return
         }
 
