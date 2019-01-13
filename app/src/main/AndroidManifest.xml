@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".SubjectActivity">
         </activity>
-        <activity android:name=".LearnLetters">
+        <activity android:name=".LearnListen">
         </activity>
         <activity android:name=".ListenQuiz">
         </activity>

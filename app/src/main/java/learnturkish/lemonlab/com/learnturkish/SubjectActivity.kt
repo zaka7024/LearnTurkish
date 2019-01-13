@@ -8,6 +8,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_subject.*
 import learnturkish.lemonlab.com.learnturkish.items.subject_item
+import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
 
 class SubjectActivity : AppCompatActivity() {
@@ -35,11 +36,11 @@ class SubjectActivity : AppCompatActivity() {
     fun addSubjectToRV(){
         adapter.clear()
         adapter.add(subject_item("الحروف التركية", "تعلم الحروف التركية بطريقة تفاعلية",
-            R.drawable.letters_icon, type = "letters", activity = this@SubjectActivity))
+            R.drawable.letters_icon, type = Keys.LESSON_ONE, activity = this@SubjectActivity))
         adapter.add(subject_item("مفردات اساسية", "تعلم المفردات الاساسية في اللغة",
-            R.drawable.chat_icon, type = "words", activity = this@SubjectActivity))
-        adapter.add(subject_item("الارقام التركية", "تعلم الارقام التركية بطريقة تفاعلية",
-            R.drawable.time_icon, type = "numbers", activity = this@SubjectActivity))
+            R.drawable.chat_icon, type = Keys.LESSON_TWO, activity = this@SubjectActivity))
+        adapter.add(subject_item("الارقام والايام التركية", "تعلم الارقام التركية بطريقة تفاعلية",
+            R.drawable.time_icon, type = Keys.LESSON_THREE, activity = this@SubjectActivity))
     }
 }
 

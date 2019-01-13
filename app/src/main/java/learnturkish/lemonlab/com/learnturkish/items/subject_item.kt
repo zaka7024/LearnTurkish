@@ -6,9 +6,10 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.subject_item.view.*
-import learnturkish.lemonlab.com.learnturkish.LearnLetters
+import learnturkish.lemonlab.com.learnturkish.LearnListen
 import learnturkish.lemonlab.com.learnturkish.R
 import learnturkish.lemonlab.com.learnturkish.LearnWords
+import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
 class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?):Item<ViewHolder>() {
 
@@ -25,18 +26,20 @@ class subject_item(var title:String, var description:String,var image:Int, var t
 
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
 
-        if (type == "letters") { // open LearnLetters activity if item type is letters
+        if (type == Keys.LESSON_ONE) { // open LearnListen activity if item type is letters
             viewHolder.itemView.setOnClickListener {
                 if(activity != null){
-                    val intent = Intent(activity, LearnLetters::class.java)
+                    val intent = Intent(activity, LearnListen::class.java)
+                    intent.putExtra(Keys.LESSON_TYPE, Keys.LESSON_ONE)
                     activity!!.startActivity(intent)
                 }
 
             }
-        }else if (type == "words"){
+        }else if (type == Keys.LESSON_TWO){
             viewHolder.itemView.setOnClickListener {
                 if(activity != null){
-                    val intent = Intent(activity, LearnWords::class.java)
+                    val intent = Intent(activity, LearnListen::class.java)
+                    intent.putExtra(Keys.LESSON_TYPE, Keys.LESSON_TWO)
                     activity!!.startActivity(intent)
                 }
 
