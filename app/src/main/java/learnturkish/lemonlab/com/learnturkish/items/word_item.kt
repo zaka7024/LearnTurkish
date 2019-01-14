@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.word_item.view.*
 import learnturkish.lemonlab.com.learnturkish.R
 
 class word_item(var text:String, var arabic:String, var sound:Int, var activity:Activity):Item<ViewHolder>() {
+
     override fun getLayout(): Int {
         return R.layout.word_item
     }

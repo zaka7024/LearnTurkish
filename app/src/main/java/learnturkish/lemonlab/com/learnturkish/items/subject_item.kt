@@ -8,7 +8,6 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.subject_item.view.*
 import learnturkish.lemonlab.com.learnturkish.LearnListen
 import learnturkish.lemonlab.com.learnturkish.R
-import learnturkish.lemonlab.com.learnturkish.LearnWords
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
 class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?):Item<ViewHolder>() {

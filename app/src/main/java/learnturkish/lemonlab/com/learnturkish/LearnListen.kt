@@ -2,8 +2,10 @@ package learnturkish.lemonlab.com.learnturkish
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_learn_letters.*
@@ -17,6 +19,8 @@ class LearnListen : AppCompatActivity() {
 
     var adapter = GroupAdapter<ViewHolder>()
     var lesson_type = ""
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +49,9 @@ class LearnListen : AppCompatActivity() {
             addSchool()
         }
 
+        val sharedPref = getSharedPreferences("app_data", 0)
+
+
     }
 
     fun initLearnLettersRV(){
@@ -56,7 +63,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON ONE
     fun addLetters(){
 
-        adapter.add(start_quiz("استمع الى جميع الحروف لفتح الاختبار", R.drawable.letters_icon,this,"lesson_1"))
+        adapter.add(start_quiz("استمع الى جميع الحروف ثم انتقل الى الاختبار", R.drawable.letters_icon,
+            this,"lesson_1"))
 
         adapter.add(letter_item("A", "a","alaska", R.raw.a_char, this@LearnListen))
         adapter.add(letter_item("B", "b","bravo", R.raw.b_char, this@LearnListen))
@@ -91,7 +99,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON TWO
     fun addWords(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار", R.drawable.chat_icon,this,"lesson_2"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.chat_icon,
+            this,"lesson_2"))
 
         adapter.add(native_ad_item(this))
 
@@ -194,8 +203,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON THREE
     fun addNumbers(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار",
-            R.drawable.time_icon,this,"lesson_3"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.time_icon,
+            this,"lesson_3"))
 
         adapter.add(word_item("sıfır", "صفر", R.raw.zero, this))
         adapter.add(word_item("bir", "واحد", R.raw.one, this))
@@ -253,8 +262,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON FOUR
     fun addColors(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح الاختبار",
-            R.drawable.time_icon,this,"lesson_4"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.colors,
+            this,"lesson_4"))
 
         adapter.add(native_ad_item(this))
 
@@ -280,8 +289,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON FIVE
     fun addParts(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
-            R.drawable.brain_icon,this,"lesson_5"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.brain_icon,
+            this,"lesson_5"))
 
         adapter.add(word_item("vucut", "جسم", R.raw.body, this))
         adapter.add(word_item("baş", "راس", R.raw.head, this))
@@ -333,8 +342,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON SIX
     fun addHome(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
-            R.drawable.tools_icon,this,"lesson_6"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.tools_icon,
+            this,"lesson_6"))
 
         adapter.add(word_item("kapı", "باب", R.raw.door, this))
         adapter.add(word_item("masa", "طاولة", R.raw.table, this))
@@ -389,8 +398,8 @@ class LearnListen : AppCompatActivity() {
     // LESSON SEVEN
     fun addSchool(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
-            R.drawable.school,this,"lesson_7"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.school,
+            this,"lesson_7"))
 
         adapter.add(word_item("öğrenci", "طالب", R.raw.student, this))
         adapter.add(word_item("hoca", "معلم", R.raw.teacher, this))
@@ -424,4 +433,5 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("yorum", "تعليق", R.raw.comment, this))
         adapter.add(word_item("kolej", "", R.raw.college, this))
     }
+
 }

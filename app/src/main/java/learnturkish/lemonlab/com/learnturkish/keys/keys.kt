@@ -16,5 +16,6 @@ class Keys{
         var LESSON_SIX = "LESSON_SIX"
         var LESSON_SEVEN = "LESSON_SEVEN"
         var LESSON_EIGHT = "LESSON_EIGHT"
+        var LESSON_ONE_LOCKED = "TRUE"
     }
 }
