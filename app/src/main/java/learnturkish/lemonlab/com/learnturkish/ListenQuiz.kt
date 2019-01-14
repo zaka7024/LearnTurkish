@@ -3,6 +3,7 @@ package learnturkish.lemonlab.com.learnturkish
 import android.app.Dialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.media.MediaActionSound
 import android.media.MediaPlayer
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
@@ -14,6 +15,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.quiz_listen.*
@@ -30,22 +32,21 @@ class ListenQuiz : AppCompatActivity() {
     var score = 0
     var prog_change = 0
     var type:String = ""
-    var adapter = GroupAdapter<ViewHolder>() // for native ad
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.quiz_listen)
 
+        // init adview
+
+        var request = AdRequest.Builder().build()
+        adView.loadAd(request)
+
+
         type = intent?.extras?.getString(Keys.QUIZ_TYPE)!!
 
         getQuestions()
         setQuesstion(index)
-
-        //add ad into quiz_ad_rv
-        adapter.add(native_ad_item(this))
-        quiz_ad_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        quiz_ad_rv.adapter = adapter
-
 
         question_sound_btn.setOnClickListener {
             var player = MediaPlayer.create(this, sound!!)
@@ -56,6 +57,9 @@ class ListenQuiz : AppCompatActivity() {
         }
 
         next_btn.setOnClickListener {
+
+            // play sound effect
+            playSoundClick()
 
             // check if user select one option at least
 
@@ -144,7 +148,7 @@ class ListenQuiz : AppCompatActivity() {
 
         if(index >= question_data.size){
             next_btn.text = "النتيجة"
-            quiz_card_view.visibility = View.INVISIBLE
+            quiz_card_view.visibility = View.GONE
             quiz_compelte_view.visibility = View.VISIBLE
             quiz_compelte_view.playAnimation()
 
@@ -233,5 +237,14 @@ class ListenQuiz : AppCompatActivity() {
         var intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(Keys.RESULT_SCORE, score)
         startActivity(intent)
+        this.finish()
+    }
+
+    fun playSoundClick(){
+        var player = MediaPlayer.create(this, R.raw.click)
+        player.start()
+        player.setOnCompletionListener {
+            it.release()
+        }
     }
 }

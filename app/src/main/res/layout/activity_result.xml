@@ -5,50 +5,68 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ResultActivity"
-        android:background="@color/gray">
+        tools:context=".ResultActivity">
 
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/correct_animation"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="100dp"
             app:layout_constraintTop_toBottomOf="@+id/score_text_view_result_activity"
             app:layout_constraintEnd_toEndOf="@+id/score_text_view_result_activity"
             app:layout_constraintStart_toStartOf="@+id/score_text_view_result_activity"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toTopOf="parent" android:textSize="20sp"
-            android:fontFamily="@font/cairo" android:textStyle="bold"
-            android:textColor="@color/black" android:text="احسنت لقد انهيت المسار وحصلت على"
+            android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            android:fontFamily="@font/cairo"
+            android:textStyle="bold"
+            android:textColor="@color/deepBlue"
+            android:text="احسنت لقد انهيت المسار وحصلت على"
             android:textAlignment="center"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/score_text_view_result_activity" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" app:layout_constraintEnd_toEndOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/textView4" android:textSize="24sp"
-            android:fontFamily="@font/cairo" tools:text="10" android:textColor="@color/black"/>
-
+            android:id="@+id/score_text_view_result_activity"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            android:textSize="24sp"
+            android:fontFamily="@font/cairo"
+            tools:text="10"
+            android:textColor="@color/deepBlue" android:textStyle="bold" android:layout_marginStart="32dp"/>
     <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/home_btn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/correct_animation"
-            app:layout_constraintBottom_toTopOf="@+id/textView5" app:layout_constraintVertical_bias="0.831"/>
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            app:lottie_fileName="score.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:layout_constraintEnd_toStartOf="@+id/score_text_view_result_activity" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@+id/score_text_view_result_activity"
+            app:layout_constraintBottom_toBottomOf="@+id/score_text_view_result_activity"/>
+
     <TextView
             android:text="الرجوع الى الرئيسية"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:fontFamily="@font/cairo" android:textSize="20sp"
-            android:textColor="@color/black" android:textStyle="bold"/>
+            android:id="@+id/home_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="@font/cairo"
+            android:textSize="20sp"
+            android:textColor="@color/deepBlue"
+            android:textStyle="bold" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/correct_animation"/>
 
 </android.support.constraint.ConstraintLayout>

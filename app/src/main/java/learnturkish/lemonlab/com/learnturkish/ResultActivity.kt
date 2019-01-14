@@ -1,6 +1,7 @@
 package learnturkish.lemonlab.com.learnturkish
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_result.*
@@ -14,7 +15,14 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        result_score = intent.extras.getInt(Keys.RESULT_SCORE)
+        // play correct sound effect
+        var player = MediaPlayer.create(this, R.raw.correct)
+        player.start()
+        player.setOnCompletionListener {
+            it.release()
+        }
+
+        result_score = intent?.extras?.getInt(Keys.RESULT_SCORE)
 
         score_text_view_result_activity.text = result_score.toString()
 
@@ -22,12 +30,9 @@ class ResultActivity : AppCompatActivity() {
         correct_animation.playAnimation()
         correct_animation.loop(true)
 
-        home_btn.setAnimation("home.json")
-        home_btn.playAnimation()
-        home_btn.loop(true)
-
         home_btn.setOnClickListener {
             goToHome()
+            this.finish()
         }
 
     }
