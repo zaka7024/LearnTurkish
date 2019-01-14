@@ -20,7 +20,7 @@
             app:rcProgressColor="#00b5cc"
             app:rcSecondaryProgressColor="#81cfe0"
             app:rcBackgroundColor="#ccc"
-            app:layout_constraintStart_toStartOf="@+id/quiz_card_view" android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/quiz_card_view" android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/quiz_card_view"/>
 
@@ -28,19 +28,18 @@
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:lottie_autoPlay="true"
+            app:lottie_autoPlay="false"
             app:lottie_loop="true"
             app:lottie_fileName="quiz_complete.json"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_end_hint_text_view" android:layout_marginStart="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.283"
-            android:id="@+id/quiz_compelte_view" android:visibility="invisible"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/quiz_compelte_view" android:visibility="invisible" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/quiz_card_view"/>
 
     <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="230dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginTop="16dp"
@@ -55,13 +54,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/question_text_view"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toTopOf="parent" android:textStyle="bold" android:textSize="18sp"
-                    app:fontFamily="@font/cairo" android:textColor="#000"
+                    android:textStyle="bold" android:textSize="18sp"
+                    app:fontFamily="@font/cairo" android:textColor="@color/deepBlue"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/question_sound_btn"
-                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"/>
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/question_sound_btn" android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"/>
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="352dp"
@@ -77,6 +76,7 @@
 
                 <RadioGroup
                         android:padding="20dp"
+                        android:theme="@style/MainRadioButtonStyle"
                         android:gravity="right"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -84,7 +84,7 @@
                             android:text="RadioButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/radio_ans_btn1"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:checked="false"/>
                     <RadioButton
                             android:text="RadioButton"
                             android:layout_width="wrap_content"
@@ -103,12 +103,14 @@
                 </RadioGroup>
             </LinearLayout>
             <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" app:srcCompat="@drawable/sound_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" app:srcCompat="@drawable/sound_icon"
                     android:id="@+id/question_sound_btn"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/question_text_view" android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/question_text_view"/>
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
@@ -117,27 +119,27 @@
             android:fontFamily="@font/cairo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/next_btn" android:background="@color/darkGray"
+            android:id="@+id/next_btn" android:background="@color/gray"
             android:textColor="@color/deepBlue" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:textSize="18sp" android:textStyle="bold"/>
+            app:layout_constraintEnd_toEndOf="parent" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/quiz_ad_rv"/>
     <Button
             android:text="خروج"
             android:fontFamily="@font/cairo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/exit_btn" android:background="@color/darkGray"
+            android:id="@+id/exit_btn" android:background="@color/gray"
             android:textColor="@color/deepBlue"
             android:textSize="18sp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quiz_end_hint_text_view" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="3dp" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/cairo" android:textSize="18sp"
-            android:textColor="@color/black" android:text="لقد انهيت الاختبار بنجاح" android:visibility="invisible"/>
+            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/next_btn"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="368dp"
+            android:layout_height="173dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/quiz_card_view"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/quiz_ad_rv"/>
 </android.support.constraint.ConstraintLayout>

@@ -1,15 +1,24 @@
 package learnturkish.lemonlab.com.learnturkish
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.Toast
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.quiz_listen.*
 import learnturkish.lemonlab.com.learnturkish.data.QuizData
+import learnturkish.lemonlab.com.learnturkish.items.native_ad_item
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
 import learnturkish.lemonlab.com.learnturkish.module.question_letter_word
 
@@ -21,6 +30,7 @@ class ListenQuiz : AppCompatActivity() {
     var score = 0
     var prog_change = 0
     var type:String = ""
+    var adapter = GroupAdapter<ViewHolder>() // for native ad
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +41,10 @@ class ListenQuiz : AppCompatActivity() {
         getQuestions()
         setQuesstion(index)
 
+        //add ad into quiz_ad_rv
+        adapter.add(native_ad_item(this))
+        quiz_ad_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        quiz_ad_rv.adapter = adapter
 
 
         question_sound_btn.setOnClickListener {
@@ -82,7 +96,25 @@ class ListenQuiz : AppCompatActivity() {
 
         exit_btn.setOnClickListener {
             // ask user before close this activity
-            this.finish()
+            var dialog:AlertDialog.Builder? = null
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                dialog = AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert)
+            }else{
+                dialog = AlertDialog.Builder(this)
+            }
+
+            dialog.setTitle("تاكيد")
+            dialog.setMessage("هل تريد الخروج من الاختبار؟")
+            dialog.setPositiveButton("نعم", DialogInterface.OnClickListener{ dialogInterface: DialogInterface, i: Int ->
+                this@ListenQuiz.finish()
+            })
+            dialog.setNegativeButton("لا", DialogInterface.OnClickListener{
+                dialog, which ->
+                dialog.cancel()
+            })
+
+            dialog.show()
         }
 
     }
@@ -91,10 +123,10 @@ class ListenQuiz : AppCompatActivity() {
 
         // select data set
 
-        if (type == Keys.LETTER_QUIZ){
+        if (type == Keys.LESSON_ONE){
             question_data =  QuizData.letters_question_data
 
-        }else if (type == Keys.WORDS_QUIZ){
+        }else if (type == Keys.LESSON_TWO){
             question_data =  QuizData.words_question_data
         }
 
@@ -112,9 +144,12 @@ class ListenQuiz : AppCompatActivity() {
 
         if(index >= question_data.size){
             next_btn.text = "النتيجة"
-            quiz_card_view.visibility = View.GONE
+            quiz_card_view.visibility = View.INVISIBLE
             quiz_compelte_view.visibility = View.VISIBLE
-            quiz_end_hint_text_view.visibility = View.VISIBLE
+            quiz_compelte_view.playAnimation()
+
+            Toast.makeText(this, "اضغط على النتيجة للحصول على النقاط", Toast.LENGTH_SHORT).show()
+
             return
         }
 

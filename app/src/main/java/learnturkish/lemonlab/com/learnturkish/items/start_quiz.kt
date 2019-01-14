@@ -19,14 +19,16 @@ class start_quiz(var text:String,var image:Int,var activity: Activity?,var lesso
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.start_quiz_text_view.text = text
 
-
+        Picasso.get().load(image).into(viewHolder.itemView.start_quiz_image)
 
         if (lesson == "lesson_1"){
             viewHolder.itemView.start_quiz_image.setOnClickListener {
                 startQuizActivity(Keys.LESSON_ONE)
             }
         }else if (lesson == "lesson_2"){
-
+            viewHolder.itemView.start_quiz_image.setOnClickListener {
+                startQuizActivity(Keys.LESSON_TWO)
+            }
         }
 
 
