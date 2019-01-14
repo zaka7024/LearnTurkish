@@ -9,10 +9,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-            ads:adSize="280x250" android:layout_marginBottom="16dp" ads:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="16dp" ads:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
-            ads:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"
-            ads:layout_constraintTop_toTopOf="parent">
+            ads:adSize="FULL_WIDTHx250" ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toTopOf="parent" android:padding="10dp">
 
     </com.google.android.gms.ads.NativeExpressAdView>
 

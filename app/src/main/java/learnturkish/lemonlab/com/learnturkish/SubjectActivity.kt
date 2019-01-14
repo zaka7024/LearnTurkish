@@ -48,6 +48,11 @@ class SubjectActivity : AppCompatActivity() {
         adapter.add(subject_item("اجزاء الجسم", "تعلم اجزاء جسم الانسان بالتركية",
             R.drawable.brain_icon, type = Keys.LESSON_FIVE, activity = this@SubjectActivity))
 
+        adapter.add(subject_item("الادوات في التركية", "تعلم الادوات المنزلية و الزراعية في اللغة التركية",
+            R.drawable.tools_icon, type = Keys.LESSON_SIX, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("المفردات التعليمية", "تعلم المفردات التعليمية في المدرسة والجامعة",
+            R.drawable.school, type = Keys.LESSON_SEVEN, activity = this@SubjectActivity))
     }
 }
 

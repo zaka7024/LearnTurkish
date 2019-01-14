@@ -9,7 +9,7 @@
 
     <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
             android:id="@+id/letter_quiz_progress"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             app:rcProgress="10"
             app:rcSecondaryProgress="20"
@@ -19,10 +19,10 @@
             app:rcReverse="false"
             app:rcProgressColor="#00b5cc"
             app:rcSecondaryProgressColor="#81cfe0"
-            app:rcBackgroundColor="#ccc" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
+            app:rcBackgroundColor="#ccc"
+            app:layout_constraintStart_toStartOf="@+id/quiz_card_view" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/quiz_card_view"/>
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -43,7 +43,7 @@
             android:layout_height="250dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/letter_quiz_progress" android:id="@+id/quiz_card_view">
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -117,21 +117,21 @@
             android:fontFamily="@font/cairo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/next_btn" android:background="@color/gray"
+            android:id="@+id/next_btn" android:background="@color/darkGray"
             android:textColor="@color/deepBlue" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp" android:textSize="18sp"/>
+            app:layout_constraintEnd_toEndOf="parent" android:textSize="18sp" android:textStyle="bold"/>
     <Button
             android:text="خروج"
             android:fontFamily="@font/cairo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/exit_btn" android:background="@color/gray"
+            android:id="@+id/exit_btn" android:background="@color/darkGray"
             android:textColor="@color/deepBlue"
             android:textSize="18sp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

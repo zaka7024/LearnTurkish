@@ -8,7 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_letters_quiz.*
+import kotlinx.android.synthetic.main.quiz_listen.*
 import learnturkish.lemonlab.com.learnturkish.data.QuizData
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
 import learnturkish.lemonlab.com.learnturkish.module.question_letter_word
@@ -24,7 +24,7 @@ class ListenQuiz : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_letters_quiz)
+        setContentView(R.layout.quiz_listen)
 
         type = intent?.extras?.getString(Keys.QUIZ_TYPE)!!
 

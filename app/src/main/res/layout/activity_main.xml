@@ -17,11 +17,12 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:fontFamily="@font/cairo"
-            tools:text="احمد زكريا"
+            tools:text="اسم المستخدم"
             android:layout_marginTop="32dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dots" android:layout_marginStart="24dp"
-            app:layout_constraintEnd_toStartOf="@+id/dots2" android:layout_marginEnd="33dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/dots2" android:layout_marginEnd="33dp"
+            android:textColor="@color/deepBlue"/>
 
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="70dp"
@@ -65,7 +66,7 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_fileName="start.json"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
             app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
             app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
@@ -89,9 +90,10 @@
             app:lottie_fileName="settings.json"
             app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView3"
-            android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/start_btn" android:id="@+id/lottieAnimationView5"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"/>
+            android:layout_marginEnd="8dp"
+            android:id="@+id/lottieAnimationView5"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
+    />
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -103,5 +105,13 @@
             app:layout_constraintVertical_bias="0.909" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/lottieAnimationView5"/>
+    <TextView
+            android:text="انطلق في رحلة تعلم اللغة التركية"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/start_btn" app:layout_constraintEnd_toEndOf="@+id/start_btn"
+            app:layout_constraintStart_toStartOf="@+id/start_btn" android:fontFamily="@font/cairo"
+            android:textSize="18sp" android:textStyle="bold" android:textColor="@color/deepBlue"/>
 
 </android.support.constraint.ConstraintLayout>

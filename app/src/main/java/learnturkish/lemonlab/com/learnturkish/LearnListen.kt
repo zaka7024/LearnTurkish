@@ -39,6 +39,10 @@ class LearnListen : AppCompatActivity() {
             addColors()
         }else if (lesson_type == Keys.LESSON_FIVE){
             addParts()
+        }else if (lesson_type == Keys.LESSON_SIX){
+            addHome()
+        }else if (lesson_type == Keys.LESSON_SEVEN){
+            addSchool()
         }
 
     }
@@ -324,5 +328,100 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("ayak", "ثدم", R.raw.foot, this))
         adapter.add(word_item("kan", "دم", R.raw.blood, this))
         adapter.add(word_item("deri ", "جلد", R.raw.skin, this))
+    }
+
+    // LESSON SIX
+    fun addHome(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
+            R.drawable.tools_icon,this,"lesson_6"))
+
+        adapter.add(word_item("kapı", "باب", R.raw.door, this))
+        adapter.add(word_item("masa", "طاولة", R.raw.table, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("telefon", "هاتف", R.raw.phone, this))
+        adapter.add(word_item("radyo", "راديو", R.raw.radio, this))
+        adapter.add(word_item("sandalye", "كرسي", R.raw.chair, this))
+        adapter.add(word_item("ocak", "فرن الغاز", R.raw.furnace, this))
+        adapter.add(word_item("koltuk", "كنب", R.raw.armchair, this))
+        adapter.add(word_item("bulaşık yıkama makinesi", "غسالة صحون", R.raw.dish_washing_machine, this))
+        adapter.add(word_item("yatak", "سرير", R.raw.bed, this))
+        adapter.add(word_item("buzdolabı", "ثلاجة", R.raw.refrigerator, this))
+        adapter.add(word_item("daire", "شقة", R.raw.apartment, this))
+        adapter.add(word_item("kablo", "كابل", R.raw.cabel, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("merdiven", "درج", R.raw.stairs, this))
+        adapter.add(word_item("mum", "شمعة", R.raw.candle, this))
+        adapter.add(word_item("halı", "سجادة", R.raw.carpet, this)) //
+        adapter.add(word_item("çöp", "نفايات", R.raw.garbage, this))
+        adapter.add(word_item("televizyon", "تلفاز", R.raw.telev, this))
+        adapter.add(word_item("resim", "صورة", R.raw.picture, this))
+        adapter.add(word_item("balkon", "بلكونة", R.raw.balkon, this))
+        adapter.add(word_item("pencere", "نافذة", R.raw.window, this))
+        adapter.add(word_item("yatak odası", "غرفة النوم", R.raw.bedroom, this))
+        adapter.add(word_item("mutfak", "مطبخ", R.raw.kitchen, this))
+        adapter.add(word_item("ev", "بيت", R.raw.home, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("yemek odası", "غرفة الطعام", R.raw.diningroom, this))
+        adapter.add(word_item("salon", "صالون", R.raw.salon, this))
+        adapter.add(word_item("tabak", "طبق", R.raw.plate, this))
+        adapter.add(word_item("duş", "دُش", R.raw.shower, this))
+        adapter.add(word_item("ayna ", "مرآة", R.raw.mirror, this))
+        adapter.add(word_item("yastık", "وسادة", R.raw.pillow, this))
+        adapter.add(word_item("perde", "ستارة", R.raw.curtain, this))
+        adapter.add(word_item("alet", "أداة", R.raw.tool, this))
+        adapter.add(word_item("kürek", "مجرفة", R.raw.shovel, this))
+        adapter.add(word_item("iğne ", "إبرة", R.raw.needle, this))
+        adapter.add(word_item("çekiç", "مطرقة", R.raw.hammer, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("testere", "منشار", R.raw.saw, this))
+        adapter.add(word_item("makas", "مقص", R.raw.cuter, this))
+    }
+
+    // LESSON SEVEN
+    fun addSchool(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات لفتح قفل الاختبار",
+            R.drawable.school,this,"lesson_7"))
+
+        adapter.add(word_item("öğrenci", "طالب", R.raw.student, this))
+        adapter.add(word_item("hoca", "معلم", R.raw.teacher, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("okul", "مدرسة", R.raw.school, this))
+        adapter.add(word_item("üniversite", "جامعة", R.raw.university, this))
+        adapter.add(word_item("ilk okul", "المدرسة الابتدائية", R.raw.primary_school, this))
+        adapter.add(word_item("lise", "ثانوية", R.raw.high_school, this))
+        adapter.add(word_item("öğretmek", "التعليم", R.raw.teach, this))
+        adapter.add(word_item("bilgisayar", "حاسوب", R.raw.computer, this))
+        adapter.add(word_item("hesap makinesi", "الة حاسبة", R.raw.calculator, this))
+        adapter.add(word_item("kitap", "كتاب", R.raw.book, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("defter", "دفتر", R.raw.book_2, this))
+        adapter.add(word_item("kalem", "قلم", R.raw.pen, this))
+        adapter.add(word_item("silgi", "ممحاة", R.raw.eraser, this))
+        adapter.add(word_item("ödev", "واجب", R.raw.homework, this))
+        adapter.add(word_item("sınıf", "قاعة الدرس", R.raw.school_class, this))
+        adapter.add(word_item("sözlük", "قاموس", R.raw.dictionary, this))
+        adapter.add(word_item("kütüphane", "مكتبة", R.raw.library, this))
+        adapter.add(word_item("sınav", "امتحان", R.raw.exam, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("alıştırma", "تمرين", R.raw.exercise, this))
+        adapter.add(word_item("dönem", "فصل دراسي", R.raw.period, this))
+        adapter.add(word_item("yorum", "تعليق", R.raw.comment, this))
+        adapter.add(word_item("kolej", "", R.raw.college, this))
     }
 }
