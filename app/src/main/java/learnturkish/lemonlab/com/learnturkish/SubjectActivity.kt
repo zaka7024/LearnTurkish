@@ -59,6 +59,9 @@ class SubjectActivity : AppCompatActivity() {
 
         adapter.add(subject_item("حروف الجر و الإتجاهات", "تعلم حروف الجر والاتجاهات بطريقة تفاعلية",
             R.drawable.prepositions_icon, type = Keys.LESSON_NINE, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("الضمائر في التركية", "تعلم الضمائر المنفصلة و المتصلة و الملكية في اللغة التركية",
+            R.drawable.pronouns, type = Keys.LESSON_TEN, activity = this@SubjectActivity))
     }
 }
 

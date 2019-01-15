@@ -47,8 +47,11 @@ class LearnListen : AppCompatActivity() {
             addSchool()
         }else if (lesson_type == Keys.LESSON_EIGHT){
             addSefat()
-        }else if (lesson_type == Keys.LESSON_TEN){
+        }else if (lesson_type == Keys.LESSON_NINE){
             addPrepositions()
+        }
+        else if (lesson_type == Keys.LESSON_TEN){
+            addPronouns()
         }
 
         val sharedPref = getSharedPreferences("app_data", 0)
@@ -476,11 +479,11 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("kolay", "سهل", R.raw.easy, this))
     }
 
-    // LESSON TEN
+    // LESSON NINE
     fun addPrepositions(){
 
         adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.prepositions_icon,
-            this,"lesson_9"))
+            this,"lesson_10"))
 
         adapter.add(word_item("önünde", "", R.raw.in_front_of, this))
         adapter.add(word_item("arkasında", "خلص", R.raw.behind, this))
@@ -518,13 +521,13 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("beri", "منذ", R.raw.since, this))
     }
 
-    // LESSON 11
+    // LESSON TEN
     fun addPronouns(){
 
-        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.prepositions_icon,
-            this,"lesson_9"))
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
+            this,"lesson_11"))
 
-        adapter.add(word_item("ben", "أنا", R.raw.i, this))
+        adapter.add(word_item("ben", "أنا", R.raw.i_word, this))
         adapter.add(word_item("sen", "أنت", R.raw.you, this))
 
         adapter.add(native_ad_item(this))
@@ -537,16 +540,19 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("Seni seviyorum", "أنا أحبك", R.raw.i_love_you, this))
         adapter.add(word_item("O güzel", "هي جميلة", R.raw.she_is_beautiful, this))
         adapter.add(word_item("Mutluyuz", "نحن سعداء", R.raw.we_are_happy, this))
-        adapter.add(word_item("beni, bana", "ني( مثال اعطني )", R.raw.beni_bana, this))
-        adapter.add(word_item("seni, sana", "ك ( مثال اعطاك )", R.raw.seni_sana, this))
 
         adapter.add(native_ad_item(this))
 
+        adapter.add(word_item("beni, bana", "ني( مثال اعطني )", R.raw.beni_bana, this))
+        adapter.add(word_item("seni, sana", "ك ( مثال اعطاك )", R.raw.seni_sana, this))
         adapter.add(word_item("onu, ona", "ه ( مثال اعطاها )", R.raw.onu_ona, this))
         adapter.add(word_item("onu, ona", "ها", R.raw.onu_ona, this))
         adapter.add(word_item("bizi, bize", "نا ( مثال اعطانا )", R.raw.bizi_bize, this))
         adapter.add(word_item("Sizi, size", "كم ( مثال اعطاكم )", R.raw.sizi_size, this))
-        adapter.add(word_item("onları, onlara", "هم ( مثال اعطاهم )", R.raw.onları_onlara, this))
+        adapter.add(word_item("onları, onlara", "هم ( مثال اعطاهم )", R.raw.onlari_onlara, this))
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(word_item("Bizi arayablir misin?", "هل يمكنك الاتصال بنا؟", R.raw.can_you_call_us, this))
         adapter.add(word_item("Bana telefon numaranı ver", "أعطني رقم هاتفك", R.raw.give_me_your_phone_number, this))
         adapter.add(word_item("Ona beni aramasını söyle", "قل له أن يتصل بي", R.raw.tell_her_him_to_call_me, this))
@@ -559,7 +565,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("onun", "ها ( مثال بلدها )", R.raw.his_her, this))
         adapter.add(word_item("bizim", "نا ( مثال بلدنا )", R.raw.our, this))
         adapter.add(word_item("Sizin", "كم ( مثال بلدكم )", R.raw.sizin, this))
-        adapter.add(word_item("onların", "هم ( مثال بلدهم )", R.raw.onların, this))
+        adapter.add(word_item("onların", "هم ( مثال بلدهم )", R.raw.onlarin, this))
         adapter.add(word_item("Onun e-postası...", "بريده الاركتروني هو...", R.raw.her_his_email, this))
         adapter.add(word_item("Benim telefon numaram...", "رقهم هاتفي...", R.raw.my_phone_number_is, this))
         adapter.add(word_item("Hayalimiz jordan ziyaret etmek", "حلمنا زيارة الاردن", R.raw.our_dream_is_to_visit_jordan, this))
@@ -572,9 +578,9 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("onunki", "له ( مثال كتاب له )", R.raw.onunki, this))
         adapter.add(word_item("bizimki", "لنا ( مثال حلوة لنا )", R.raw.bizimki, this))
         adapter.add(word_item("Sizinki", "لكم ( مثال دروس لكم )", R.raw.sizinki, this))
-        adapter.add(word_item("onlarınki", "لهم ( مثال دروس لهم )", R.raw.onlarınki, this))
+        adapter.add(word_item("onlarınki", "لهم ( مثال دروس لهم )", R.raw.onlarinki, this))
         adapter.add(word_item("Bu kalem seninki mi?", "هل هذا القلم لك؟", R.raw.is_this_your_pencil, this))
         adapter.add(word_item("Bu kitap benimki", "الكتاب هو لي", R.raw.this_book_is_for_me, this))
-        adapter.add(word_item("zafer bizimdir", "النصر لنا", R.raw.zafer_bizimdir, this))
+        adapter.add(word_item("zafer bizimki", "النصر لنا", R.raw.zafer_bizimdir, this))
     }
 }

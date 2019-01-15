@@ -21,12 +21,12 @@
             android:layout_marginStart="8dp" app:fontFamily="@font/cairo" android:textStyle="bold"/>
     <TextView
             android:text="تلعم الحروف التركية بطريقة تفاعلية"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/subject_description"
             app:layout_constraintTop_toBottomOf="@+id/subject_title"
             app:layout_constraintStart_toStartOf="@+id/subject_title"
             app:fontFamily="@font/cairo"
-            android:textSize="12sp"/>
+            android:textSize="12sp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"/>
 
 </android.support.constraint.ConstraintLayout>
