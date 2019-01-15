@@ -2,10 +2,8 @@ package learnturkish.lemonlab.com.learnturkish
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_learn_letters.*
@@ -260,6 +258,10 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("Ekim", "تشرين أول", R.raw.october, this))
         adapter.add(word_item("Kasım", "تشرين ثاني", R.raw.november, this))
         adapter.add(word_item("Aralık", "كانون أول", R.raw.december, this))
+        adapter.add(word_item("Zaman", "وقت", R.raw.time, this))
+        adapter.add(word_item("Saat", "ساعة", R.raw.hour, this))
+        adapter.add(word_item("Dakika", "دقيقة", R.raw.minute, this))
+        adapter.add(word_item("Saniye", "ثانية", R.raw.second, this))
 
     }
 
@@ -516,4 +518,63 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("beri", "منذ", R.raw.since, this))
     }
 
+    // LESSON 11
+    fun addPronouns(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.prepositions_icon,
+            this,"lesson_9"))
+
+        adapter.add(word_item("ben", "أنا", R.raw.i, this))
+        adapter.add(word_item("sen", "أنت", R.raw.you, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("o", "هو", R.raw.he_she_is, this))
+        adapter.add(word_item("o", "هي", R.raw.he_she_is, this))
+        adapter.add(word_item("biz", "نحن", R.raw.we, this))
+        adapter.add(word_item("Siz", "انتم", R.raw.you_siz, this))
+        adapter.add(word_item("onlar", "هم", R.raw.them, this))
+        adapter.add(word_item("Seni seviyorum", "أنا أحبك", R.raw.i_love_you, this))
+        adapter.add(word_item("O güzel", "هي جميلة", R.raw.she_is_beautiful, this))
+        adapter.add(word_item("Mutluyuz", "نحن سعداء", R.raw.we_are_happy, this))
+        adapter.add(word_item("beni, bana", "ني( مثال اعطني )", R.raw.beni_bana, this))
+        adapter.add(word_item("seni, sana", "ك ( مثال اعطاك )", R.raw.seni_sana, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("onu, ona", "ه ( مثال اعطاها )", R.raw.onu_ona, this))
+        adapter.add(word_item("onu, ona", "ها", R.raw.onu_ona, this))
+        adapter.add(word_item("bizi, bize", "نا ( مثال اعطانا )", R.raw.bizi_bize, this))
+        adapter.add(word_item("Sizi, size", "كم ( مثال اعطاكم )", R.raw.sizi_size, this))
+        adapter.add(word_item("onları, onlara", "هم ( مثال اعطاهم )", R.raw.onları_onlara, this))
+        adapter.add(word_item("Bizi arayablir misin?", "هل يمكنك الاتصال بنا؟", R.raw.can_you_call_us, this))
+        adapter.add(word_item("Bana telefon numaranı ver", "أعطني رقم هاتفك", R.raw.give_me_your_phone_number, this))
+        adapter.add(word_item("Ona beni aramasını söyle", "قل له أن يتصل بي", R.raw.tell_her_him_to_call_me, this))
+        adapter.add(word_item("benim", "ي ( مثال بلدك )", R.raw.benim, this))
+        adapter.add(word_item("senin", "ك ( مثال بلدك )", R.raw.your, this))
+        adapter.add(word_item("onun", "ه ( مثال بلده )", R.raw.his_her, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("onun", "ها ( مثال بلدها )", R.raw.his_her, this))
+        adapter.add(word_item("bizim", "نا ( مثال بلدنا )", R.raw.our, this))
+        adapter.add(word_item("Sizin", "كم ( مثال بلدكم )", R.raw.sizin, this))
+        adapter.add(word_item("onların", "هم ( مثال بلدهم )", R.raw.onların, this))
+        adapter.add(word_item("Onun e-postası...", "بريده الاركتروني هو...", R.raw.her_his_email, this))
+        adapter.add(word_item("Benim telefon numaram...", "رقهم هاتفي...", R.raw.my_phone_number_is, this))
+        adapter.add(word_item("Hayalimiz jordan ziyaret etmek", "حلمنا زيارة الاردن", R.raw.our_dream_is_to_visit_jordan, this))
+        adapter.add(word_item("benimki", "", R.raw.benimki, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("seninki", "لي ( مثال كتاب لي )", R.raw.seninki, this))
+        adapter.add(word_item("onunki", "لك ( مثال كتاب لك )", R.raw.onunki, this))
+        adapter.add(word_item("onunki", "له ( مثال كتاب له )", R.raw.onunki, this))
+        adapter.add(word_item("bizimki", "لنا ( مثال حلوة لنا )", R.raw.bizimki, this))
+        adapter.add(word_item("Sizinki", "لكم ( مثال دروس لكم )", R.raw.sizinki, this))
+        adapter.add(word_item("onlarınki", "لهم ( مثال دروس لهم )", R.raw.onlarınki, this))
+        adapter.add(word_item("Bu kalem seninki mi?", "هل هذا القلم لك؟", R.raw.is_this_your_pencil, this))
+        adapter.add(word_item("Bu kitap benimki", "الكتاب هو لي", R.raw.this_book_is_for_me, this))
+        adapter.add(word_item("zafer bizimdir", "النصر لنا", R.raw.zafer_bizimdir, this))
+    }
 }
