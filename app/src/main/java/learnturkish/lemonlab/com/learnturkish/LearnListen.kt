@@ -434,4 +434,40 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("kolej", "", R.raw.college, this))
     }
 
+    // LESSON EIGHT
+    fun addSefat(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.adjectives,
+            this,"lesson_8"))
+
+        adapter.add(word_item("uzun", "طويل", R.raw.long_word, this))
+        adapter.add(word_item("kısa", "قصير", R.raw.short_word, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("büyük", "كبير", R.raw.big, this))
+        adapter.add(word_item("geniş", "واسع", R.raw.broad, this))
+        adapter.add(word_item("küçük", "صفير", R.raw.small, this))
+        adapter.add(word_item("kalın", "سميك", R.raw.thick, this))
+        adapter.add(word_item("ince", "رقيق", R.raw.thin, this))
+        adapter.add(word_item("yeni", "جديد", R.raw.new_word, this))
+        adapter.add(word_item("eski", "قديم", R.raw.old, this))
+        adapter.add(word_item("ucuz", "رخيص", R.raw.cheap, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("pahalı", "غالي", R.raw.expensive, this))
+        adapter.add(word_item("genç", "شاب", R.raw.young, this))
+        adapter.add(word_item("Yaşlı", "عجوز", R.raw.old_2, this))
+        adapter.add(word_item("yanlış", "خاطئ", R.raw.false_word, this))
+        adapter.add(word_item("doğru", "صحيح", R.raw.true_word, this))
+        adapter.add(word_item("iyi", "جيد", R.raw.good, this))
+        adapter.add(word_item("kötü", "سيئ", R.raw.bad, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("zor", "صعب", R.raw.difficult, this))
+        adapter.add(word_item("kolay", "سهل", R.raw.easy, this))
+    }
+
 }

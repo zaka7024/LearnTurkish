@@ -218,19 +218,19 @@ class ListenQuiz : AppCompatActivity() {
     fun clearColor(){
         radio_ans_btn1.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn1.alpha = 1f
-//        radio_ans_btn1.isSelected = false
+//        radio_ans_btn1.isSelected = false_word
 
         radio_ans_btn2.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn2.alpha = 1f
-//        radio_ans_btn2.isSelected = false
+//        radio_ans_btn2.isSelected = false_word
 
         radio_ans_btn3.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn3.alpha = 1f
-//        radio_ans_btn3.isSelected = false
+//        radio_ans_btn3.isSelected = false_word
 
         radio_ans_btn4.setTextColor(resources.getColor(R.color.black))
         radio_ans_btn4.alpha = 1f
-//        radio_ans_btn4.isSelected = false
+//        radio_ans_btn4.isSelected = false_word
     }
 
     fun showResult(){

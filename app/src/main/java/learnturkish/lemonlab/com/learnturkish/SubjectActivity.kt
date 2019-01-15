@@ -53,6 +53,9 @@ class SubjectActivity : AppCompatActivity() {
 
         adapter.add(subject_item("المفردات التعليمية", "تعلم المفردات التعليمية في المدرسة والجامعة",
             R.drawable.school, type = Keys.LESSON_SEVEN, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("الصفات و النعت", "تعلم كيف تصف شخص ما بالتركية",
+            R.drawable.adjectives, type = Keys.LESSON_EIGHT, activity = this@SubjectActivity))
     }
 }
 
