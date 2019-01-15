@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         MobileAds.initialize(this, "ca-app-pub-9769401692194876~3476321522")
 
         /*
-        * Check if user does not log in using preferences from registration activity
+        * Check if user does not log in_word using preferences from registration activity
         * */
 
         if(!CheckIfNotLoged()){

@@ -47,6 +47,10 @@ class LearnListen : AppCompatActivity() {
             addHome()
         }else if (lesson_type == Keys.LESSON_SEVEN){
             addSchool()
+        }else if (lesson_type == Keys.LESSON_EIGHT){
+            addSefat()
+        }else if (lesson_type == Keys.LESSON_TEN){
+            addPrepositions()
         }
 
         val sharedPref = getSharedPreferences("app_data", 0)
@@ -468,6 +472,48 @@ class LearnListen : AppCompatActivity() {
 
         adapter.add(word_item("zor", "صعب", R.raw.difficult, this))
         adapter.add(word_item("kolay", "سهل", R.raw.easy, this))
+    }
+
+    // LESSON TEN
+    fun addPrepositions(){
+
+        adapter.add(start_quiz("استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.prepositions_icon,
+            this,"lesson_9"))
+
+        adapter.add(word_item("önünde", "", R.raw.in_front_of, this))
+        adapter.add(word_item("arkasında", "خلص", R.raw.behind, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("önce", "قبل", R.raw.before, this))
+        adapter.add(word_item("sonra", "بعد", R.raw.after, this))
+        adapter.add(word_item("içinde", "داخل", R.raw.in_word, this))
+        adapter.add(word_item("ile", "مع", R.raw.with, this))
+        adapter.add(word_item("olmadan", "بدون", R.raw.without, this))
+        adapter.add(word_item("dışında", "خارج", R.raw.outside, this))
+        adapter.add(word_item("üzerinde", "فوق", R.raw.over, this))
+        adapter.add(word_item("altında", "تحت", R.raw.under, this))
+        adapter.add(word_item("hakkında", "حول", R.raw.about, this))
+        adapter.add(word_item("karşısında", "ضد", R.raw.against, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("ve", "و", R.raw.and, this))
+        adapter.add(word_item("gibi", "", R.raw.as_word, this))
+        adapter.add(word_item("arasında", "بين", R.raw.between, this))
+        adapter.add(word_item("ama", "لكن", R.raw.but, this))
+        adapter.add(word_item("için", "لـ (من اجل )", R.raw.for_word, this))
+        adapter.add(word_item("itibaren", "من", R.raw.day, this))
+        adapter.add(word_item("içinde", "في", R.raw.in_2, this))
+        adapter.add(word_item("yerine", "بدلا من", R.raw.instead, this))
+        adapter.add(word_item("yakınında", "قرب", R.raw.near, this))
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(word_item("Veya", "أو", R.raw.or, this))
+        adapter.add(word_item("kadar", "حتى", R.raw.until, this))
+        adapter.add(word_item("Böylece", "لكي", R.raw.thus, this))
+        adapter.add(word_item("beri", "منذ", R.raw.since, this))
     }
 
 }

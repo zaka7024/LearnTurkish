@@ -56,6 +56,9 @@ class SubjectActivity : AppCompatActivity() {
 
         adapter.add(subject_item("الصفات و النعت", "تعلم كيف تصف شخص ما بالتركية",
             R.drawable.adjectives, type = Keys.LESSON_EIGHT, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("حروف الجر و الإتجاهات", "تعلم حروف الجر والاتجاهات بطريقة تفاعلية",
+            R.drawable.prepositions_icon, type = Keys.LESSON_NINE, activity = this@SubjectActivity))
     }
 }
 

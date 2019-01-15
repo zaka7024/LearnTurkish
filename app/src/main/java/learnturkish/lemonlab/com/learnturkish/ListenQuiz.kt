@@ -144,7 +144,7 @@ class ListenQuiz : AppCompatActivity() {
 
     fun setQuesstion(index:Int){
 
-        clearColor() // reset default colors for radio buttons
+        clearColor() // reset default colors for_word radio buttons
 
         if(index >= question_data.size){
             next_btn.text = "النتيجة"

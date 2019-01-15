@@ -19,7 +19,7 @@ class letter_item(var big:String, var small:String,var examples:String, var soun
         viewHolder.itemView.letter_example.text = examples
 
 
-        // create sound for letter
+        // create sound for_word letter
         var sound:MediaPlayer = MediaPlayer.create(context, sound)
 
         viewHolder.itemView.play_sound_letter_btn.setOnClickListener{
