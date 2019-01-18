@@ -11,22 +11,29 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/subject_image"/>
+
     <TextView
             android:text="الحروف التركية"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/subject_title"
             app:layout_constraintTop_toTopOf="@+id/subject_image"
-            app:layout_constraintStart_toEndOf="@+id/subject_image" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:fontFamily="@font/cairo" android:textStyle="bold"/>
+            app:fontFamily="@font/cairo"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="textEnd"/>
+
     <TextView
             android:text="تلعم الحروف التركية بطريقة تفاعلية"
             android:layout_height="wrap_content"
+            android:layout_width="0dp"
             android:id="@+id/subject_description"
-            app:layout_constraintTop_toBottomOf="@+id/subject_title"
-            app:layout_constraintStart_toStartOf="@+id/subject_title"
             app:fontFamily="@font/cairo"
-            android:textSize="12sp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp"/>
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/subject_image"
+            app:layout_constraintEnd_toEndOf="@+id/subject_title"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/subject_title"/>
 
 </android.support.constraint.ConstraintLayout>

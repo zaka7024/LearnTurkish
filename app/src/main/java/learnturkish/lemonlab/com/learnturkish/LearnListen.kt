@@ -578,7 +578,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(word_item("onunki", "له ( مثال كتاب له )", R.raw.onunki, this))
         adapter.add(word_item("bizimki", "لنا ( مثال حلوة لنا )", R.raw.bizimki, this))
         adapter.add(word_item("Sizinki", "لكم ( مثال دروس لكم )", R.raw.sizinki, this))
-        adapter.add(word_item("onlarınki", "لهم ( مثال دروس لهم )", R.raw.onlarinki, this))
+        adapter.add(word_item("onlarinki", "لهم ( مثال دروس لهم )", R.raw.onlarinki, this))
         adapter.add(word_item("Bu kalem seninki mi?", "هل هذا القلم لك؟", R.raw.is_this_your_pencil, this))
         adapter.add(word_item("Bu kitap benimki", "الكتاب هو لي", R.raw.this_book_is_for_me, this))
         adapter.add(word_item("zafer bizimki", "النصر لنا", R.raw.zafer_bizimdir, this))

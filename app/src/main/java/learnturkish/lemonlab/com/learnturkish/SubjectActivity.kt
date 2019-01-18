@@ -62,6 +62,10 @@ class SubjectActivity : AppCompatActivity() {
 
         adapter.add(subject_item("الضمائر في التركية", "تعلم الضمائر المنفصلة و المتصلة و الملكية في اللغة التركية",
             R.drawable.pronouns, type = Keys.LESSON_TEN, activity = this@SubjectActivity))
+
+        adapter.add(subject_item("دردشة", "دردشة",
+            R.drawable.pronouns, type = Keys.CHAT_LESSON, activity = this@SubjectActivity))
+
     }
 }
 

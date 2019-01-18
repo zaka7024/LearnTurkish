@@ -6,6 +6,7 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.subject_item.view.*
+import learnturkish.lemonlab.com.learnturkish.ChatActivity
 import learnturkish.lemonlab.com.learnturkish.LearnListen
 import learnturkish.lemonlab.com.learnturkish.R
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
@@ -26,6 +27,14 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
 
         viewHolder.itemView.setOnClickListener {
+            // check if subject is special subject
+
+            if (type == Keys.CHAT_LESSON){
+                var intent = Intent(activity, ChatActivity::class.java)
+                activity!!.startActivity(intent)
+                return@setOnClickListener
+            }
+
             if(activity != null){
                 val intent = Intent(activity, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)

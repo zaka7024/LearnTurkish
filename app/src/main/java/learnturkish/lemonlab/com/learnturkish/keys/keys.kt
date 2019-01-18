@@ -7,6 +7,7 @@ class Keys{
         var QUIZ_TYPE = "QUIZ_TYPE"
         var LETTER_QUIZ = "LETTER_QUIZ"
         var WORDS_QUIZ = "WORDS_QUIZ"
+        var CHAT_LESSON = "CHAT_LESSON"
         var LESSON_TYPE = "LESSON_TYPE"
         var LESSON_ONE = "LESSON_ONE"
         var LESSON_TWO = "LESSON_TWO"
