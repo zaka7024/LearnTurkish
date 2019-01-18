@@ -51,12 +51,18 @@ class ChatActivity : AppCompatActivity() {
 
 
         adapter.add(selectChatItem())
+        slideToLast()
         chat_from = !chat_from
         player!!.setOnCompletionListener {
             index++
+            player!!.release()
             if (index >= chatData.size)return@setOnCompletionListener
             playChat()
         }
+    }
+
+    fun slideToLast(){
+        chat_activity_rv.scrollToPosition(adapter.itemCount - 1)
     }
 
 
