@@ -19,8 +19,10 @@ class chat_to_item(var chat_item: chat, var context: Context, var player: MediaP
         viewHolder.itemView.chat_text_view.text = chat_item.text
         viewHolder.itemView.chat_text_view_arabic.text = chat_item.arabic
 
+        viewHolder.itemView.chat_to_image.setImageResource(R.drawable.girl_1)
+
         // auto play sound
-        YoYo.with(Techniques.Pulse).duration((player!!.duration * 0.2).toLong()).playOn(viewHolder.itemView)
+        YoYo.with(Techniques.Pulse).duration((0.5).toLong()).playOn(viewHolder.itemView)
         if (player != null)
             player!!.start()
     }

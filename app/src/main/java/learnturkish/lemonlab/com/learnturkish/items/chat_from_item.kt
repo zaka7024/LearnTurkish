@@ -19,7 +19,9 @@ class chat_from_item(var chat_item:chat, var context: Context, var player: Media
         viewHolder.itemView.chat_text_view.text = chat_item.text
         viewHolder.itemView.chat_text_view_arabic.text = chat_item.arabic
 
-        YoYo.with(Techniques.Pulse).duration((player!!.duration * 0.2).toLong()).playOn(viewHolder.itemView)
+        viewHolder.itemView.chat_from_image.setImageResource(R.drawable.girl_2)
+
+        YoYo.with(Techniques.Pulse).duration((0.5).toLong()).playOn(viewHolder.itemView)
 
         // auto play sound
         if (player != null)
