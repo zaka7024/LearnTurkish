@@ -22,7 +22,7 @@ class chat_to_item(var chat_item: chat, var context: Context, var player: MediaP
         viewHolder.itemView.chat_to_image.setImageResource(R.drawable.girl_1)
 
         // auto play sound
-        YoYo.with(Techniques.Pulse).duration((0.5).toLong()).playOn(viewHolder.itemView)
+        YoYo.with(Techniques.Pulse).duration((500).toLong()).playOn(viewHolder.itemView)
         if (player != null)
             player!!.start()
     }

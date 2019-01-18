@@ -2,6 +2,8 @@ package learnturkish.lemonlab.com.learnturkish.items
 
 import android.app.Activity
 import android.content.Intent
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
@@ -19,12 +21,17 @@ class subject_item(var title:String, var description:String,var image:Int, var t
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
 
+
         // change layout title and description
 
         viewHolder.itemView.subject_title.text = title
         viewHolder.itemView.subject_description.text = description
 
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
+
+        // play animation on this item using YoYo
+
+        YoYo.with(Techniques.FadeInUp).duration(1000).playOn(viewHolder.itemView)
 
         viewHolder.itemView.setOnClickListener {
             // check if subject is special subject

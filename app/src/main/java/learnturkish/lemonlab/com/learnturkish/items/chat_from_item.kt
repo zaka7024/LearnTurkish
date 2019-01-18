@@ -21,7 +21,7 @@ class chat_from_item(var chat_item:chat, var context: Context, var player: Media
 
         viewHolder.itemView.chat_from_image.setImageResource(R.drawable.girl_2)
 
-        YoYo.with(Techniques.Pulse).duration((0.5).toLong()).playOn(viewHolder.itemView)
+        YoYo.with(Techniques.Pulse).duration((500).toLong()).playOn(viewHolder.itemView)
 
         // auto play sound
         if (player != null)

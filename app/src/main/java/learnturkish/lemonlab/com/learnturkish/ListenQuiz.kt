@@ -1,5 +1,6 @@
 package learnturkish.lemonlab.com.learnturkish
 
+import android.animation.Animator
 import android.app.Dialog
 import android.content.DialogInterface
 import android.content.Intent
@@ -12,9 +13,12 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.Toast
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.google.android.gms.ads.AdRequest
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -157,12 +161,34 @@ class ListenQuiz : AppCompatActivity() {
             return
         }
 
+
+
         sound = question_data[index].sound
         var options = question_data[index].options
         radio_ans_btn1.text = options[0]
         radio_ans_btn2.text = options[1]
         radio_ans_btn3.text = options[2]
         radio_ans_btn4.text = options[3]
+
+        YoYo.with(Techniques.SlideOutLeft).withListener(object:Animator.AnimatorListener{
+            override fun onAnimationRepeat(animation: Animator?) {
+
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                YoYo.with(Techniques.SlideInRight).duration(300).playOn(quiz_card_view)
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+
+            }
+
+
+        }).duration(300).playOn(quiz_card_view)
     }
 
     fun checkIfCorrect(index:Int):Boolean{
