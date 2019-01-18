@@ -161,8 +161,6 @@ class ListenQuiz : AppCompatActivity() {
             return
         }
 
-
-
         sound = question_data[index].sound
         var options = question_data[index].options
         radio_ans_btn1.text = options[0]
@@ -170,6 +168,7 @@ class ListenQuiz : AppCompatActivity() {
         radio_ans_btn3.text = options[2]
         radio_ans_btn4.text = options[3]
 
+        // play fade out animation after that play fade on animation with new content
         YoYo.with(Techniques.SlideOutLeft).withListener(object:Animator.AnimatorListener{
             override fun onAnimationRepeat(animation: Animator?) {
 
@@ -262,6 +261,7 @@ class ListenQuiz : AppCompatActivity() {
     fun showResult(){
         var intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(Keys.RESULT_SCORE, score)
+        intent.putExtra(Keys.LESSON_TYPE, type)
         startActivity(intent)
         this.finish()
     }
@@ -273,4 +273,5 @@ class ListenQuiz : AppCompatActivity() {
             it.release()
         }
     }
+
 }

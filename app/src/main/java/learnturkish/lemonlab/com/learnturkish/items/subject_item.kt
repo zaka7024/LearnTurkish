@@ -1,6 +1,8 @@
 package learnturkish.lemonlab.com.learnturkish.items
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -13,7 +15,8 @@ import learnturkish.lemonlab.com.learnturkish.LearnListen
 import learnturkish.lemonlab.com.learnturkish.R
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
-class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?):Item<ViewHolder>() {
+class subject_item(var title:String, var description:String,var image:Int, var type:String, var context: Context?
+, var min_score:Int = 0):Item<ViewHolder>() {
 
     override fun getLayout(): Int {
         return R.layout.subject_item
@@ -37,18 +40,33 @@ class subject_item(var title:String, var description:String,var image:Int, var t
             // check if subject is special subject
 
             if (type == Keys.CHAT_LESSON){
-                var intent = Intent(activity, ChatActivity::class.java)
-                activity!!.startActivity(intent)
+                var intent = Intent(context, ChatActivity::class.java)
+                context!!.startActivity(intent)
                 return@setOnClickListener
             }
 
-            if(activity != null){
-                val intent = Intent(activity, LearnListen::class.java)
+            if(context != null){
+                // check if user has the min score for this lesson
+                if(getUserScore() < min_score){
+                    val dialog = AlertDialog.Builder(context)
+                    dialog.setTitle("متطلبات")
+                    dialog.setMessage("تحتاج الى المزيد من النقاط للتمكن من الدخول الى الدرس.\n" +
+                            "النقاط الحالية: ${getUserScore()}\n" +
+                            "يتطلب الدرس: ${min_score}")
+                    dialog.show()
+                    return@setOnClickListener
+                }
+
+                val intent = Intent(context, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)
-                activity!!.startActivity(intent)
+                context!!.startActivity(intent)
             }
 
         }
+    }
+    fun getUserScore():Int{
+        val ref = context!!.getSharedPreferences("app_data", 0)
+        return ref.getInt(Keys.SCORE, 0)
     }
 
 }

@@ -8,7 +8,7 @@ class QuizData{
             add(question_letter_word(R.raw.a_char, arrayListOf("A", "B", "C","Ç"), 0))
             add(question_letter_word(R.raw.b_char, arrayListOf("A", "C", "B","E"), 2))
             add(question_letter_word(R.raw.c_char, arrayListOf("F", "C", "L","V"), 1))
-            add(question_letter_word(R.raw.d_char, arrayListOf("D", "F", "G","Ğ"), 0))
+            /*add(question_letter_word(R.raw.d_char, arrayListOf("D", "F", "G","Ğ"), 0))
             add(question_letter_word(R.raw.c__char, arrayListOf("Z", "Ç", "S","Ü"), 1))
             add(question_letter_word(R.raw.d_char, arrayListOf("A", "D", "Y","Z"), 1))
             add(question_letter_word(R.raw.e_char, arrayListOf("E", "O", "Ö","M"), 0))
@@ -33,7 +33,7 @@ class QuizData{
             add(question_letter_word(R.raw.u__char, arrayListOf("L", "J", "Ü","A"), 2))
             add(question_letter_word(R.raw.v_char, arrayListOf("V", "M", "I","Y"), 0))
             add(question_letter_word(R.raw.y_char, arrayListOf("Z", "S", "Y","U"), 2))
-            add(question_letter_word(R.raw.z_char, arrayListOf("K", "L", "Z","I"), 2))
+            add(question_letter_word(R.raw.z_char, arrayListOf("K", "L", "Z","I"), 2)) */
         }
 
         var words_question_data = ArrayList<question_letter_word>().apply {

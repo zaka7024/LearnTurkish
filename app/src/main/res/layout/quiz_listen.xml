@@ -80,30 +80,47 @@
                         android:gravity="right"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                     <RadioButton
                             android:text="الاختيار الاول"
                             android:textColor="@color/deepBlue"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/radio_ans_btn1"
-                            android:layout_weight="1" android:checked="false"/>
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_ans_btn1"
+                            android:layout_weight="1"
+                            android:checked="false"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
                     <RadioButton
                             android:text="الاختيار الثاني"
                             android:textColor="@color/deepBlue"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/radio_ans_btn2"
-                            android:layout_weight="1"/>
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_ans_btn2"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
                     <RadioButton
                             android:text="الاختيار الثالث"
                             android:textColor="@color/deepBlue"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/radio_ans_btn3"
-                            android:layout_weight="1"/>
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_ans_btn3"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
                     <RadioButton
                             android:text="الاختيار الرابع"
                             android:textColor="@color/deepBlue"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/radio_ans_btn4"
-                            android:layout_weight="1"/>
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_ans_btn4"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
                 </RadioGroup>
             </LinearLayout>
             <ImageView

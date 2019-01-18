@@ -1,5 +1,7 @@
 package learnturkish.lemonlab.com.learnturkish.keys
 
+import learnturkish.lemonlab.com.learnturkish.data.QuizData
+
 class Keys{
     companion object {
         var SCORE = "USER_SCORE"
@@ -9,6 +11,12 @@ class Keys{
         var WORDS_QUIZ = "WORDS_QUIZ"
         var CHAT_LESSON = "CHAT_LESSON"
         var LESSON_TYPE = "LESSON_TYPE"
+
+        // LESSON QUIZ PASSED
+        var LESSON_QUIZ_ONE = "false"
+        var LESSON_QUIZ_TWO = "false"
+
+
         var LESSON_ONE = "LESSON_ONE"
         var LESSON_TWO = "LESSON_TWO"
         var LESSON_THREE = "LESSON_THREE"
