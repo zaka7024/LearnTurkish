@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.chat_from_item.view.*
 import learnturkish.lemonlab.com.learnturkish.R
 import learnturkish.lemonlab.com.learnturkish.module.chat
 
-class chat_from_item(var chat_item:chat, var context: Context, var player: MediaPlayer?):Item<ViewHolder>() {
+class chat_from_item(var chat_item:chat, var context: Context, var player: MediaPlayer?, var done:Boolean = false):Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.chat_from_item
     }
@@ -24,7 +24,8 @@ class chat_from_item(var chat_item:chat, var context: Context, var player: Media
         YoYo.with(Techniques.Pulse).duration((500).toLong()).playOn(viewHolder.itemView)
 
         // auto play sound
-        if (player != null)
+        if (player != null && !done && !player!!.isPlaying)
+            done = true
             player!!.start()
     }
 

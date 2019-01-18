@@ -38,34 +38,34 @@ class SubjectActivity : AppCompatActivity() {
         adapter.clear()
 
         adapter.add(subject_item("الحروف التركية", "تعلم الحروف التركية بطريقة تفاعلية",
-            R.drawable.letters_icon, type = Keys.LESSON_ONE, context = this@SubjectActivity, min_score = 0))
+            R.drawable.letters_icon, type = Keys.LESSON_ONE, activity = this@SubjectActivity, min_score = 0))
         adapter.add(subject_item("مفردات اساسية", "تعلم المفردات الاساسية في اللغة",
-            R.drawable.chat_icon, type = Keys.LESSON_TWO, context = this@SubjectActivity, min_score = 3))
+            R.drawable.chat_icon, type = Keys.LESSON_TWO, activity = this@SubjectActivity, min_score = 3))
         adapter.add(subject_item("الارقام والايام التركية", "تعلم الارقام التركية بطريقة تفاعلية",
-            R.drawable.time_icon, type = Keys.LESSON_THREE, context = this@SubjectActivity, min_score = 6))
+            R.drawable.time_icon, type = Keys.LESSON_THREE, activity = this@SubjectActivity, min_score = 6))
         adapter.add(subject_item("الالوان في التركية", "تعلم الالوان الاساسية في اللغة التركية",
-            R.drawable.colors, type = Keys.LESSON_FOUR, context = this@SubjectActivity, min_score = 90))
+            R.drawable.colors, type = Keys.LESSON_FOUR, activity = this@SubjectActivity, min_score = 90))
 
         adapter.add(subject_item("اجزاء الجسم", "تعلم اجزاء جسم الانسان بالتركية",
-            R.drawable.brain_icon, type = Keys.LESSON_FIVE, context = this@SubjectActivity))
+            R.drawable.brain_icon, type = Keys.LESSON_FIVE, activity = this@SubjectActivity))
 
         adapter.add(subject_item("الادوات في التركية", "تعلم الادوات المنزلية و الزراعية في اللغة التركية",
-            R.drawable.tools_icon, type = Keys.LESSON_SIX, context = this@SubjectActivity))
+            R.drawable.tools_icon, type = Keys.LESSON_SIX, activity = this@SubjectActivity))
 
         adapter.add(subject_item("المفردات التعليمية", "تعلم المفردات التعليمية في المدرسة والجامعة",
-            R.drawable.school, type = Keys.LESSON_SEVEN, context = this@SubjectActivity))
+            R.drawable.school, type = Keys.LESSON_SEVEN, activity = this@SubjectActivity))
 
         adapter.add(subject_item("الصفات و النعت", "تعلم كيف تصف شخص ما بالتركية",
-            R.drawable.adjectives, type = Keys.LESSON_EIGHT, context = this@SubjectActivity))
+            R.drawable.adjectives, type = Keys.LESSON_EIGHT, activity = this@SubjectActivity))
 
         adapter.add(subject_item("حروف الجر و الإتجاهات", "تعلم حروف الجر والاتجاهات بطريقة تفاعلية",
-            R.drawable.prepositions_icon, type = Keys.LESSON_NINE, context = this@SubjectActivity))
+            R.drawable.prepositions_icon, type = Keys.LESSON_NINE, activity = this@SubjectActivity))
 
         adapter.add(subject_item("الضمائر في التركية", "تعلم الضمائر المنفصلة و المتصلة و الملكية في اللغة التركية",
-            R.drawable.pronouns, type = Keys.LESSON_TEN, context = this@SubjectActivity))
+            R.drawable.pronouns, type = Keys.LESSON_TEN, activity = this@SubjectActivity))
 
         adapter.add(subject_item("محادثة صوتية 1", "اسمع محادثة صوتية كاملة بين ليلى و رولا",
-            R.drawable.chat_2_icon, type = Keys.CHAT_LESSON, context = this@SubjectActivity))
+            R.drawable.chat_2_icon, type = Keys.CHAT_LESSON_ONE, activity = this@SubjectActivity))
 
     }
 }

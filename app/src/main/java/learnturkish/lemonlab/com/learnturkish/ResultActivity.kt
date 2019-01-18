@@ -43,7 +43,6 @@ class ResultActivity : AppCompatActivity() {
         home_btn.setOnClickListener {
             goToHome()
             saveUserScore()
-            Log.i("ResultActivity", "user score: ${saveUserScore()}")
             this.finish()
         }
 
@@ -52,7 +51,6 @@ class ResultActivity : AppCompatActivity() {
     fun goToHome(){
         var intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        this.finish()
     }
 
     fun saveUserScore():Int{
@@ -92,13 +90,58 @@ class ResultActivity : AppCompatActivity() {
         when(type){
             Keys.LESSON_ONE ->{
                 quiz_name_score = Keys.LESSON_QUIZ_ONE
-                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
+                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCKED
             }
 
             Keys.LESSON_TWO ->{
                 quiz_name_score = Keys.LESSON_QUIZ_TWO
-                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
+                quiz_name_locked = Keys.LESSON_QUIZ_THREE_LOCKED
             }
+
+            Keys.LESSON_THREE ->{
+                quiz_name_score = Keys.LESSON_QUIZ_THREE
+                quiz_name_locked = Keys.LESSON_QUIZ_FOUR_LOCKED
+            }
+
+            Keys.LESSON_FOUR ->{
+                quiz_name_score = Keys.LESSON_QUIZ_FOUR
+                quiz_name_locked = Keys.LESSON_QUIZ_FIVE_LOCKED
+            }
+
+            Keys.LESSON_FIVE ->{
+                quiz_name_score = Keys.LESSON_QUIZ_FIVE
+                quiz_name_locked = Keys.LESSON_QUIZ_SIX_LOCKED
+            }
+
+            Keys.LESSON_SIX ->{
+                quiz_name_score = Keys.LESSON_QUIZ_SIX
+                quiz_name_locked = Keys.LESSON_QUIZ_SEVEN_LOCKED
+            }
+
+            Keys.LESSON_SEVEN ->{
+                quiz_name_score = Keys.LESSON_QUIZ_SEVEN
+                quiz_name_locked = Keys.LESSON_QUIZ_EIGHT_LOCKED
+            }
+            Keys.LESSON_EIGHT ->{
+                quiz_name_score = Keys.LESSON_QUIZ_EIGHT
+                quiz_name_locked = Keys.LESSON_QUIZ_NINE_LOCKED
+            }
+
+            Keys.LESSON_NINE ->{
+                quiz_name_score = Keys.LESSON_QUIZ_NINE
+                quiz_name_locked = Keys.LESSON_QUIZ_TEN_LOCKED
+            }
+
+            Keys.LESSON_TEN ->{
+                quiz_name_score = Keys.LESSON_QUIZ_TEN
+                quiz_name_locked = Keys.LESSON_QUIZ_ELEVEN_LOCKED
+            }
+
+            Keys.LESSON_ELEVEN ->{
+                quiz_name_score = Keys.LESSON_QUIZ_ELEVEN
+                quiz_name_locked = Keys.LESSON_QUIZ_ELEVEN_LOCKED
+            }
+
 
         }
         Log.i("ResultActivity", "quiz name score: ${quiz_name_score}")

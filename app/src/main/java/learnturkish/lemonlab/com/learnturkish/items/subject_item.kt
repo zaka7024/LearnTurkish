@@ -2,7 +2,6 @@ package learnturkish.lemonlab.com.learnturkish.items
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.daimajia.androidanimations.library.Techniques
@@ -16,7 +15,7 @@ import learnturkish.lemonlab.com.learnturkish.LearnListen
 import learnturkish.lemonlab.com.learnturkish.R
 import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
-class subject_item(var title:String, var description:String,var image:Int, var type:String, var context: Context?
+class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?
 , var min_score:Int = 0):Item<ViewHolder>() {
 
 
@@ -42,22 +41,23 @@ class subject_item(var title:String, var description:String,var image:Int, var t
 
         // check if lesson is locked or not
         if (isLockOrNot()){
-            viewHolder.itemView.back_layout.setBackgroundColor(context!!.resources.getColor(R.color.darkGray))
+            viewHolder.itemView.back_layout.setBackgroundColor(activity!!.resources.getColor(R.color.darkGray))
         }
 
         viewHolder.itemView.setOnClickListener {
             // check if subject is special subject
 
-            if (type == Keys.CHAT_LESSON){
-                var intent = Intent(context, ChatActivity::class.java)
-                context!!.startActivity(intent)
+            if (type == Keys.CHAT_LESSON_ONE){
+                var intent = Intent(activity, ChatActivity::class.java)
+                activity!!.startActivity(intent)
+                activity!!.finish()
                 return@setOnClickListener
             }
 
-            if(context != null){
+            if(activity != null){
                 // check if user has the min score for this lesson
                 if(getUserScore() < min_score){
-                    val dialog = AlertDialog.Builder(context)
+                    val dialog = AlertDialog.Builder(activity)
                     dialog.setTitle("متطلبات")
                     dialog.setMessage("تحتاج الى المزيد من النقاط للتمكن من الدخول الى الدرس.\n" +
                             "النقاط الحالية: ${getUserScore()}\n" +
@@ -66,15 +66,16 @@ class subject_item(var title:String, var description:String,var image:Int, var t
                     return@setOnClickListener
                 }
 
-                val intent = Intent(context, LearnListen::class.java)
+                val intent = Intent(activity, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)
-                context!!.startActivity(intent)
+                activity!!.startActivity(intent)
+                activity!!.finish()
             }
 
         }
     }
     fun getUserScore():Int{
-        val ref = context!!.getSharedPreferences("app_data", 0)
+        val ref = activity!!.getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
     }
 
@@ -85,15 +86,55 @@ class subject_item(var title:String, var description:String,var image:Int, var t
             }
 
             Keys.LESSON_TWO ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
+                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCKED
             }
+
+            Keys.LESSON_THREE ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_THREE_LOCKED
+            }
+
+            Keys.LESSON_FOUR ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_FOUR_LOCKED
+            }
+
+            Keys.LESSON_FIVE ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_FIVE_LOCKED
+            }
+
+            Keys.LESSON_SIX ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_SIX_LOCKED
+            }
+
+            Keys.LESSON_SEVEN ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_SEVEN_LOCKED
+            }
+            Keys.LESSON_EIGHT ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_EIGHT_LOCKED
+            }
+
+            Keys.LESSON_NINE ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_NINE_LOCKED
+            }
+
+            Keys.LESSON_TEN ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_TEN_LOCKED
+            }
+
+            Keys.LESSON_ELEVEN ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_ELEVEN_LOCKED
+            }
+
+            Keys.CHAT_LESSON_ONE ->{
+                quiz_name_locked = Keys.LESSON_CHAT_ONE_LOCKED
+            }
+
 
         }
     }
 
     fun isLockOrNot():Boolean{
         getLesson()
-        val ref = context!!.getSharedPreferences("app_data", 0)
+        val ref = activity!!.getSharedPreferences("app_data", 0)
         val isLocked = ref.getBoolean(quiz_name_locked, true)
         Log.i("subject_item", "lesson is locked: ${isLocked}")
         return isLocked

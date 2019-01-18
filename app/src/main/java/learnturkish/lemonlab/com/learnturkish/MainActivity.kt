@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     fun StartRegisterActivity(){
         var intent = Intent(this,RegistrationActivity::class.java)
         startActivity(intent)
+        this.finish()
     }
 
     fun getUserName():String{
@@ -62,7 +63,17 @@ class MainActivity : AppCompatActivity() {
             with(ref.edit()){
                 putBoolean("init_data", true)
                 putBoolean(Keys.LESSON_QUIZ_ONE_LOCKED, false)
-                putBoolean(Keys.LESSON_QUIZ_TWO_LOCEED, true)
+                putBoolean(Keys.LESSON_QUIZ_TWO_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_THREE_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_FOUR_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_FIVE_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_SIX_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_SEVEN_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_EIGHT_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_NINE_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_TEN_LOCKED, true)
+                putBoolean(Keys.LESSON_QUIZ_ELEVEN_LOCKED, true)
+                putBoolean(Keys.LESSON_CHAT_ONE_LOCKED, true)
                 apply()
             }
         }

@@ -34,5 +34,8 @@ class RegistrationActivity : AppCompatActivity() {
             putString("USER_NAME",username_edittext.text.toString() )
             apply()
         }
+
+        var intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
