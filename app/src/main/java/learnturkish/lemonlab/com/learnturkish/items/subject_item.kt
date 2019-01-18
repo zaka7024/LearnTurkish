@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.squareup.picasso.Picasso
@@ -17,6 +18,9 @@ import learnturkish.lemonlab.com.learnturkish.keys.Keys
 
 class subject_item(var title:String, var description:String,var image:Int, var type:String, var context: Context?
 , var min_score:Int = 0):Item<ViewHolder>() {
+
+
+    var quiz_name_locked = ""
 
     override fun getLayout(): Int {
         return R.layout.subject_item
@@ -35,6 +39,11 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         // play animation on this item using YoYo
 
         YoYo.with(Techniques.FadeInUp).duration(1000).playOn(viewHolder.itemView)
+
+        // check if lesson is locked or not
+        if (isLockOrNot()){
+            viewHolder.itemView.back_layout.setBackgroundColor(context!!.resources.getColor(R.color.darkGray))
+        }
 
         viewHolder.itemView.setOnClickListener {
             // check if subject is special subject
@@ -67,6 +76,27 @@ class subject_item(var title:String, var description:String,var image:Int, var t
     fun getUserScore():Int{
         val ref = context!!.getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
+    }
+
+    fun getLesson(){
+        when(type){
+            Keys.LESSON_ONE ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_ONE_LOCKED
+            }
+
+            Keys.LESSON_TWO ->{
+                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
+            }
+
+        }
+    }
+
+    fun isLockOrNot():Boolean{
+        getLesson()
+        val ref = context!!.getSharedPreferences("app_data", 0)
+        val isLocked = ref.getBoolean(quiz_name_locked, true)
+        Log.i("subject_item", "lesson is locked: ${isLocked}")
+        return isLocked
     }
 
 }

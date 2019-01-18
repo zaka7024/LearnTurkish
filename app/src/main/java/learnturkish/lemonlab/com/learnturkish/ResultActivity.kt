@@ -13,6 +13,7 @@ class ResultActivity : AppCompatActivity() {
     var result_score:Int? = null
     var type:String = ""
     var quiz_name_score = ""
+    var quiz_name_locked = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,9 @@ class ResultActivity : AppCompatActivity() {
         result_score = intent?.extras?.getInt(Keys.RESULT_SCORE)
         type = intent?.extras?.getString(Keys.LESSON_TYPE)!!
 
+        // unlock the lesson lesson
+        getQuizName()
+        unlockTheNextLesson()
         score_text_view_result_activity.text = result_score.toString()
 
         correct_animation.setAnimation("tick_reveal.json")
@@ -69,7 +73,6 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun passQuiz(){
-        getQuizName()
         val ref = getSharedPreferences("app_dat", 0)
         with(ref.edit()){
             putBoolean(quiz_name_score, true)
@@ -89,13 +92,23 @@ class ResultActivity : AppCompatActivity() {
         when(type){
             Keys.LESSON_ONE ->{
                 quiz_name_score = Keys.LESSON_QUIZ_ONE
+                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
             }
 
             Keys.LESSON_TWO ->{
                 quiz_name_score = Keys.LESSON_QUIZ_TWO
+                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCEED
             }
 
         }
         Log.i("ResultActivity", "quiz name score: ${quiz_name_score}")
+    }
+
+    fun unlockTheNextLesson(){
+        val ref = getSharedPreferences("app_data", 0)
+        with(ref.edit()){
+            putBoolean(quiz_name_locked, false)
+            apply()
+        }
     }
 }

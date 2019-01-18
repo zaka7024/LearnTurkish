@@ -7,14 +7,25 @@ class Keys{
         var SCORE = "USER_SCORE"
         var RESULT_SCORE = "RESULT"
         var QUIZ_TYPE = "QUIZ_TYPE"
-        var LETTER_QUIZ = "LETTER_QUIZ"
-        var WORDS_QUIZ = "WORDS_QUIZ"
         var CHAT_LESSON = "CHAT_LESSON"
         var LESSON_TYPE = "LESSON_TYPE"
 
         // LESSON QUIZ PASSED
-        var LESSON_QUIZ_ONE = "false"
-        var LESSON_QUIZ_TWO = "false"
+        var LESSON_QUIZ_ONE = "LESSON_QUIZ_ONE"
+        var LESSON_QUIZ_TWO = "LESSON_QUIZ_TWO"
+        var LESSON_QUIZ_THREE = "LESSON_QUIZ_THREE"
+        var LESSON_QUIZ_FOUR = "LESSON_QUIZ_FOUR"
+        var LESSON_QUIZ_FIVE = "false"
+        var LESSON_QUIZ_SIX = "false"
+        var LESSON_QUIZ_SEVEN = "false"
+        var LESSON_QUIZ_EIGHT = "false"
+        var LESSON_QUIZ_NINE = "false"
+        var LESSON_QUIZ_TEN = "false"
+        var LESSON_QUIZ_ELEVEN = "false"
+
+        // LESSON QUIZ PASSED
+        var LESSON_QUIZ_ONE_LOCKED = "LESSON_QUIZ_ONE_LOCKED"
+        var LESSON_QUIZ_TWO_LOCEED = "LESSON_QUIZ_TWO_LOCKED"
 
 
         var LESSON_ONE = "LESSON_ONE"

@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
+import learnturkish.lemonlab.com.learnturkish.keys.Keys
+import java.security.Key
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         if(!CheckIfNotLoged()){
             StartRegisterActivity()
         }
+
+        initData()
 
         username_textview.text = getUserName()
 
@@ -49,5 +53,19 @@ class MainActivity : AppCompatActivity() {
     fun startLearn(){
         var intent = Intent(this, SubjectActivity::class.java)
         startActivity(intent)
+    }
+
+    fun initData(){
+        val ref = getSharedPreferences("app_data",0)
+        val saved = ref.getBoolean("init_data", false)
+        if (!saved){
+            with(ref.edit()){
+                putBoolean("init_data", true)
+                putBoolean(Keys.LESSON_QUIZ_ONE_LOCKED, false)
+                putBoolean(Keys.LESSON_QUIZ_TWO_LOCEED, true)
+                apply()
+            }
+        }
+
     }
 }
