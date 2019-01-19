@@ -38,8 +38,6 @@ class ResultActivity : AppCompatActivity() {
         correct_animation.playAnimation()
         correct_animation.loop(true)
 
-        passQuiz() // save in sharedPref that the user complete this quiz
-
         home_btn.setOnClickListener {
             goToHome()
             saveUserScore()
@@ -67,11 +65,14 @@ class ResultActivity : AppCompatActivity() {
 
         prev_score = ref.getInt(Keys.SCORE, 0)
         Log.i("ResultActivity", "user score after quiz end: ${prev_score}")
+
+        passQuiz() // save in sharedPref that the user complete this quiz
+
         return prev_score
     }
 
     fun passQuiz(){
-        val ref = getSharedPreferences("app_dat", 0)
+        val ref = getSharedPreferences("app_data", 0)
         with(ref.edit()){
             putBoolean(quiz_name_score, true)
             apply()

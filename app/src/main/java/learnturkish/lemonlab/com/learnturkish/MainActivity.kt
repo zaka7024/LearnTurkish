@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         username_textview.text = getUserName()
+        score_text_view.text = getUserScore().toString() + " كأس "
 
         start_btn.setOnClickListener {
             startLearn()
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity() {
     fun startLearn(){
         var intent = Intent(this, SubjectActivity::class.java)
         startActivity(intent)
+    }
+
+    fun getUserScore():Int{
+        val ref = getSharedPreferences("app_data", 0)
+        return ref.getInt(Keys.SCORE, 0)
     }
 
     fun initData(){
