@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.LessonLockedDialog"
+        android:background="@color/deepBlue"
+        android:padding="10dp">
+
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16sp"
+            android:fontFamily="@font/cairo"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="10dp"
+            tools:text="هذا الدرس يحتاج الى 30 كأس للتمكن من الدخول اليه، اكمل الاختبارات السابقة للحصول على المزيد من الكؤوس"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>

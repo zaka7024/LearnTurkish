@@ -1,8 +1,8 @@
 package learnturkish.lemonlab.com.learnturkish.items
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Intent
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -57,7 +57,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
             if(activity != null){
                 // check if user has the min score for this lesson
                 if(getUserScore() < min_score){
-                    val dialog = AlertDialog.Builder(activity)
+                    val dialog = AlertDialog.Builder(activity!!)
                     dialog.setTitle("متطلبات")
                     dialog.setMessage("تحتاج الى المزيد من النقاط للتمكن من الدخول الى الدرس.\n" +
                             "النقاط الحالية: ${getUserScore()}\n" +

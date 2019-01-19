@@ -26,6 +26,7 @@ class SubjectActivity : AppCompatActivity() {
         // add our subject to subject rv using groupie adapter
         addSubjectToRV()
 
+
     }
 
     fun initSubjectRV(){
