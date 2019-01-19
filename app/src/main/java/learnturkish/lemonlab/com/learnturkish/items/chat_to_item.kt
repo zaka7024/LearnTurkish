@@ -36,13 +36,12 @@ class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>()
                 }
 
                 override fun onAnimationEnd(animation: Animator?) {
+                    isTurkey = !isTurkey
 
                     if (isTurkey)
                         viewHolder.itemView.chat_text_view.text = chat_item.text
                     else
                         viewHolder.itemView.chat_text_view.text = chat_item.arabic
-
-                    isTurkey = !isTurkey
 
                     YoYo.with(Techniques.FadeIn).duration(200).playOn(viewHolder.itemView.chat_text_view)
                 }
@@ -56,7 +55,6 @@ class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>()
                 }
 
             }).duration(200).playOn(viewHolder.itemView.chat_text_view)
-            viewHolder.itemView.chat_text_view.text = chat_item.arabic
 
         }
     }
