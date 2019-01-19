@@ -38,20 +38,22 @@ class ChatActivity : AppCompatActivity() {
 
     fun selectChatItem():Item<ViewHolder>{
         var item = if (chat_from){
-            chat_from_item(chatData[index], this,player)
+            chat_from_item(chatData[index], this)
         }else{
-            chat_to_item(chatData[index], this,player)
+            chat_to_item(chatData[index], this)
         }
         return item
     }
 
     fun playChat(){
         var sound = chatData[index].sound
+
         player = MediaPlayer.create(this , sound)
-
-
+        player!!.start()
         adapter.add(selectChatItem())
         slideToLast()
+
+
         chat_from = !chat_from
         player!!.setOnCompletionListener {
             index++
