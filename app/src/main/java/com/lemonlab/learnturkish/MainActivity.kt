@@ -1,5 +1,6 @@
 package com.lemonlab.learnturkish
 
+import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -11,15 +12,18 @@ import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import com.lemonlab.learnturkish.keys.Keys
 import com.lemonlab.learnturkish.R
+import kotlinx.android.synthetic.main.dialog_layout.view.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var dialog:Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         MobileAds.initialize(this, "ca-app-pub-9769401692194876~3476321522")
-
+        //init
+        dialog = Dialog(this)
 
         /*
         * Check if user does not log in_word using preferences from registration activity
@@ -52,6 +56,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(intent,"مشاركة الى"))
         }
 
+        score_icon.setOnClickListener {
+            showDialog()
+        }
+
     }
 
     fun CheckIfNotLoged():Boolean{
@@ -81,6 +89,16 @@ class MainActivity : AppCompatActivity() {
     fun getUserScore():Int{
         val ref = getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
+    }
+
+    fun showDialog(){
+        val view = layoutInflater.inflate(R.layout.dialog_layout,null, false)
+        view.message_text_view.text = "يمثل هذا الرقم عدد النقاط التي تمتلكها، من خلال اكمالك للاختبارات سوف تحصل على النقاط، كلما حصلت على نقاط اكثر سوف تتمكن من فتح الدروس المقفلة"
+        view.exit_btn.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.setContentView(view)
+        dialog.show()
     }
 
     fun initData(){

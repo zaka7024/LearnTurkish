@@ -14,7 +14,7 @@ import com.lemonlab.learnturkish.ChatActivity
 import com.lemonlab.learnturkish.LearnListen
 import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.keys.Keys
-import kotlinx.android.synthetic.main.lesson_locked_dialog.view.*
+import kotlinx.android.synthetic.main.dialog_layout.view.*
 
 class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?
 , var min_score:Int = 0):Item<ViewHolder>() {
@@ -60,7 +60,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
                 // check if user has the min score for this lesson
                 if(getUserScore() < min_score){
                     val dialog = Dialog(activity!!)
-                    var view = activity!!.layoutInflater.inflate(R.layout.lesson_locked_dialog, null)
+                    var view = activity!!.layoutInflater.inflate(R.layout.dialog_layout, null)
                     view.message_text_view.text = "انت لا تمتلك الحد الادنى من النقاط\n" +
                             "يحتاج هذا الدرس الي: ${min_score}"
 

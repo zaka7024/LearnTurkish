@@ -32,7 +32,7 @@
             android:textStyle="bold"
             android:textColor="@color/deepBlue"
             android:text="احسنت لقد انهيت المسار وحصلت على"
-            android:textAlignment="center"/>
+            android:gravity="center"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

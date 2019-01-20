@@ -4,6 +4,7 @@ import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
@@ -17,15 +18,31 @@ class ChatActivity : AppCompatActivity() {
 
     var adapter = GroupAdapter<ViewHolder>()
     var chatData = chat_data.chatData
-    var index = 0
+    var index = -1
     var chat_from = true
     var player:MediaPlayer? = null
+    var isPlaying = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
         initChatRV()
-        playChat()
+
+        play_chat.setOnClickListener {
+
+            if (index == -1){
+                adapter.clear()
+            }
+
+            if (isPlaying || (player != null && player!!.isPlaying)){
+                isPlaying = false
+                play_chat.setImageResource(R.drawable.play_icon)
+                return@setOnClickListener
+            }
+            play_chat.setImageResource(R.drawable.pause_icon)
+            isPlaying = true
+            playChat()
+        }
 
     }
 
@@ -50,6 +67,12 @@ class ChatActivity : AppCompatActivity() {
     }
 
     fun playChat(){
+        index++
+        if (index >= chatData.size){
+            index = -1
+            return
+        }
+
         var sound = chatData[index].sound
 
         player = MediaPlayer.create(this , sound)
@@ -57,12 +80,19 @@ class ChatActivity : AppCompatActivity() {
         adapter.add(selectChatItem())
         slideToLast()
 
+        if(!isPlaying){
+            return
+        }
 
         chat_from = !chat_from
         player!!.setOnCompletionListener {
-            index++
+
             player!!.release()
-            if (index >= chatData.size)return@setOnCompletionListener
+            if (index >= chatData.size && isPlaying){
+                isPlaying = false
+                return@setOnCompletionListener
+            }
+            Log.i("ChatActivity", "playChat(): isPlaying -> ${isPlaying}")
             playChat()
         }
     }
