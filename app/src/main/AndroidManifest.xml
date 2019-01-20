@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="learnturkish.lemonlab.com.learnturkish">
+          package="com.lemonlab.learnturkish.temp">
 
     <application
             android:allowBackup="true"
@@ -13,7 +13,7 @@
                 android:name="com.google.android.gms.ads.AD_MANAGER_APP"
                 android:value="true"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,17 +25,17 @@
                 android:name="preloaded_fonts"
                 android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name=".RegistrationActivity">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.RegistrationActivity">
         </activity>
-        <activity android:name=".SubjectActivity">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.SubjectActivity">
         </activity>
-        <activity android:name=".LearnListen">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.LearnListen">
         </activity>
-        <activity android:name=".ListenQuiz">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ListenQuiz">
         </activity>
-        <activity android:name=".ResultActivity">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ResultActivity">
         </activity>
-        <activity android:name=".ChatActivity">
+        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ChatActivity">
         </activity>
     </application>
 
