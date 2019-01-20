@@ -44,8 +44,14 @@ class ResultActivity : AppCompatActivity() {
         // go to home
         home_btn.setOnClickListener {
             this.finish()
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 
     fun saveUserScore():Int{

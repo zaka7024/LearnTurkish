@@ -51,6 +51,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
             if (type == Keys.CHAT_LESSON_ONE){
                 var intent = Intent(activity, ChatActivity::class.java)
                 activity!!.startActivity(intent)
+                activity!!.overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
                 activity!!.finish()
                 return@setOnClickListener
             }
@@ -73,6 +74,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
                 val intent = Intent(activity, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)
                 activity!!.startActivity(intent)
+                activity!!.overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
                 activity!!.finish()
             }
 

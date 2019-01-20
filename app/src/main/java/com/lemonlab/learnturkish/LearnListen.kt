@@ -66,6 +66,11 @@ class LearnListen : AppCompatActivity() {
         learn_letters_rv.adapter = adapter
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.no_animation, R.anim.slide_to_down)
+    }
+
     // LESSON ONE
     fun addLetters(){
 

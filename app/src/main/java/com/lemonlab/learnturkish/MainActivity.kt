@@ -2,8 +2,11 @@ package com.lemonlab.learnturkish
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Slide
+import android.transition.TransitionInflater
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import com.lemonlab.learnturkish.keys.Keys
@@ -16,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         MobileAds.initialize(this, "ca-app-pub-9769401692194876~3476321522")
+
 
         /*
         * Check if user does not log in_word using preferences from registration activity
@@ -71,6 +75,7 @@ class MainActivity : AppCompatActivity() {
     fun startLearn(){
         var intent = Intent(this, SubjectActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 
     fun getUserScore():Int{

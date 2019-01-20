@@ -1,9 +1,11 @@
 package com.lemonlab.learnturkish
 
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.transition.TransitionInflater
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_subject.*
@@ -20,6 +22,7 @@ class SubjectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_subject)
 
+
         // init subject rv
         initSubjectRV()
 
@@ -27,6 +30,11 @@ class SubjectActivity : AppCompatActivity() {
         addSubjectToRV()
 
 
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
     }
 
     fun initSubjectRV(){

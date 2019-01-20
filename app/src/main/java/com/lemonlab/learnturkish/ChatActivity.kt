@@ -29,6 +29,11 @@ class ChatActivity : AppCompatActivity() {
 
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
+    }
+
     fun initChatRV(){
         adapter.clear()
         chat_activity_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
