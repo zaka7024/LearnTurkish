@@ -12,7 +12,7 @@ import com.lemonlab.learnturkish.items.native_ad_item
 import com.lemonlab.learnturkish.items.start_quiz
 import com.lemonlab.learnturkish.items.word_item
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class LearnListen : AppCompatActivity() {
 

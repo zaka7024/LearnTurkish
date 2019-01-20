@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import com.lemonlab.learnturkish.data.chat_data
 import com.lemonlab.learnturkish.items.chat_from_item
 import com.lemonlab.learnturkish.items.chat_to_item
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class ChatActivity : AppCompatActivity() {
 

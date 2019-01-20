@@ -9,7 +9,7 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_subject.*
 import com.lemonlab.learnturkish.items.subject_item
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 
 class SubjectActivity : AppCompatActivity() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.lemonlab.learnturkish.temp">
+          package="com.lemonlab.learnturkish">
 
     <application
             android:allowBackup="true"
@@ -13,7 +13,7 @@
                 android:name="com.google.android.gms.ads.AD_MANAGER_APP"
                 android:value="true"/>
 
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.MainActivity">
+        <activity android:name="com.lemonlab.learnturkish.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,17 +25,17 @@
                 android:name="preloaded_fonts"
                 android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.RegistrationActivity">
+        <activity android:name="com.lemonlab.learnturkish.RegistrationActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.SubjectActivity">
+        <activity android:name="com.lemonlab.learnturkish.SubjectActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.LearnListen">
+        <activity android:name="com.lemonlab.learnturkish.LearnListen">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ListenQuiz">
+        <activity android:name="com.lemonlab.learnturkish.ListenQuiz">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ResultActivity">
+        <activity android:name="com.lemonlab.learnturkish.ResultActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.temp.learnturkish.lemonlab.com.ChatActivity">
+        <activity android:name="com.lemonlab.learnturkish.ChatActivity">
         </activity>
     </application>
 

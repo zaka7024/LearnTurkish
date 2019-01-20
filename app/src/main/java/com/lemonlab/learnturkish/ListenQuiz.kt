@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.quiz_listen.*
 import com.lemonlab.learnturkish.data.QuizData
 import com.lemonlab.learnturkish.keys.Keys
 import com.lemonlab.learnturkish.module.question_letter_word
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class ListenQuiz : AppCompatActivity() {
 

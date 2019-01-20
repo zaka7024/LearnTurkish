@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_registration.*
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class RegistrationActivity : AppCompatActivity() {
 

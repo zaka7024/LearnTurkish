@@ -5,7 +5,7 @@ import com.google.android.gms.ads.AdRequest
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.native_ad_layout.view.*
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class native_ad_item(var context: Context):Item<ViewHolder>() {
     override fun getLayout(): Int {

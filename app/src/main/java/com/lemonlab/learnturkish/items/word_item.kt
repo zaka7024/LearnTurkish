@@ -8,7 +8,7 @@ import com.daimajia.androidanimations.library.YoYo
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.word_item.view.*
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class word_item(var text:String, var arabic:String, var sound:Int, var activity:Activity):Item<ViewHolder>() {
 

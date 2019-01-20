@@ -12,7 +12,7 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.subject_item.view.*
 import com.lemonlab.learnturkish.ChatActivity
 import com.lemonlab.learnturkish.LearnListen
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.keys.Keys
 import kotlinx.android.synthetic.main.lesson_locked_dialog.view.*
 

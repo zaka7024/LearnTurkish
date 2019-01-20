@@ -7,7 +7,7 @@ import com.daimajia.androidanimations.library.YoYo
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.chat_to_item.view.*
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.module.chat
 
 class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>() {

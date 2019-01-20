@@ -1,4 +1,4 @@
-package com.lemonlab.learnturkish.temp
+package com.lemonlab.learnturkish
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

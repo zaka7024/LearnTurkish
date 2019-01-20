@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_result.*
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class ResultActivity : AppCompatActivity() {
 

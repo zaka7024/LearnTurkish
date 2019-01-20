@@ -7,7 +7,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.start_quiz.view.*
 import com.lemonlab.learnturkish.ListenQuiz
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.keys.Keys
 
 class start_quiz(var text:String,var image:Int,var activity: Activity?,var lesson:String):Item<ViewHolder>(){

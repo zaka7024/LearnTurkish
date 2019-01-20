@@ -1,12 +1,13 @@
 package com.lemonlab.learnturkish
 
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,21 @@ class MainActivity : AppCompatActivity() {
         start_btn.setOnClickListener {
             startLearn()
         }
+
+        rate_btn.setOnClickListener {
+            var intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("market://details?id=com.lemonlab.persona")
+            startActivity(intent);
+        }
+
+        share_btn.setOnClickListener {
+            var intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "تظبيق تعلم التركية مجانا - تطبيق يساعدك على تعلم اللغة التركية بطريقة تفعالية - يحتوي التطبيق على الكثير من المفردات و الاختبارات والمحادثات التي تساعد في رحلة تعلمك للغة\n" +
+                    "https://bit.ly/2MpcpLW")
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent,"مشاركة الى"))
+        }
+
     }
 
     fun CheckIfNotLoged():Boolean{

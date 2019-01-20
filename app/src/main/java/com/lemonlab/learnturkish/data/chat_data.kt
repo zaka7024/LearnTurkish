@@ -1,6 +1,6 @@
 package com.lemonlab.learnturkish.data
 
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.module.chat
 
 object chat_data {

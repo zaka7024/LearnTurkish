@@ -7,7 +7,7 @@ import com.daimajia.androidanimations.library.YoYo
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.letter_item.view.*
-import com.lemonlab.learnturkish.temp.R
+import com.lemonlab.learnturkish.R
 
 class letter_item(var big:String, var small:String,var examples:String, var sound:Int, var context: Context?):Item<ViewHolder>() {
     override fun getLayout(): Int {
