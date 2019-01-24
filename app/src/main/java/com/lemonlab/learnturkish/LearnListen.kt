@@ -1199,7 +1199,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "Mart",
-                "ىذار",
+                "اذار",
                 R.raw.march,
                 this
             )

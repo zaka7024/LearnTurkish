@@ -180,6 +180,147 @@ class QuizData{
             )
         }
 
-
+        var lesson_three_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.zero,
+                    arrayListOf("صفر", "اثنين", "واحد", "خمسة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.one,
+                    arrayListOf("ثلاثة", "صفر", "واحد", "اربعة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.three,
+                    arrayListOf("عشر", "واحد", "صفر", "ثلاث"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.two,
+                    arrayListOf("صفر", "اثنين", "واحد", "خمسة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.ten,
+                    arrayListOf("واحد", "عشرة", "اثنين", "تسعة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.seven,
+                    arrayListOf("صفر", "سبعة", "واحد", "خمسة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.eight,
+                    arrayListOf("ستة", "سبعة", "ثمنية", "واحد"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.monday,
+                    arrayListOf("الاثنين", "الاربعاء", "الاحد", "الثلاثاء"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.sunday,
+                    arrayListOf("الاحد", "الثلاثاء", "الاثنين", "الجمعة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.friday,
+                    arrayListOf("الثلاثاء", "سبعة", "الاحد", "الجمعة"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.day,
+                    arrayListOf("الثلاثاء", "يوم", "اسبوع", "سنة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.week,
+                    arrayListOf("الجمعة", "سنة", "يوم", "اسبوع"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.month,
+                    arrayListOf("شهر", "سنة", "اسبوع", "يوم"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.autumn,
+                    arrayListOf("ربيع", "ثلج", "خريف", "شتاء"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.spring,
+                    arrayListOf("خريف", "جليد", "شتاء", "ربيع"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.march,
+                    arrayListOf("ربيع", "نيسان", "شباط", "أيّار"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.april,
+                    arrayListOf("أيّار", "أيّار", "حزيران", "نيسان"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.time,
+                    arrayListOf("وقت", "تاريخ", "يوم", "ساعة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.second,
+                    arrayListOf("ساعة", "ثانية", "تاريخ", "يوم"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.five,
+                    arrayListOf("سبعة", "ستة", "خمسة", "تاريخ"),
+                    2
+                )
+            )
+        }
     }
 }
