@@ -2983,4 +2983,127 @@ class LearnListen : AppCompatActivity() {
             )
         )
     }
+
+    // LESSON ELEVEN
+    fun addClothes(){
+        adapter.add(
+            word_item(
+                "Kemer", "حزام", R.raw.belt, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Elbiseler", "ملابس", R.raw.clothes, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Palto", "معطف", R.raw.coat, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Elbise", "فستان", R.raw.dress, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Gözlük", "نظارات", R.raw.glasses, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Eldiven", "قفازات", R.raw.glove, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Şapka", "قبعة", R.raw.hat, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Ceket", "معطف", R.raw.jacket, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Pantolon", "بنطلون", R.raw.trousers, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Yüzük", "خاتم", R.raw.ring, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Gömlek", "قميص", R.raw.shirt, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Ayakkabı", "احذية", R.raw.shoes, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Çorap", "جوارب ", R.raw.socks, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Takım elbise", "بذلة", R.raw.suit, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Süveter", "سترة", R.raw.sweater, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Kravat", "ربطة عنق", R.raw.tie, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Şemsiye", "شمسية", R.raw.umbrella, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "İç çamaşırı", "ملابس داخلية", R.raw.underwear, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Cüzdan", "شمسية", R.raw.wallet, this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Kol saati", "ساعة يد", R.raw.watch, this
+            )
+        )
+    }
 }

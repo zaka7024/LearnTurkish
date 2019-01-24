@@ -13,7 +13,7 @@
                 android:name="com.google.android.gms.ads.AD_MANAGER_APP"
                 android:value="true"/>
 
-        <activity android:name="com.lemonlab.learnturkish.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,17 +25,19 @@
                 android:name="preloaded_fonts"
                 android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name="com.lemonlab.learnturkish.RegistrationActivity">
+        <activity android:name=".RegistrationActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.SubjectActivity">
+        <activity android:name=".SubjectActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.LearnListen">
+        <activity android:name=".LearnListen">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.ListenQuiz">
+        <activity android:name=".ListenQuiz">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.ResultActivity">
+        <activity android:name=".ResultActivity">
         </activity>
-        <activity android:name="com.lemonlab.learnturkish.ChatActivity">
+        <activity android:name=".ChatActivity">
+        </activity>
+        <activity android:name=".CtsActivity">
         </activity>
     </application>
 

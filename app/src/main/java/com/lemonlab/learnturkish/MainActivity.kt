@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         rate_btn.setOnClickListener {
             var intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("market://details?id=com.lemonlab.persona")
+            intent.data = Uri.parse("market://details?id=com.lemonlab.learnturkish")
             startActivity(intent);
         }
 
