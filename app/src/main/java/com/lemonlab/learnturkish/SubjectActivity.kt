@@ -157,6 +157,16 @@ class SubjectActivity : AppCompatActivity() {
             )
         )
 
+        adapter.add(
+            subject_item(
+                "الملابس في التركية",
+                "تعلم مفردات الملابس في التركية بطريقة تفاعلية",
+                R.drawable.clothes,
+                type = Keys.LESSON_ELEVEN,
+                activity = this@SubjectActivity
+            )
+        )
+
     }
 }
 

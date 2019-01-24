@@ -4,11 +4,12 @@ import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.module.question_letter_word
 class QuizData{
     companion object {
+
         var letters_question_data = ArrayList<question_letter_word>().apply {
             add(question_letter_word(R.raw.a_char, arrayListOf("A", "B", "C", "Ç"), 0))
             add(question_letter_word(R.raw.b_char, arrayListOf("A", "C", "B", "E"), 2))
             add(question_letter_word(R.raw.c_char, arrayListOf("F", "C", "L", "V"), 1))
-            /*add(question_letter_word(R.raw.d_char, arrayListOf("D", "F", "G","Ğ"), 0))
+            add(question_letter_word(R.raw.d_char, arrayListOf("D", "F", "G","Ğ"), 0))
             add(question_letter_word(R.raw.c__char, arrayListOf("Z", "Ç", "S","Ü"), 1))
             add(question_letter_word(R.raw.d_char, arrayListOf("A", "D", "Y","Z"), 1))
             add(question_letter_word(R.raw.e_char, arrayListOf("E", "O", "Ö","M"), 0))
@@ -33,7 +34,7 @@ class QuizData{
             add(question_letter_word(R.raw.u__char, arrayListOf("L", "J", "Ü","A"), 2))
             add(question_letter_word(R.raw.v_char, arrayListOf("V", "M", "I","Y"), 0))
             add(question_letter_word(R.raw.y_char, arrayListOf("Z", "S", "Y","U"), 2))
-            add(question_letter_word(R.raw.z_char, arrayListOf("K", "L", "Z","I"), 2)) */
+            add(question_letter_word(R.raw.z_char, arrayListOf("K", "L", "Z","I"), 2))
         }
 
         var words_question_data = ArrayList<question_letter_word>().apply {
@@ -48,7 +49,7 @@ class QuizData{
                 question_letter_word(
                     R.raw.word_3,
                     arrayListOf("أب", "أم", "طفل", "أخ"),
-                    2
+                    1
                 )
             )
             add(
@@ -58,6 +59,127 @@ class QuizData{
                     3
                 )
             )
+            add(
+                question_letter_word(
+                    R.raw.word_10,
+                    arrayListOf("أخ", "أم", "عمه", "عم"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_2,
+                    arrayListOf("جدة", "عم", "عمة", "جد"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_12,
+                    arrayListOf("عم", "أم", "أحت", "أخ"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_8,
+                    arrayListOf("خال", "جد", "أم", "خالة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_13,
+                    arrayListOf("عم", "خالة", "أحت", "خال"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_15,
+                    arrayListOf("عمة", "أب", "الكنة", "أخ"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_5,
+                    arrayListOf("طفل", "جدة", "جد", "أب"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_1,
+                    arrayListOf("أخ", "عائلة", "أحت", "خال"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_7,
+                    arrayListOf("اخي", "رضيع", "أحت", "طفل"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_6,
+                    arrayListOf("اخي", "جد", "أحت", "طفل"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_14,
+                    arrayListOf("أخت", "رضيع", "أحت", "حفيد"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_11,
+                    arrayListOf("اخي", "طفل", "أحت", "توام"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_23,
+                    arrayListOf("شاب", "ارض", "شمس", "قمر"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_24,
+                    arrayListOf("شاب", "قمر", "شمس", "ارض"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_25,
+                    arrayListOf("ماء", "عصير", "ارض", "شمس"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_34,
+                    arrayListOf("حيوان", "قرد", "نحلة", "فراشة"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.word_36,
+                    arrayListOf("قرد", "حيوان", "نحلة", "فراشة"),
+                    2
+                )
+            )
         }
+
+
     }
 }

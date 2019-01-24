@@ -53,10 +53,9 @@ class LearnListen : AppCompatActivity() {
         }
         else if (lesson_type == Keys.LESSON_TEN){
             addPronouns()
+        }else if (lesson_type == Keys.LESSON_ELEVEN){
+            addClothes()
         }
-
-        val sharedPref = getSharedPreferences("app_data", 0)
-
 
     }
 
@@ -470,7 +469,7 @@ class LearnListen : AppCompatActivity() {
                 this
             )
         )
-        adapter.add(
+        adapter.add( // quiz point
             word_item(
                 "Yer",
                 "أرض",
@@ -2986,11 +2985,21 @@ class LearnListen : AppCompatActivity() {
 
     // LESSON ELEVEN
     fun addClothes(){
+
+        adapter.add(
+            start_quiz(
+                "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
+                this, "lesson_12"
+            )
+        )
+
         adapter.add(
             word_item(
                 "Kemer", "حزام", R.raw.belt, this
             )
         )
+
+        adapter.add(native_ad_item(this))
 
         adapter.add(
             word_item(
@@ -3021,6 +3030,8 @@ class LearnListen : AppCompatActivity() {
                 "Eldiven", "قفازات", R.raw.glove, this
             )
         )
+
+        adapter.add(native_ad_item(this))
 
         adapter.add(
             word_item(
@@ -3069,6 +3080,8 @@ class LearnListen : AppCompatActivity() {
                 "Takım elbise", "بذلة", R.raw.suit, this
             )
         )
+
+        adapter.add(native_ad_item(this))
 
         adapter.add(
             word_item(
