@@ -76,7 +76,7 @@ class QuizData{
             add(
                 question_letter_word(
                     R.raw.word_12,
-                    arrayListOf("عم", "أم", "أحت", "أخ"),
+                    arrayListOf("عم", "أم", "أخت", "أخ"),
                     2
                 )
             )
@@ -90,7 +90,7 @@ class QuizData{
             add(
                 question_letter_word(
                     R.raw.word_13,
-                    arrayListOf("عم", "خالة", "أحت", "خال"),
+                    arrayListOf("عم", "خالة", "أخت", "خال"),
                     1
                 )
             )
@@ -111,35 +111,35 @@ class QuizData{
             add(
                 question_letter_word(
                     R.raw.word_1,
-                    arrayListOf("أخ", "عائلة", "أحت", "خال"),
+                    arrayListOf("أخ", "عائلة", "أخت", "خال"),
                     1
                 )
             )
             add(
                 question_letter_word(
                     R.raw.word_7,
-                    arrayListOf("اخي", "رضيع", "أحت", "طفل"),
+                    arrayListOf("اخي", "رضيع", "أخت", "طفل"),
                     3
                 )
             )
             add(
                 question_letter_word(
                     R.raw.word_6,
-                    arrayListOf("اخي", "جد", "أحت", "طفل"),
+                    arrayListOf("اخي", "جد", "أخت", "طفل"),
                     1
                 )
             )
             add(
                 question_letter_word(
                     R.raw.word_14,
-                    arrayListOf("أخت", "رضيع", "أحت", "حفيد"),
+                    arrayListOf("أخت", "رضيع", "أخت", "حفيد"),
                     1
                 )
             )
             add(
                 question_letter_word(
                     R.raw.word_11,
-                    arrayListOf("اخي", "طفل", "أحت", "توام"),
+                    arrayListOf("اخي", "طفل", "أخت", "توام"),
                     3
                 )
             )

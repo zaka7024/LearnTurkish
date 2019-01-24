@@ -76,7 +76,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الحروف ثم انتقل الى الاختبار", R.drawable.letters_icon,
-                this, "lesson_1"
+                this, Keys.LESSON_ONE
             )
         )
 
@@ -340,7 +340,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.chat_icon,
-                this, "lesson_2"
+                this, Keys.LESSON_TWO
             )
         )
 
@@ -959,7 +959,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.time_icon,
-                this, "lesson_3"
+                this, Keys.LESSON_THREE
             )
         )
 
