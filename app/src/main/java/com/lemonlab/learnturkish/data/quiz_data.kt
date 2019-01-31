@@ -5,6 +5,7 @@ import com.lemonlab.learnturkish.module.question_letter_word
 class QuizData{
     companion object {
 
+        // 28 score
         var letters_question_data = ArrayList<question_letter_word>().apply {
             add(question_letter_word(R.raw.a_char, arrayListOf("A", "B", "C", "Ç"), 0))
             add(question_letter_word(R.raw.b_char, arrayListOf("A", "C", "B", "E"), 2))
@@ -37,6 +38,7 @@ class QuizData{
             add(question_letter_word(R.raw.z_char, arrayListOf("K", "L", "Z","I"), 2))
         }
 
+        // 20 score
         var words_question_data = ArrayList<question_letter_word>().apply {
             add(
                 question_letter_word(
@@ -180,6 +182,7 @@ class QuizData{
             )
         }
 
+        // 20 score
         var lesson_three_data = ArrayList<question_letter_word>().apply {
             add(
                 question_letter_word(
@@ -311,7 +314,7 @@ class QuizData{
                 question_letter_word(
                     R.raw.second,
                     arrayListOf("ساعة", "ثانية", "تاريخ", "يوم"),
-                    0
+                    1
                 )
             )
             add(
@@ -319,6 +322,73 @@ class QuizData{
                     R.raw.five,
                     arrayListOf("سبعة", "ستة", "خمسة", "تاريخ"),
                     2
+                )
+            )
+        }
+
+        // 9 score
+        var lesson_four_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.color,
+                    arrayListOf("احمر", "لون", "اصفر", "اسود"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.blue,
+                    arrayListOf("لون", "اسود", "ازرق", "اصفر"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.green,
+                    arrayListOf("اخضر", "اصفر", "ارجواني", "غامق"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.yellow,
+                    arrayListOf("اصفر", "اسود", "احمر", "فاتح"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.black,
+                    arrayListOf("اسود", "اصفر", "برتقالي", "غامق"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.red,
+                    arrayListOf("برتقالي", "اصفر", "غامق", "احمر"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.white,
+                    arrayListOf("اصفر", "زهري", "ابيض", "غامق"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.lighter,
+                    arrayListOf("اسود", "غامق", "فاتح", "زهري"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.bright,
+                    arrayListOf("فاتح", "زهري", "لامع", "غامق"),
+                    3
                 )
             )
         }
