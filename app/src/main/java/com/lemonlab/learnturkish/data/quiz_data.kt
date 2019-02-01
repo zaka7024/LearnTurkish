@@ -622,5 +622,261 @@ class QuizData{
                 )
             )
         }
+
+        // 18 score
+        var lesson_seven_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.student,
+                    arrayListOf("كتاب", "قلم", "معلم", "طالب"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.teacher,
+                    arrayListOf("مدرسة", "معلم", "قلم", "جامعة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.school,
+                    arrayListOf("مدرسة", "قلم", "جامعة", "طالب"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.primary_school,
+                    arrayListOf("مدرسة", "الثانوية", "مدرسة ابتدائية", "جامعة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.high_school,
+                    arrayListOf("التعليم", "قلم", "جامعة", "الثانوية"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.computer,
+                    arrayListOf("كتاب", "قلم", "حاسوب", "دفتر"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.book,
+                    arrayListOf("واجب", "قلم", "قاموس", "كتاب"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.pen,
+                    arrayListOf("واجب", "قلم", "قاموس", "ممحاة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.book_2,
+                    arrayListOf("الة حاسبة", "دفتر", "قاموس", "ممحاة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.calculator,
+                    arrayListOf("ممحاة", "دفتر", "قاموس", "الة حاسبة"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.eraser,
+                    arrayListOf("الة حاسبة", "دفتر", "قاموس", "ممحاة"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.homework,
+                    arrayListOf("ممحاة", "واجب", "قاموس", "قاعة الدرس"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.library,
+                    arrayListOf("امتحان", "قاعة الدرس", "قاموس", "مكتبة"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.dictionary,
+                    arrayListOf("ممحاة", "واجب", "قاموس", "قاعة الدرس"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.exam,
+                    arrayListOf("امتحان", "قاعة الدرس", "قاموس", "مكتبة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.school_class,
+                    arrayListOf("تعليق", "واجب", "كلية", "قاعة الدرس"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.college,
+                    arrayListOf("جامعة", "كلية", "كلية", "قاعة الصف"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.university,
+                    arrayListOf("جامعة", "كلية", "كلية", "قاعة الصف"),
+                    0
+                )
+            )
+
+        }
+
+        // 17 score
+        var lesson_eight_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.long_word,
+                    arrayListOf("معدوم", "قصير", "طويل", "كثير"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.short_word,
+                    arrayListOf("معدوم", "قصير", "طويل", "كثير"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.big,
+                    arrayListOf("كبير", "واسع", "قليل", "كثير"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.broad,
+                    arrayListOf("معدوم", "قصير", "طويل", "واسع"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.small,
+                    arrayListOf("قديم", "صفير", "جديد", "معدوم"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.thick,
+                    arrayListOf("قديم", "رقيق", "جديد", "سميك"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.thin,
+                    arrayListOf("قديم", "رقيق", "جديد", "رخيص"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.old,
+                    arrayListOf("قديم", "رخيص", "جديد", "سميك"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.new_word,
+                    arrayListOf("غالي", "رخيص", "عجوز", "جديد"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.cheap,
+                    arrayListOf("غالي", "رخيص", "عجوز", "جديد"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.expensive,
+                    arrayListOf("شاب", "رخيص", "خاطئ", "غالي"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.true_word,
+                    arrayListOf("صحيح", "رخيص", "عجوز", "جديد"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.false_word,
+                    arrayListOf("شاب", "جيد", "خاطئ", "غالي"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.good,
+                    arrayListOf("مستحيل", "سهل", "جيد", "صعب"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.bad,
+                    arrayListOf("شاب", "جيد", "خاطئ", "غالي"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.difficult,
+                    arrayListOf("مستحيل", "سهل", "جيد", "صعب"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.easy,
+                    arrayListOf("سهل", "جيد", "خاطئ", "غالي"),
+                    0
+                )
+            )
+        }
+
+
     }
 }

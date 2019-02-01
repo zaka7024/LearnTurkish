@@ -2233,7 +2233,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "kolej",
-                "",
+                "كلية",
                 R.raw.college,
                 this
             )
