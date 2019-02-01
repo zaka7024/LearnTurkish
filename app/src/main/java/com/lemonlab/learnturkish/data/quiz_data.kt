@@ -392,5 +392,91 @@ class QuizData{
                 )
             )
         }
+
+        // 16 score
+        var lesson_five_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.body,
+                    arrayListOf("جسم", "لون", "بطن", "قدم"),
+                    0
+                )
+            )
+            question_letter_word(
+                R.raw.head,
+                arrayListOf("جسم", "رجل", "راس", "بطن"),
+                2
+            )
+            question_letter_word(
+                R.raw.hair,
+                arrayListOf("حاجب", "رمش", "شعر", "مقص"),
+                2
+            )
+            question_letter_word(
+                R.raw.brian,
+                arrayListOf("بطن", "دماغ", "شعر", "عقل"),
+                3
+            )
+            question_letter_word(
+                R.raw.ear,
+                arrayListOf("عين", "دماغ", "اذن", "أنف"),
+                2
+            )
+            question_letter_word(
+                R.raw.eye,
+                arrayListOf("دماغ", "عين", "عقل", "اذن"),
+                1
+            )
+            question_letter_word(
+                R.raw.eyelash,
+                arrayListOf("رمش", "عين", "عقل", "شعر"),
+                0
+            )
+            question_letter_word(
+                R.raw.eyebrow,
+                arrayListOf("بطن", "عين", "حاجب", "اصبع"),
+                2
+            )
+            question_letter_word(
+                R.raw.nose,
+                arrayListOf("انف", "عقل", "شعر", "اذن"),
+                0
+            )
+            question_letter_word(
+                R.raw.face,
+                arrayListOf("عيون", "جلد", "رموش", "وجه"),
+                3
+            )
+            question_letter_word(
+                R.raw.skin,
+                arrayListOf("مقص", "جلد", "دم", "اصبع"),
+                1
+            )
+            question_letter_word(
+                R.raw.blood,
+                arrayListOf("قدم", "دم", "لسان", "رجل"),
+                1
+            )
+            question_letter_word(
+                R.raw.whiskers,
+                arrayListOf("حاجب", "رمش", "ذقن", "شارب"),
+                3
+            )
+            question_letter_word(
+                R.raw.heart,
+                arrayListOf("بطن", "قلب", "كبد", "رئة"),
+                2
+            )
+            question_letter_word(
+                R.raw.finger,
+                arrayListOf("بطن", "اصبع", "ظهر", "اظفر"),
+                1
+            )
+            question_letter_word(
+                R.raw.nail,
+                arrayListOf("رئة", "بطن", "اصبع", "اظفر"),
+                3
+            )
+        }
     }
 }

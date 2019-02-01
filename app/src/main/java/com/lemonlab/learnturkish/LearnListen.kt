@@ -1708,7 +1708,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "ayak",
-                "ثدم",
+                "قدم",
                 R.raw.foot,
                 this
             )
