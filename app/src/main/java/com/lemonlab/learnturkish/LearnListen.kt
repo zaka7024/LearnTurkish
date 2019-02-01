@@ -1866,7 +1866,7 @@ class LearnListen : AppCompatActivity() {
                 R.raw.carpet,
                 this
             )
-        ) //
+        )
         adapter.add(
             word_item(
                 "çöp",

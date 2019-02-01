@@ -63,7 +63,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.chat_icon,
                 type = Keys.LESSON_TWO,
                 activity = this@SubjectActivity,
-                min_score = 3
+                min_score = 20
             )
         )
         adapter.add(
@@ -73,7 +73,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.time_icon,
                 type = Keys.LESSON_THREE,
                 activity = this@SubjectActivity,
-                min_score = 6
+                min_score = 40
             )
         )
         adapter.add(
@@ -83,7 +83,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.colors,
                 type = Keys.LESSON_FOUR,
                 activity = this@SubjectActivity,
-                min_score = 90
+                min_score = 60
             )
         )
 
@@ -93,7 +93,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم اجزاء جسم الانسان بالتركية",
                 R.drawable.brain_icon,
                 type = Keys.LESSON_FIVE,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 70
             )
         )
 
@@ -103,7 +104,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم الادوات المنزلية و الزراعية في اللغة التركية",
                 R.drawable.tools_icon,
                 type = Keys.LESSON_SIX,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 90
             )
         )
 

@@ -478,5 +478,149 @@ class QuizData{
                 3
             )
         }
+
+        // 20 score
+        var lesson_six_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.door,
+                    arrayListOf("شباك", "باب", "هاتف", "طاولة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.table,
+                    arrayListOf("طاولة", "شباك", "هاتف ذكي", "باب"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.phone,
+                    arrayListOf("هاتف ذكي", "باب", "هاتف", "طاولة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.radio,
+                    arrayListOf("راديو", "شباك", "هاتف ذكي", "كرسي"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.chair,
+                    arrayListOf("شباك", "باب", "كتاب", "كرسي"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.bed,
+                    arrayListOf("راديو", "شقة", "سرير", "ثلاجة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.apartment,
+                    arrayListOf("شباك", "باب", "شقة", "كرسي"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.refrigerator,
+                    arrayListOf("ثلاجة", "درج", "شقة", "كرسي"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.stairs,
+                    arrayListOf("ثلاجة", "باب", "كتاب", "درج"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.garbage,
+                    arrayListOf("بلكونة", "مطبخ", "كتاب", "نفايات"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.telev,
+                    arrayListOf("صورة", "تلفاز", "سرير", "بلكونة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.carpet,
+                    arrayListOf("بلكونة", "سجادة", "شقة", "صورة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.home,
+                    arrayListOf("شقى", "مطبخ", "بيت", "صورة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.salon,
+                    arrayListOf("شقى", "سجادة", "مرآة", "صالون"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.plate,
+                    arrayListOf("وسادة", "طبق", "ستارة", "مرآة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.cuter,
+                    arrayListOf("مرآة", "منشار", "مقص", "إبرة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.saw,
+                    arrayListOf("مرآة", "مقص", "منشار", "إبرة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.tool,
+                    arrayListOf("ستارة", "طبق", "أداة", "مرآة"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.pillow,
+                    arrayListOf("وسادة", "منشار", "مقص", "إبرة"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.diningroom,
+                    arrayListOf("غرفة النوم", "غرفة الجلوس", "غرفة الطعام", "إبرة"),
+                    2
+                )
+            )
+        }
     }
 }

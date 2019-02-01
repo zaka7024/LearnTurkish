@@ -135,6 +135,12 @@ class ListenQuiz : AppCompatActivity() {
             question_data =  QuizData.words_question_data
         }else if (type == Keys.LESSON_THREE){
             question_data = QuizData.lesson_three_data
+        }else if (type == Keys.LESSON_FOUR){
+            question_data = QuizData.lesson_four_data
+        }else if (type == Keys.LESSON_FIVE){
+            question_data = QuizData.lesson_five_data
+        }else if (type == Keys.LESSON_SIX){
+            question_data = QuizData.lesson_six_data
         }
 
         letter_quiz_progress.max = 100.0f
