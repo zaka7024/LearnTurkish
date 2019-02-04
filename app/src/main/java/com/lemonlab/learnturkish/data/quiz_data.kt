@@ -877,6 +877,6 @@ class QuizData{
             )
         }
 
-
+        
     }
 }

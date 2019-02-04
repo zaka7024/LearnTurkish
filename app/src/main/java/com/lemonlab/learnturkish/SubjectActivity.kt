@@ -115,7 +115,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم المفردات التعليمية في المدرسة والجامعة",
                 R.drawable.school,
                 type = Keys.LESSON_SEVEN,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 100
             )
         )
 
@@ -125,7 +126,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم كيف تصف شخص ما بالتركية",
                 R.drawable.adjectives,
                 type = Keys.LESSON_EIGHT,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 120
             )
         )
 
