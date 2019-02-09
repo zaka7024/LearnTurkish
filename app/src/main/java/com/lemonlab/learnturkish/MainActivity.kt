@@ -56,6 +56,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(intent,"مشاركة الى"))
         }
 
+        settings_btn.setOnClickListener {
+            var intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+
         score_icon.setOnClickListener {
             showDialog()
         }

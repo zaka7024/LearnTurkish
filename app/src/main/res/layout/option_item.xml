@@ -8,7 +8,7 @@
 
     <com.andexert.library.RippleView
             android:layout_width="match_parent"
-            android:layout_height="?android:actionBarSize"
+            android:layout_height="60dp"
             app:rv_color="@color/deepBlue"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +23,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:gravity="right"
+                android:layout_marginTop="6dp"
                 android:padding="4dp"
                 android:fontFamily="@font/cairo"
                 tools:text="عن التطبيق"
                 android:textStyle="bold"
                 android:textColor="@color/deepBlue"
                 app:layout_constraintBottom_toBottomOf="parent"
-                />
+                android:textSize="18sp"/>
 
     </com.andexert.library.RippleView>
 
