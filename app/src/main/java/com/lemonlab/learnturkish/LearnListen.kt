@@ -2901,7 +2901,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "benimki",
-                "",
+                "لي ( مثال كتاب لي )",
                 R.raw.benimki,
                 this
             )
@@ -2912,7 +2912,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "seninki",
-                "لي ( مثال كتاب لي )",
+                "لك ( مثال كتاب لك )",
                 R.raw.seninki,
                 this
             )
@@ -2920,7 +2920,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "onunki",
-                "لك ( مثال كتاب لك )",
+                "له ( مثال كتاب لك )",
                 R.raw.onunki,
                 this
             )

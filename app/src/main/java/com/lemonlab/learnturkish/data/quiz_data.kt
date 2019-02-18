@@ -877,6 +877,7 @@ class QuizData{
             )
         }
 
+        // 22 score
         var lesson_nine_data = ArrayList<question_letter_word>().apply {
             add(
                 question_letter_word(
@@ -1032,6 +1033,134 @@ class QuizData{
                     R.raw.thus,
                     arrayListOf("حتى يحصل", "بقرب", "بعيد", "لكي"),
                     3
+                )
+            )
+        }
+
+        var lesson_ten_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.i_word,
+                    arrayListOf("هي", "هو", "انا", "هم"),
+                    2
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.you,
+                    arrayListOf("هي", "انت", "هو", "انا"),
+                    2
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.he_she_is,
+                    arrayListOf("هما", "هو", "انا", "هم"),
+                    1
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.he_she_is,
+                    arrayListOf("هي", "امام", "خلف", "عند"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.we,
+                    arrayListOf("بجانب", "هم", "نحن", "عند"),
+                    2
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.you_siz,
+                    arrayListOf("هما", "هو", "انا", "هم"),
+                    1
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.them,
+                    arrayListOf("انتم", "نحن", "هم", "هما"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.i_love_you,
+                    arrayListOf("انا اكرهك", "انا بجانبك", "نحن", "انا احبك"),
+                    3
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.she_is_beautiful,
+                    arrayListOf("انا جميل", "هي جميلة", "شكرًا لك", "هم"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.we_are_happy,
+                    arrayListOf("نحن حزينون", "نحن سعداء", "لا", "لماذا؟!"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.can_you_call_us,
+                    arrayListOf("هل يمكنك الاتصال بنا؟", "أعطني رقم هاتفك", "نحن", "انا احبك"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.give_me_your_phone_number,
+                    arrayListOf("انا جميل", "أعطني رقم هاتفك", "شكرًا لك", "هم"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.onlarin,
+                    arrayListOf("انتم", "نحن", "هم", "هما"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.my_phone_number_is,
+                    arrayListOf("لا اريد", "رقم هاتفي هو", "شكرًا لك", "هم"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.is_this_your_pencil,
+                    arrayListOf("اللعنة", "النصر لنا", "هل هذا الكتاب لي؟", "هل هذا الكتاب لك؟"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.this_book_is_for_me,
+                    arrayListOf("اللعنة", "هذا الكتاب لي", "هل هذا الكتاب لي؟", "هل هذا الكتاب لك؟"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.zafer_bizimdir,
+                    arrayListOf("اللعنة", "النصر لنا", "هل هذا الكتاب لي؟", "هل هذا الكتاب لك؟"),
+                    1
                 )
             )
         }
