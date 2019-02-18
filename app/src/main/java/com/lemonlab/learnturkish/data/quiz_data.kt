@@ -877,6 +877,163 @@ class QuizData{
             )
         }
 
-        
+        var lesson_nine_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.in_front_of,
+                    arrayListOf("بجانب", "امام", "خلف", "عند"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.behind,
+                    arrayListOf("خلف", "في الداخل", "بعد", "كثير"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.before,
+                    arrayListOf("معدوم", "قصير", "طويل", "قبل"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.after,
+                    arrayListOf("قبل", "بعد", "خلف", "عند"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.in_word,
+                    arrayListOf("خارج", "داخل", "بعد", "كثير"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.with,
+                    arrayListOf("بدون", "ناقص", "مع", "الجميع"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.without,
+                    arrayListOf("مع", "بجانب", "طويل", "بدون"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.outside,
+                    arrayListOf("داخل", "بعد", "خارج", "عند"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.over,
+                    arrayListOf("مع", "تحت", "فوق", "الاعلى"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.under,
+                    arrayListOf("تحت", "ناقص", "مع", "الجميع"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.about,
+                    arrayListOf("مع", "بجانب", "حول", "بدون"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.against,
+                    arrayListOf("حول", "عدو", "صديق", "ضد"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.and,
+                    arrayListOf("مع", "و", "او", "حرف"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.as_word,
+                    arrayListOf("مثل", "عندما", "بين", "لكن"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.between,
+                    arrayListOf("مع", "بين", "حول", "عندما"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.but,
+                    arrayListOf("حول", "مع هذا", "لكن", "ضد"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.for_word,
+                    arrayListOf("من اجل", "خارج", "في", "بدون سبب"),
+                    0
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.near,
+                    arrayListOf("او", "بقرب", "بعيد", "عندما"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.or,
+                    arrayListOf("حول", "او", "لكن", "ضد"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.until,
+                    arrayListOf("لـ", "منذ", "في", "حتى"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.since,
+                    arrayListOf("منذ", "خارج", "في", "بدون سبب"),
+                    0
+                )
+            )
+
+            add(
+                question_letter_word(
+                    R.raw.thus,
+                    arrayListOf("حتى يحصل", "بقرب", "بعيد", "لكي"),
+                    3
+                )
+            )
+        }
     }
 }

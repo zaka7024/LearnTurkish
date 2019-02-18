@@ -2428,7 +2428,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "önünde",
-                "",
+                "امام",
                 R.raw.in_front_of,
                 this
             )
@@ -2436,7 +2436,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "arkasında",
-                "خلص",
+                "خلف",
                 R.raw.behind,
                 this
             )
@@ -2538,7 +2538,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             word_item(
                 "gibi",
-                "",
+                "مثل",
                 R.raw.as_word,
                 this
             )
