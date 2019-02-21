@@ -1037,6 +1037,7 @@ class QuizData{
             )
         }
 
+        // 17 score
         var lesson_ten_data = ArrayList<question_letter_word>().apply {
             add(
                 question_letter_word(
@@ -1161,6 +1162,114 @@ class QuizData{
                     R.raw.zafer_bizimdir,
                     arrayListOf("اللعنة", "النصر لنا", "هل هذا الكتاب لي؟", "هل هذا الكتاب لك؟"),
                     1
+                )
+            )
+        }
+
+        var lesson_eleven_data = ArrayList<question_letter_word>().apply {
+            add(
+                question_letter_word(
+                    R.raw.belt,
+                    arrayListOf("معطف", "ربطة عنق", "حزام", "زفاف"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.clothes,
+                    arrayListOf("ملابس", "ربطة عنق", "حزام", "زفاف"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.coat,
+                    arrayListOf("معطف", "ربطة عنق", "حزام", "زفاف"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.clothes,
+                    arrayListOf("ملابس", "قبعة", "شريط", "قفازات"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.dress,
+                    arrayListOf("معطف", "فستان", "حزام", "زفاف"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.glasses,
+                    arrayListOf("ملابس", "قبعة", "نظارات", "زفاف"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.glove,
+                    arrayListOf("بنطلون", "ربطة عنق", "حزام", "قفازات"),
+                    3
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.hat,
+                    arrayListOf("قبعة", "فستان", "حزام", "زفاف"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.jacket,
+                    arrayListOf("بنطلون", "قبعة", "معطف", "خاتم"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.trousers,
+                    arrayListOf("بنطلون", "ربطة عنق", "حزام", "قفازات"),
+                    0
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.ring,
+                    arrayListOf("احذية", "قبعة", "خاتم", "زفاف"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.shirt,
+                    arrayListOf("قميص", "ربطة عنق", "بنطلون", "قفازات"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.socks,
+                    arrayListOf("احذية", "بذلة", "جوارب", "قفازات"),
+                    2
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.suit,
+                    arrayListOf("قميص", "بذلة", "احذية", "سترة"),
+                    1
+                )
+            )
+            add(
+                question_letter_word(
+                    R.raw.sweater,
+                    arrayListOf("احذية", "بذلة", "جوارب", "سترة"),
+                    3
                 )
             )
         }
