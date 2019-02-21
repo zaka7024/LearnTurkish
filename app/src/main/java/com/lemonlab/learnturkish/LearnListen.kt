@@ -12,7 +12,6 @@ import com.lemonlab.learnturkish.items.native_ad_item
 import com.lemonlab.learnturkish.items.start_quiz
 import com.lemonlab.learnturkish.items.word_item
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.R
 
 class LearnListen : AppCompatActivity() {
 
@@ -3154,6 +3153,9 @@ class LearnListen : AppCompatActivity() {
                 this
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             word_item(
                 "Bilmek",
@@ -3178,6 +3180,9 @@ class LearnListen : AppCompatActivity() {
                 this
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             word_item(
                 "Oynamak",
@@ -3210,6 +3215,9 @@ class LearnListen : AppCompatActivity() {
                 this
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             word_item(
                 "Konuşmak",
@@ -3242,11 +3250,138 @@ class LearnListen : AppCompatActivity() {
                 this
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             word_item(
                 "Yazmak",
                 "الكتابة",
                 R.raw.write,
+                this
+            )
+        )
+    }
+
+    fun addPresent(){
+        adapter.add(
+            word_item(
+                "Seni görüyorum",
+                "أنا أراك",
+                R.raw.he_she_knows_my_friend,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Kalemle yazarım",
+                "أنا أكتب بالقلم",
+                R.raw.i_write_with_pencil,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Elmaları seviyorsun",
+                "أنت تحب التفاح",
+                R.raw.you_love_apples,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Para verirsin",
+                "أنت تعطي المال",
+                R.raw.you_give_a_money,
+                this
+            )
+        )
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(
+            word_item(
+                "Tenis oynarsın",
+                "أنت تلعب كرة المضرب",
+                R.raw.you_play_tennis,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Kitap okur",
+                "هو يقرأ كتاب",
+                R.raw.reading_a_book,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Beni anlıyor",
+                "هو يفهمني",
+                R.raw.understand_me,
+                this
+            )
+        )
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(
+            word_item(
+                "Kedisi var",
+                "هي لديها قطة",
+                R.raw.she_has_a_cat,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Arkadaşımı tanıyor",
+                "هي تعرف صديقي",
+                R.raw.he_she_knows_my_friend,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Öğrenmek istiyoruz",
+                "نحن نريد أن نتعلم",
+                R.raw.we_want_to_learn,
+                this
+            )
+        )
+
+        adapter.add(
+            word_item(
+                "Burada çalışıyorsunuz",
+                "أنتم تعملون هنا",
+                R.raw.you_work_here,
+                this
+            )
+        )
+
+        adapter.add(native_ad_item(this))
+
+        adapter.add(
+            word_item(
+                "Fransızca konuşuyorsunuz",
+                "أنتم تتكلمون الفرنسية",
+                R.raw.you_speak_french,
+                this
+            )
+        )
+        adapter.add(
+            word_item(
+                "Gülümsüyorlar",
+                "هم يتبسمون",
+                R.raw.they_smiles,
                 this
             )
         )
