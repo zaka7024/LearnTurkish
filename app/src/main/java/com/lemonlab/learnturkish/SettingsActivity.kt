@@ -26,7 +26,10 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     fun setItems(){
-        adapter.add(option_item("حول التطبيق","ABOUT_US", this))
-        adapter.add(option_item("سياسة الاستخدام","PRIVACY", this))
+        adapter.add(option_item("حول التطبيق","ABOUT_US", this, android.R.drawable.ic_dialog_info))
+        adapter.add(option_item("سياسة الاستخدام","PRIVACY", this, android.R.drawable.ic_menu_slideshow))
+        adapter.add(option_item("لماذا لاعلانات؟","WAY_ADS", this, android.R.drawable.ic_lock_idle_charging))
+        adapter.add(option_item("ازالة الاعلانات","REMOVE_ADS", this, android.R.drawable.ic_notification_clear_all))
+        adapter.add(option_item("المصادر","CREDITS", this, android.R.drawable.ic_media_next))
     }
 }

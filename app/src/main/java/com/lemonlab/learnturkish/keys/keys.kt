@@ -47,6 +47,8 @@ class Keys{
         var LESSON_NINE = "LESSON_NINE"
         var LESSON_TEN = "LESSON_TEN"
         var LESSON_ELEVEN = "LESSON_ELEVEN"
+        var LESSON_TWELVE = "LESSON_TWELVE"
+        var LESSON_THIRTEEN = "LESSON_THIRTEEN"
         var CHAT_LESSON_ONE = "CHAT_LESSON_ONE"
     }
 }

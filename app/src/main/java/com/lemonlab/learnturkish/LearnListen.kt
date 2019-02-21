@@ -54,6 +54,10 @@ class LearnListen : AppCompatActivity() {
             addPronouns()
         }else if (lesson_type == Keys.LESSON_ELEVEN){
             addClothes()
+        }else if (lesson_type == Keys.LESSON_TWELVE){
+            addVerps()
+        }else if (lesson_type == Keys.LESSON_THIRTEEN){
+            addPresent()
         }
 
     }

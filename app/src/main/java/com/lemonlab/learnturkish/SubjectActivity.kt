@@ -171,6 +171,26 @@ class SubjectActivity : AppCompatActivity() {
             )
         )
 
+        adapter.add(
+            subject_item(
+                "الافعال في التركية",
+                "تعرف على الافعال الرئيسية في اللغة التركية",
+                R.drawable.idea_icon,
+                type = Keys.LESSON_TWELVE,
+                activity = this@SubjectActivity
+            )
+        )
+
+        adapter.add(
+            subject_item(
+                "الفعل المضارع",
+                "تعلم الفعل المضارع في اللغة التركية بطريقة تفاعلية",
+                R.drawable.marketing,
+                type = Keys.LESSON_THIRTEEN,
+                activity = this@SubjectActivity
+            )
+        )
+
     }
 }
 
