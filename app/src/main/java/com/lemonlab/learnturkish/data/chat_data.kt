@@ -27,7 +27,7 @@ object chat_data {
                 R.raw.chat_4
             )
         )
-        /* add(chat("Gerçekten seni görmek güzel", "حقًا رويتك انتي جميلة", R.raw.chat_5))
+        add(chat("Gerçekten seni görmek güzel", "حقًا رويتك انتي جميلة", R.raw.chat_5))
         add(
             chat(
                 "Buraya yeni bir bilgisayar almaya geldim. Neden buraya geldin?",
@@ -100,6 +100,6 @@ object chat_data {
                     R.raw.chat_17
                 )
             )
-        add(chat("Hoşçakal lyla", "مع السلامة ليلى", R.raw.chat_18)) */
+        add(chat("Hoşçakal lyla", "مع السلامة ليلى", R.raw.chat_18))
     }
 }

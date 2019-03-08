@@ -33,7 +33,7 @@ class letter_item(var big:String, var small:String,var examples:String, var soun
                 viewHolder.itemView.play_sound_letter_btn.playAnimation()
                 sound.setOnCompletionListener {
                     sound.release()
-                    viewHolder.itemView.play_sound_letter_btn.resumeReverseAnimation()
+                    viewHolder.itemView.play_sound_letter_btn.reverseAnimationSpeed()
                 }
             }
         }

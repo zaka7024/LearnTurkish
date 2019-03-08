@@ -5,9 +5,9 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
@@ -53,7 +53,7 @@ class ListenQuiz : AppCompatActivity() {
             player.start()
             player.setOnCompletionListener {
                 it.release()
-                question_sound_btn.resumeReverseAnimation()
+                question_sound_btn.reverseAnimationSpeed()
             }
         }
 
@@ -127,24 +127,19 @@ class ListenQuiz : AppCompatActivity() {
     fun getQuestions(){
 
         // select data set
-
-        if (type == Keys.LESSON_ONE){
-            question_data =  QuizData.letters_question_data
-
-        }else if (type == Keys.LESSON_TWO){
-            question_data =  QuizData.words_question_data
-        }else if (type == Keys.LESSON_THREE){
-            question_data = QuizData.lesson_three_data
-        }else if (type == Keys.LESSON_FOUR){
-            question_data = QuizData.lesson_four_data
-        }else if (type == Keys.LESSON_FIVE){
-            question_data = QuizData.lesson_five_data
-        }else if (type == Keys.LESSON_SIX){
-            question_data = QuizData.lesson_six_data
-        }else if (type == Keys.LESSON_SEVEN){
-            question_data = QuizData.lesson_seven_data
-        }else if (type == Keys.LESSON_EIGHT){
-            question_data = QuizData.lesson_eight_data
+        Log.i("ListenQuiz", "lesson type: ${type}")
+        when (type) {
+            Keys.LESSON_ONE -> question_data =  QuizData.letters_question_data
+            Keys.LESSON_TWO -> question_data =  QuizData.words_question_data
+            Keys.LESSON_THREE -> question_data = QuizData.lesson_three_data
+            Keys.LESSON_FOUR -> question_data = QuizData.lesson_four_data
+            Keys.LESSON_FIVE -> question_data = QuizData.lesson_five_data
+            Keys.LESSON_SIX -> question_data = QuizData.lesson_six_data
+            Keys.LESSON_SEVEN -> question_data = QuizData.lesson_seven_data
+            Keys.LESSON_EIGHT -> question_data = QuizData.lesson_eight_data
+            Keys.LESSON_NINE -> question_data = QuizData.lesson_nine_data
+            Keys.LESSON_TEN -> question_data = QuizData.lesson_ten_data
+            Keys.LESSON_ELEVEN -> question_data = QuizData.lesson_eleven_data
         }
 
         letter_quiz_progress.max = 100.0f

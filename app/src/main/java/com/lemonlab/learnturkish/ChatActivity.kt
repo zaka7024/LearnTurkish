@@ -1,9 +1,9 @@
 package com.lemonlab.learnturkish
 
 import android.media.MediaPlayer
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
@@ -28,21 +28,7 @@ class ChatActivity : AppCompatActivity() {
 
         initChatRV()
 
-        play_chat.setOnClickListener {
-
-            if (index == -1){
-                adapter.clear()
-            }
-
-            if (isPlaying || (player != null && player!!.isPlaying)){
-                isPlaying = false
-                play_chat.setImageResource(R.drawable.play_icon)
-                return@setOnClickListener
-            }
-            play_chat.setImageResource(R.drawable.pause_icon)
-            isPlaying = true
-            playChat()
-        }
+        playChat()
 
     }
 
@@ -53,7 +39,11 @@ class ChatActivity : AppCompatActivity() {
 
     fun initChatRV(){
         adapter.clear()
-        chat_activity_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        chat_activity_rv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+            this,
+            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            false
+        )
         chat_activity_rv.adapter = adapter
     }
 
@@ -79,10 +69,6 @@ class ChatActivity : AppCompatActivity() {
         player!!.start()
         adapter.add(selectChatItem())
         slideToLast()
-
-        if(!isPlaying){
-            return
-        }
 
         chat_from = !chat_from
         player!!.setOnCompletionListener {

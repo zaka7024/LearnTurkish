@@ -1,8 +1,9 @@
 package com.lemonlab.learnturkish
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lemonlab.learnturkish.items.option_item
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -22,14 +23,19 @@ class SettingsActivity : AppCompatActivity() {
 
     fun initSettingsRv(){
         settings_rv.adapter = adapter
-        settings_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        settings_rv.addItemDecoration(DividerItemDecoration(this,  DividerItemDecoration.VERTICAL))
+        settings_rv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+            this,
+            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            false
+        )
     }
 
     fun setItems(){
-        adapter.add(option_item("حول التطبيق","ABOUT_US", this, android.R.drawable.ic_dialog_info))
-        adapter.add(option_item("سياسة الاستخدام","PRIVACY", this, android.R.drawable.ic_menu_slideshow))
-        adapter.add(option_item("لماذا لاعلانات؟","WAY_ADS", this, android.R.drawable.ic_lock_idle_charging))
-        adapter.add(option_item("ازالة الاعلانات","REMOVE_ADS", this, android.R.drawable.ic_notification_clear_all))
-        adapter.add(option_item("المصادر","CREDITS", this, android.R.drawable.ic_media_next))
+        adapter.add(option_item("حول التطبيق","ABOUT_US", this, R.drawable.ic_action_info))
+        adapter.add(option_item("المزيد من التطبيقات","MORE_APPS", this, R.drawable.ic_action_more_apps))
+        adapter.add(option_item("سياسة الاستخدام","PRIVACY", this, R.drawable.ic_action_privacy))
+        adapter.add(option_item("لماذا لاعلانات؟","WAY_ADS", this, R.drawable.ic_action_ads))
+        adapter.add(option_item("المصادر","CREDITS", this, R.drawable.ic_action_credits))
     }
 }

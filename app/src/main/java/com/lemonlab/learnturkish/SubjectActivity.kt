@@ -1,10 +1,10 @@
 package com.lemonlab.learnturkish
 
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.transition.TransitionInflater
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -38,8 +38,17 @@ class SubjectActivity : AppCompatActivity() {
     }
 
     fun initSubjectRV(){
-        subject_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        subject_rv.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL ))
+        subject_rv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+            this,
+            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            false
+        )
+        subject_rv.addItemDecoration(
+            androidx.recyclerview.widget.DividerItemDecoration(
+                this,
+                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+            )
+        )
         subject_rv.adapter = adapter
     }
 
@@ -127,7 +136,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.adjectives,
                 type = Keys.LESSON_EIGHT,
                 activity = this@SubjectActivity,
-                min_score = 120
+                min_score = 0
             )
         )
 
@@ -137,7 +146,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم حروف الجر والاتجاهات بطريقة تفاعلية",
                 R.drawable.prepositions_icon,
                 type = Keys.LESSON_NINE,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 120
             )
         )
 
@@ -147,7 +157,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم الضمائر المنفصلة و المتصلة و الملكية في اللغة التركية",
                 R.drawable.pronouns,
                 type = Keys.LESSON_TEN,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 140
             )
         )
 
@@ -157,7 +168,8 @@ class SubjectActivity : AppCompatActivity() {
                 "اسمع محادثة صوتية كاملة بين ليلى و رولا",
                 R.drawable.chat_2_icon,
                 type = Keys.CHAT_LESSON_ONE,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 160
             )
         )
 
@@ -167,7 +179,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم مفردات الملابس في التركية بطريقة تفاعلية",
                 R.drawable.clothes,
                 type = Keys.LESSON_ELEVEN,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 170
             )
         )
 
@@ -177,7 +190,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعرف على الافعال الرئيسية في اللغة التركية",
                 R.drawable.idea_icon,
                 type = Keys.LESSON_TWELVE,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 180
             )
         )
 
@@ -187,7 +201,8 @@ class SubjectActivity : AppCompatActivity() {
                 "تعلم الفعل المضارع في اللغة التركية بطريقة تفاعلية",
                 R.drawable.marketing,
                 type = Keys.LESSON_THIRTEEN,
-                activity = this@SubjectActivity
+                activity = this@SubjectActivity,
+                min_score = 190
             )
         )
 

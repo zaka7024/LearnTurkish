@@ -1,9 +1,9 @@
 package com.lemonlab.learnturkish
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_learn_letters.*
@@ -63,8 +63,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     fun initLearnLettersRV(){
-        learn_letters_rv.layoutManager  = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        learn_letters_rv.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        learn_letters_rv.layoutManager  = androidx.recyclerview.widget.LinearLayoutManager(
+            this,
+            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            false
+        )
+        learn_letters_rv.addItemDecoration(
+            androidx.recyclerview.widget.DividerItemDecoration(
+                this,
+                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+            )
+        )
         learn_letters_rv.adapter = adapter
     }
 
@@ -101,6 +110,9 @@ class LearnListen : AppCompatActivity() {
                 this@LearnListen
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             letter_item(
                 "C",
@@ -137,6 +149,9 @@ class LearnListen : AppCompatActivity() {
                 this@LearnListen
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             letter_item(
                 "F",
@@ -200,6 +215,9 @@ class LearnListen : AppCompatActivity() {
                 this@LearnListen
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             letter_item(
                 "L",
@@ -254,6 +272,9 @@ class LearnListen : AppCompatActivity() {
                 this@LearnListen
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             letter_item(
                 "R",
@@ -308,6 +329,9 @@ class LearnListen : AppCompatActivity() {
                 this@LearnListen
             )
         )
+
+        adapter.add(native_ad_item(this))
+
         adapter.add(
             letter_item(
                 "V",
@@ -2249,7 +2273,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.adjectives,
-                this, "lesson_8"
+                this, Keys.LESSON_EIGHT
             )
         )
 
@@ -2424,7 +2448,7 @@ class LearnListen : AppCompatActivity() {
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار",
                 R.drawable.prepositions_icon,
                 this,
-                "lesson_10"
+                Keys.LESSON_NINE
             )
         )
 
@@ -2645,7 +2669,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
-                this, "lesson_11"
+                this, Keys.LESSON_TEN
             )
         )
 
@@ -2992,7 +3016,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
-                this, "lesson_12"
+                this, Keys.LESSON_ELEVEN
             )
         )
 

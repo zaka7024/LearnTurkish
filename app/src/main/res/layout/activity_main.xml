@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +9,7 @@
         tools:layout_editor_absoluteY="25dp"
         android:background="#FFF">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
@@ -29,39 +29,11 @@
                 tools:text="اسم المستخدم"
                 android:layout_marginTop="32dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/dots"
-                android:layout_marginStart="24dp"
-                app:layout_constraintEnd_toStartOf="@+id/dots2"
-                android:layout_marginEnd="33dp"
-                android:textColor="@color/deepBlue"/>
-
-        <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_fileName="sparkles.json"
-                android:id="@+id/dots"
-                android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/deepBlue"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/username_textview"
-                app:layout_constraintTop_toTopOf="@+id/username_textview"
-                app:layout_constraintBottom_toBottomOf="@+id/username_textview"/>
-
-        <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_fileName="sparkles.json"
-                android:id="@+id/dots2"
-                app:layout_constraintTop_toTopOf="@+id/username_textview"
-                app:layout_constraintBottom_toBottomOf="@+id/username_textview"
-                app:layout_constraintStart_toEndOf="@+id/username_textview"
-                android:layout_marginStart="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="70dp"
@@ -74,18 +46,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/username_textview"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/score_text_view"/>
-
-        <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_fileName="start.json"
-                android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/score_icon"
-                app:layout_constraintEnd_toEndOf="@+id/score_icon"
-                app:layout_constraintStart_toStartOf="@+id/score_icon"
-                android:id="@+id/start_btn"/>
 
         <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="100dp"
@@ -127,19 +87,32 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/settings_btn"/>
 
+        <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_fileName="start.json"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/score_icon"
+                app:layout_constraintEnd_toEndOf="@+id/score_icon"
+                app:layout_constraintStart_toStartOf="@+id/score_icon"
+                android:id="@+id/start_btn"/>
+
         <TextView
                 android:text="إنطلق في رحلة تعلم اللغة التركية"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/start_btn"
-                app:layout_constraintEnd_toEndOf="@+id/start_btn"
-                app:layout_constraintStart_toStartOf="@+id/start_btn"
                 android:fontFamily="@font/cairo"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/deepBlue"/>
+                android:textColor="@color/deepBlue"
+                app:layout_constraintEnd_toEndOf="@+id/start_btn"
+                app:layout_constraintStart_toStartOf="@+id/start_btn"
+                app:layout_constraintHorizontal_bias="0.54"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/start_btn"/>
 
         <TextView
                 android:text="50 كأس"
@@ -155,6 +128,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/yellow"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

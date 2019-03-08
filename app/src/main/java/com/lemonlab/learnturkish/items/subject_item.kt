@@ -34,6 +34,9 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         viewHolder.itemView.subject_title.text = title
         viewHolder.itemView.subject_description.text = description
 
+        //init
+        viewHolder.itemView.back_layout.setBackgroundColor(activity!!.resources.getColor(R.color.white))
+
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
 
         // play animation on this item using YoYo
@@ -41,14 +44,18 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         YoYo.with(Techniques.FadeInUp).duration(1000).playOn(viewHolder.itemView)
 
         // check if lesson is locked or not
-        if (isLockOrNot()){
+        if (getUserScore() < min_score){
             viewHolder.itemView.back_layout.setBackgroundColor(activity!!.resources.getColor(R.color.darkGray))
         }
 
         viewHolder.itemView.setOnClickListener {
+
             // check if subject is special subject
 
             if (type == Keys.CHAT_LESSON_ONE){
+
+                if (checkIfUserReady()) return@setOnClickListener
+
                 var intent = Intent(activity, ChatActivity::class.java)
                 activity!!.startActivity(intent)
                 activity!!.overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
@@ -57,19 +64,8 @@ class subject_item(var title:String, var description:String,var image:Int, var t
             }
 
             if(activity != null){
-                // check if user has the min score for this lesson
-                if(getUserScore() < min_score){
-                    val dialog = Dialog(activity!!)
-                    var view = activity!!.layoutInflater.inflate(R.layout.dialog_layout, null)
-                    view.message_text_view.text = "انت لا تمتلك الحد الادنى من النقاط\n" +
-                            "يحتاج هذا الدرس الي: ${min_score}"
 
-                    view.exit_btn.setOnClickListener { dialog.dismiss() }
-
-                    dialog.setContentView(view)
-                    dialog.show()
-                    return@setOnClickListener
-                }
+                if(checkIfUserReady()) return@setOnClickListener
 
                 val intent = Intent(activity, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)
@@ -80,6 +76,25 @@ class subject_item(var title:String, var description:String,var image:Int, var t
 
         }
     }
+
+    fun checkIfUserReady():Boolean{
+        // check if user has the min score for this lesson
+        if(getUserScore() < min_score){
+            val dialog = Dialog(activity!!)
+            var view = activity!!.layoutInflater.inflate(R.layout.dialog_layout, null)
+            view.message_text_view.text = "انت لا تمتلك الحد الادنى من النقاط\n" +
+                    "يحتاج هذا الدرس الي: ${min_score}"
+
+            view.exit_btn.setOnClickListener { dialog.dismiss() }
+
+            dialog.setContentView(view)
+            dialog.show()
+            return true
+        }
+
+        return false
+    }
+
     fun getUserScore():Int{
         val ref = activity!!.getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
@@ -134,16 +149,12 @@ class subject_item(var title:String, var description:String,var image:Int, var t
                 quiz_name_locked = Keys.LESSON_CHAT_ONE_LOCKED
             }
 
+            Keys.LESSON_TWELVE ->{
+                quiz_name_locked = Keys.LESSON_CHAT_ONE_LOCKED
+            }
+
 
         }
-    }
-
-    fun isLockOrNot():Boolean{
-        getLesson()
-        val ref = activity!!.getSharedPreferences("app_data", 0)
-        val isLocked = ref.getBoolean(quiz_name_locked, true)
-        Log.i("subject_item", "lesson is locked: ${isLocked}")
-        return isLocked
     }
 
 }

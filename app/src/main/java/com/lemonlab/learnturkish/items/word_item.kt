@@ -31,7 +31,7 @@ class word_item(var text:String, var arabic:String, var sound:Int, var activity:
                 viewHolder.itemView.play_sound_letter_btn.playAnimation()
                 player.setOnCompletionListener {
                     it.release()
-                    viewHolder.itemView.play_sound_letter_btn.resumeReverseAnimation()
+                    viewHolder.itemView.play_sound_letter_btn.reverseAnimationSpeed()
                     Log.i("word_item", "player released")
                 }
             }
