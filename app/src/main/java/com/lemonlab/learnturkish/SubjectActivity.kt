@@ -136,7 +136,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.adjectives,
                 type = Keys.LESSON_EIGHT,
                 activity = this@SubjectActivity,
-                min_score = 0
+                min_score = 110
             )
         )
 

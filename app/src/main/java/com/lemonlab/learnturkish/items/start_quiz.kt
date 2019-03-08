@@ -21,7 +21,7 @@ class start_quiz(var text:String,var image:Int,var activity: Activity?,var lesso
         Picasso.get().load(image).into(viewHolder.itemView.start_quiz_image)
 
         viewHolder.itemView.start_quiz_image.setOnClickListener {
-            startQuizActivity(lesson)
+                startQuizActivity(lesson)
         }
     }
 
