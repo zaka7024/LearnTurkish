@@ -142,6 +142,9 @@ class ListenQuiz : AppCompatActivity() {
             Keys.LESSON_ELEVEN -> question_data = QuizData.lesson_eleven_data
         }
 
+
+        Log.i("ListenQuiz", "lesson data size: ${question_data.size}")
+
         letter_quiz_progress.max = 100.0f
         prog_change = (letter_quiz_progress.max /question_data.size).toInt()
         letter_quiz_progress.secondaryProgress = letter_quiz_progress.max

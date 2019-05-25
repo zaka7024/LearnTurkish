@@ -2,6 +2,7 @@ package com.lemonlab.learnturkish.items
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
@@ -22,6 +23,7 @@ class start_quiz(var text:String,var image:Int,var activity: Activity?,var lesso
 
         viewHolder.itemView.start_quiz_image.setOnClickListener {
                 startQuizActivity(lesson)
+            print("lesson: $lesson")
         }
     }
 

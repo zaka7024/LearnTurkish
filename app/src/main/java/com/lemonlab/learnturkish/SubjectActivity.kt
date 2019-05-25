@@ -103,7 +103,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.brain_icon,
                 type = Keys.LESSON_FIVE,
                 activity = this@SubjectActivity,
-                min_score = 70
+                min_score = 60
             )
         )
 
@@ -114,7 +114,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.tools_icon,
                 type = Keys.LESSON_SIX,
                 activity = this@SubjectActivity,
-                min_score = 90
+                min_score = 60
             )
         )
 
@@ -125,7 +125,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.school,
                 type = Keys.LESSON_SEVEN,
                 activity = this@SubjectActivity,
-                min_score = 100
+                min_score = 80
             )
         )
 
@@ -136,7 +136,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.adjectives,
                 type = Keys.LESSON_EIGHT,
                 activity = this@SubjectActivity,
-                min_score = 110
+                min_score = 100
             )
         )
 
@@ -147,7 +147,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.prepositions_icon,
                 type = Keys.LESSON_NINE,
                 activity = this@SubjectActivity,
-                min_score = 120
+                min_score = 110
             )
         )
 
@@ -158,7 +158,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.pronouns,
                 type = Keys.LESSON_TEN,
                 activity = this@SubjectActivity,
-                min_score = 140
+                min_score = 120
             )
         )
 
@@ -169,7 +169,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.chat_2_icon,
                 type = Keys.CHAT_LESSON_ONE,
                 activity = this@SubjectActivity,
-                min_score = 160
+                min_score = 130
             )
         )
 
@@ -180,7 +180,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.clothes,
                 type = Keys.LESSON_ELEVEN,
                 activity = this@SubjectActivity,
-                min_score = 170
+                min_score = 140
             )
         )
 
@@ -191,7 +191,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.idea_icon,
                 type = Keys.LESSON_TWELVE,
                 activity = this@SubjectActivity,
-                min_score = 180
+                min_score = 150
             )
         )
 
@@ -202,7 +202,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.marketing,
                 type = Keys.LESSON_THIRTEEN,
                 activity = this@SubjectActivity,
-                min_score = 190
+                min_score = 200
             )
         )
 

@@ -115,7 +115,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/start_btn"/>
 
         <TextView
-                android:text="50 كأس"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/score_text_view"
@@ -126,7 +125,8 @@
                 android:textSize="24sp"
                 android:fontFamily="@font/cairo"
                 android:textStyle="bold"
-                android:textColor="@color/yellow"/>
+                android:textColor="@color/yellow"
+                tools:text="z"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

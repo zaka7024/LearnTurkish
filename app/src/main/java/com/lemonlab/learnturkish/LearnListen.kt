@@ -1347,7 +1347,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.colors,
-                this, "lesson_4"
+                this, Keys.LESSON_FOUR
             )
         )
 
@@ -1476,7 +1476,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.brain_icon,
-                this, "lesson_5"
+                this, Keys.LESSON_FIVE
             )
         )
 
@@ -1764,7 +1764,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.tools_icon,
-                this, "lesson_6"
+                this, Keys.LESSON_SIX
             )
         )
 
@@ -2076,7 +2076,7 @@ class LearnListen : AppCompatActivity() {
         adapter.add(
             start_quiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.school,
-                this, "lesson_7"
+                this, Keys.LESSON_SEVEN
             )
         )
 
