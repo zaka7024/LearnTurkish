@@ -1,17 +1,18 @@
 package com.lemonlab.learnturkish
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.activity_learn_letters.*
+import androidx.recyclerview.widget.RecyclerView
 import com.lemonlab.learnturkish.items.letter_item
 import com.lemonlab.learnturkish.items.native_ad_item
 import com.lemonlab.learnturkish.items.start_quiz
 import com.lemonlab.learnturkish.items.word_item
 import com.lemonlab.learnturkish.keys.Keys
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.activity_learn_letters.*
 
 class LearnListen : AppCompatActivity() {
 
@@ -63,15 +64,15 @@ class LearnListen : AppCompatActivity() {
     }
 
     fun initLearnLettersRV(){
-        learn_letters_rv.layoutManager  = androidx.recyclerview.widget.LinearLayoutManager(
+        learn_letters_rv.layoutManager  =LinearLayoutManager(
             this,
-            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            RecyclerView.VERTICAL,
             false
         )
         learn_letters_rv.addItemDecoration(
-            androidx.recyclerview.widget.DividerItemDecoration(
+            DividerItemDecoration(
                 this,
-                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+                DividerItemDecoration.VERTICAL
             )
         )
         learn_letters_rv.adapter = adapter

@@ -77,7 +77,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         }
     }
 
-    fun checkIfUserReady():Boolean{
+    private fun checkIfUserReady():Boolean{
         // check if user has the min score for this lesson
         if(getUserScore() < min_score){
             val dialog = Dialog(activity!!)
@@ -95,7 +95,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         return false
     }
 
-    fun getUserScore():Int{
+    private fun getUserScore():Int{
         val ref = activity!!.getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
     }

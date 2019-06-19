@@ -26,7 +26,7 @@ class word_item(var text:String, var arabic:String, var sound:Int, var activity:
 
         viewHolder.itemView.play_sound_letter_btn.setOnClickListener {
             if (activity.applicationContext != null){
-                var player = MediaPlayer.create(activity.applicationContext, sound)
+                val player = MediaPlayer.create(activity.applicationContext, sound)
                 player.start()
                 viewHolder.itemView.play_sound_letter_btn.playAnimation()
                 player.setOnCompletionListener {

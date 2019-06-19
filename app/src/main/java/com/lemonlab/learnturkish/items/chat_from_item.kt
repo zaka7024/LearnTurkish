@@ -4,11 +4,11 @@ import android.animation.Animator
 import android.content.Context
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
+import com.lemonlab.learnturkish.R
+import com.lemonlab.learnturkish.module.chat
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.chat_from_item.view.*
-import com.lemonlab.learnturkish.R
-import com.lemonlab.learnturkish.module.chat
 
 class chat_from_item(var chat_item: chat, var context: Context):Item<ViewHolder>() {
 

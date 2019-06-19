@@ -27,8 +27,8 @@ class start_quiz(var text:String,var image:Int,var activity: Activity?,var lesso
         }
     }
 
-    fun startQuizActivity(extra:String){
-        var intent = Intent(activity, ListenQuiz::class.java)
+    private fun startQuizActivity(extra:String){
+        val intent = Intent(activity, ListenQuiz::class.java)
         intent.putExtra(Keys.QUIZ_TYPE, extra)
         activity!!.startActivity(intent)
         activity!!.finish()

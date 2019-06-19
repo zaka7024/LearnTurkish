@@ -2,10 +2,10 @@ package com.lemonlab.learnturkish.items
 
 import android.content.Context
 import com.google.android.gms.ads.AdRequest
+import com.lemonlab.learnturkish.R
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.native_ad_layout.view.*
-import com.lemonlab.learnturkish.R
 
 class native_ad_item(var context: Context):Item<ViewHolder>() {
     override fun getLayout(): Int {
@@ -13,9 +13,7 @@ class native_ad_item(var context: Context):Item<ViewHolder>() {
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        var ad_request = AdRequest.Builder().build()
-
-        viewHolder.itemView.native_ad_view.loadAd(ad_request)
+        viewHolder.itemView.native_ad_view.loadAd(AdRequest.Builder().build())
     }
 
 }

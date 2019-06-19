@@ -1,22 +1,20 @@
 package com.lemonlab.learnturkish
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import android.transition.TransitionInflater
+import androidx.recyclerview.widget.RecyclerView
+import com.lemonlab.learnturkish.items.subject_item
+import com.lemonlab.learnturkish.keys.Keys
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_subject.*
-import com.lemonlab.learnturkish.items.subject_item
-import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.R
 
 
 class SubjectActivity : AppCompatActivity() {
 
-    var adapter = GroupAdapter<ViewHolder>()
+    private var adapter = GroupAdapter<ViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,22 +35,22 @@ class SubjectActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
     }
 
-    fun initSubjectRV(){
-        subject_rv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+    private fun initSubjectRV(){
+        subject_rv.layoutManager = LinearLayoutManager(
             this,
-            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            RecyclerView.VERTICAL,
             false
         )
         subject_rv.addItemDecoration(
-            androidx.recyclerview.widget.DividerItemDecoration(
+            DividerItemDecoration(
                 this,
-                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+                DividerItemDecoration.VERTICAL
             )
         )
         subject_rv.adapter = adapter
     }
 
-    fun addSubjectToRV(){
+    private fun addSubjectToRV(){
         adapter.clear()
 
         adapter.add(

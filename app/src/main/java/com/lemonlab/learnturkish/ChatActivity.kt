@@ -1,27 +1,27 @@
 package com.lemonlab.learnturkish
 
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.lemonlab.learnturkish.data.chat_data
+import com.lemonlab.learnturkish.items.chat_from_item
+import com.lemonlab.learnturkish.items.chat_to_item
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat.*
-import com.lemonlab.learnturkish.data.chat_data
-import com.lemonlab.learnturkish.items.chat_from_item
-import com.lemonlab.learnturkish.items.chat_to_item
-import com.lemonlab.learnturkish.R
 
 class ChatActivity : AppCompatActivity() {
 
-    var adapter = GroupAdapter<ViewHolder>()
-    var chatData = chat_data.chatData
-    var index = -1
-    var chat_from = true
-    var player:MediaPlayer? = null
-    var isPlaying = false
+    private var adapter = GroupAdapter<ViewHolder>()
+    private var chatData = chat_data.chatData
+    private var index = -1
+    private var chatFrom = true
+    private var player:MediaPlayer? = null
+    private var isPlaying = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
@@ -37,40 +37,39 @@ class ChatActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
     }
 
-    fun initChatRV(){
+    private fun initChatRV(){
         adapter.clear()
-        chat_activity_rv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(
+        chat_activity_rv.layoutManager = LinearLayoutManager(
             this,
-            androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+            RecyclerView.VERTICAL,
             false
         )
         chat_activity_rv.adapter = adapter
     }
 
-    fun selectChatItem():Item<ViewHolder>{
-        var item = if (chat_from){
+    private fun selectChatItem():Item<ViewHolder>{
+        return if (chatFrom){
             chat_from_item(chatData[index], this)
         }else{
             chat_to_item(chatData[index], this)
         }
-        return item
     }
 
-    fun playChat(){
+    private fun playChat(){
         index++
         if (index >= chatData.size){
             index = -1
             return
         }
 
-        var sound = chatData[index].sound
+        val sound = chatData[index].sound
 
         player = MediaPlayer.create(this , sound)
         player!!.start()
         adapter.add(selectChatItem())
         slideToLast()
 
-        chat_from = !chat_from
+        chatFrom = !chatFrom
         player!!.setOnCompletionListener {
 
             player!!.release()
@@ -78,15 +77,14 @@ class ChatActivity : AppCompatActivity() {
                 isPlaying = false
                 return@setOnCompletionListener
             }
-            Log.i("ChatActivity", "playChat(): isPlaying -> ${isPlaying}")
+            Log.i("ChatActivity", "playChat(): isPlaying -> $isPlaying")
             playChat()
         }
     }
 
-    fun slideToLast(){
+    private fun slideToLast(){
         chat_activity_rv.scrollToPosition(adapter.itemCount - 1)
     }
-
 
 
 
