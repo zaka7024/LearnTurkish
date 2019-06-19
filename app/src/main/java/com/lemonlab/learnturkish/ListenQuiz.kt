@@ -18,17 +18,17 @@ import com.daimajia.androidanimations.library.YoYo
 import com.google.android.gms.ads.AdRequest
 import com.lemonlab.learnturkish.data.QuizData
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.module.question_letter_word
+import com.lemonlab.learnturkish.module.QuestionsLetterWord
 import kotlinx.android.synthetic.main.quiz_listen.*
 
 class ListenQuiz : AppCompatActivity() {
 
-    private lateinit var questionData:ArrayList<question_letter_word>
-    var sound:Int? = null
+    private lateinit var questionData: ArrayList<QuestionsLetterWord>
+    var sound: Int? = null
     private var index = 0
     private var score = 0
     private var progChange = 0
-    var type:String = ""
+    var type: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +64,7 @@ class ListenQuiz : AppCompatActivity() {
 
             // check if user select one option at least
 
-            if(!checkIfOneIsCheckedAtLeast() && index <= questionData.size - 1){
+            if (!checkIfOneIsCheckedAtLeast() && index <= questionData.size - 1) {
                 Toast.makeText(this, "اختر الاجابة الصيحية للانتقال", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -72,16 +72,15 @@ class ListenQuiz : AppCompatActivity() {
             // check if user select the correct answer
 
 
-            if(index < questionData.size){
-                if (checkIfCorrect(index)){
+            if (index < questionData.size) {
+                if (checkIfCorrect(index)) {
                     Toast.makeText(this, "True", Toast.LENGTH_SHORT).show()
                     score++
                     letter_quiz_progress.progress = letter_quiz_progress.progress + progChange
                     letter_quiz_progress.secondaryProgress += progChange
-                }
-                else{ // help user to select the correct answer
+                } else { // help user to select the correct answer
 
-                    with(selectedRadioButton()!!.animate()){
+                    with(selectedRadioButton()!!.animate()) {
                         alpha(0.5f)
                     }
                     selectedRadioButton()!!.setTextColor(ContextCompat.getColor(applicationContext, R.color.red))
@@ -92,7 +91,7 @@ class ListenQuiz : AppCompatActivity() {
                 index++
                 setQuestion(index)
 
-            }else if(index >= questionData.size){ // user solve all problems
+            } else if (index >= questionData.size) { // user solve all problems
                 showResult()
             }
         }
@@ -102,15 +101,15 @@ class ListenQuiz : AppCompatActivity() {
         exit_btn.setOnClickListener {
             // ask user before close this activity
 
-            val dialog:AlertDialog.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            val dialog: AlertDialog.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert)
-            }else{
+            } else {
                 AlertDialog.Builder(this)
             }
 
             dialog.setTitle("تاكيد")
             dialog.setMessage("هل تريد الخروج من الاختبار؟")
-            dialog.setPositiveButton("نعم") { _: DialogInterface, i: Int ->
+            dialog.setPositiveButton("نعم") { _: DialogInterface, _: Int ->
                 this@ListenQuiz.finish()
             }
             dialog.setNegativeButton("لا") { theDialog, _ ->
@@ -122,13 +121,13 @@ class ListenQuiz : AppCompatActivity() {
 
     }
 
-    private fun getQuestions(){
+    private fun getQuestions() {
 
         // select data set
-        Log.i("ListenQuiz", "lesson type: ${type}")
+        Log.i("ListenQuiz", "lesson type: $type")
         when (type) {
-            Keys.LESSON_ONE -> questionData =  QuizData.letters_question_data
-            Keys.LESSON_TWO -> questionData =  QuizData.words_question_data
+            Keys.LESSON_ONE -> questionData = QuizData.letters_question_data
+            Keys.LESSON_TWO -> questionData = QuizData.words_question_data
             Keys.LESSON_THREE -> questionData = QuizData.lesson_three_data
             Keys.LESSON_FOUR -> questionData = QuizData.lesson_four_data
             Keys.LESSON_FIVE -> questionData = QuizData.lesson_five_data
@@ -144,18 +143,18 @@ class ListenQuiz : AppCompatActivity() {
         Log.i("ListenQuiz", "lesson data size: ${questionData.size}")
 
         letter_quiz_progress.max = 100.0f
-        progChange = (letter_quiz_progress.max /questionData.size).toInt()
+        progChange = (letter_quiz_progress.max / questionData.size).toInt()
         letter_quiz_progress.secondaryProgress = letter_quiz_progress.max
         Log.i("LetterQuiz", "progChange: $progChange")
         Log.i("LetterQuiz", "letter_quiz_progress.max: ${letter_quiz_progress.max}")
         Log.i("LetterQuiz", "letter_quiz_progress.secondaryProgress: ${letter_quiz_progress.secondaryProgress}")
     }
 
-    private fun setQuestion(index:Int){
+    private fun setQuestion(index: Int) {
 
         clearColor() // reset default colors for_word radio buttons
 
-        if(index >= questionData.size){
+        if (index >= questionData.size) {
             next_btn.text = "النتيجة"
             quiz_card_view.visibility = View.GONE
             quiz_compelte_view.visibility = View.VISIBLE
@@ -167,14 +166,14 @@ class ListenQuiz : AppCompatActivity() {
         }
 
         sound = questionData[index].sound
-        var options = questionData[index].options
+        val options = questionData[index].options
         radio_ans_btn1.text = options[0]
         radio_ans_btn2.text = options[1]
         radio_ans_btn3.text = options[2]
         radio_ans_btn4.text = options[3]
 
         // play fade out animation after that play fade on animation with new content
-        YoYo.with(Techniques.SlideOutLeft).withListener(object:Animator.AnimatorListener{
+        YoYo.with(Techniques.SlideOutLeft).withListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
 
             }
@@ -195,23 +194,23 @@ class ListenQuiz : AppCompatActivity() {
         }).duration(300).playOn(quiz_card_view)
     }
 
-    private fun checkIfCorrect(index:Int):Boolean{
+    private fun checkIfCorrect(index: Int): Boolean {
 
-        var radio_btn_index = 0
+        var radioButtonIndex = 0
 
         when {
-            radio_ans_btn1.isChecked -> radio_btn_index = 0
-            radio_ans_btn2.isChecked -> radio_btn_index = 1
-            radio_ans_btn3.isChecked -> radio_btn_index = 2
-            radio_ans_btn4.isChecked -> radio_btn_index = 3
+            radio_ans_btn1.isChecked -> radioButtonIndex = 0
+            radio_ans_btn2.isChecked -> radioButtonIndex = 1
+            radio_ans_btn3.isChecked -> radioButtonIndex = 2
+            radio_ans_btn4.isChecked -> radioButtonIndex = 3
         }
 
-        return radio_btn_index == questionData[index].answer
+        return radioButtonIndex == questionData[index].answer
     }
 
-    private fun checkIfOneIsCheckedAtLeast():Boolean{
+    private fun checkIfOneIsCheckedAtLeast(): Boolean {
 
-        val result:Boolean
+        val result: Boolean
         when {
             radio_ans_btn1.isChecked -> {
                 result = true
@@ -234,7 +233,7 @@ class ListenQuiz : AppCompatActivity() {
 
     }
 
-    private fun selectedRadioButton():RadioButton?{
+    private fun selectedRadioButton(): RadioButton? {
         return when {
             radio_ans_btn1.isChecked -> radio_ans_btn1
             radio_ans_btn2.isChecked -> radio_ans_btn2
@@ -244,7 +243,7 @@ class ListenQuiz : AppCompatActivity() {
         }
     }
 
-    private fun clearColor(){
+    private fun clearColor() {
         radio_ans_btn1.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
         radio_ans_btn1.alpha = 1f
 //        radio_ans_btn1.isSelected = false_word
@@ -262,7 +261,7 @@ class ListenQuiz : AppCompatActivity() {
 //        radio_ans_btn4.isSelected = false_word
     }
 
-    private fun showResult(){
+    private fun showResult() {
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(Keys.RESULT_SCORE, score)
         intent.putExtra(Keys.LESSON_TYPE, type)
@@ -270,7 +269,7 @@ class ListenQuiz : AppCompatActivity() {
         this.finish()
     }
 
-    private fun playSoundClick(){
+    private fun playSoundClick() {
         val player = MediaPlayer.create(this, R.raw.click)
         player.start()
         player.setOnCompletionListener {

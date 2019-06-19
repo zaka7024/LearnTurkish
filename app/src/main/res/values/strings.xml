@@ -4,8 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ok">Okay</string>
     <string name="okAr">حسنًا</string>
+    <string name="cup">كأس %1$s</string>
     <string name="changeLanguage">تغيير اللغة</string>
+    <string name="minimumPoints">
+        "أنت لا تمتلك الحد الأدنى من النقاط. \n"
+                    "يحتاج هذا الدرس الى: %1$d"
+    </string>
     <string name="whyAds">الإعلانات هي مصدر الدخل الوحيد لمعظم المطورين وصنع التطبيقات يتطلب وقتًا وجهدًا كثيرين، فنحاول أن نستمر في مسيرتنا من خلال هذا.</string>
+
 
     <string name="aboutLemonLabAr">    "مختبر الليمون فريق يسعى لنشر تطبيقات تساعد الناس وتسهل حياتهم. \n"
     "نحاول أن نستخدم أحدث الخدمات وأفضل الطرق لإيصال تطبيقاتنا إلى مستوىً منافس. "
@@ -185,5 +191,7 @@
         \n
         duroos.org/turkish_lesson1.php
     </string>
+    <string name="testFinished">احسنت لقد انهيت المسار وحصلت على</string>
+    <string name="home">الرئيسية</string>
 
 </resources>

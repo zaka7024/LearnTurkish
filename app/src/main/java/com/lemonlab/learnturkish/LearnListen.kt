@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lemonlab.learnturkish.items.letter_item
-import com.lemonlab.learnturkish.items.native_ad_item
-import com.lemonlab.learnturkish.items.start_quiz
-import com.lemonlab.learnturkish.items.word_item
+import com.lemonlab.learnturkish.items.LetterItem
+import com.lemonlab.learnturkish.items.NativeAdItem
+import com.lemonlab.learnturkish.items.StartQuiz
+import com.lemonlab.learnturkish.items.WordItem
 import com.lemonlab.learnturkish.keys.Keys
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -16,55 +16,41 @@ import kotlinx.android.synthetic.main.activity_learn_letters.*
 
 class LearnListen : AppCompatActivity() {
 
-    var adapter = GroupAdapter<ViewHolder>()
-    var lesson_type = ""
-
+    private var adapter = GroupAdapter<ViewHolder>()
+    private var lessonType = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learn_letters)
 
-        // get the lesson type from subject_item
-        lesson_type = intent?.extras?.getString(Keys.LESSON_TYPE)!!
+        // get the lesson type from SubjectItem
+        lessonType = intent?.extras?.getString(Keys.LESSON_TYPE)!!
 
         // init letters rv
         initLearnLettersRV()
 
         // add items(letters with sound) to rv
-        if (lesson_type == Keys.LESSON_ONE){
-            addLetters()
-        }else if (lesson_type == Keys.LESSON_TWO){
-            addWords()
-        }else if (lesson_type == Keys.LESSON_THREE){
-            addNumbers()
-        }else if (lesson_type == Keys.LESSON_FOUR){
-            addColors()
-        }else if (lesson_type == Keys.LESSON_FIVE){
-            addParts()
-        }else if (lesson_type == Keys.LESSON_SIX){
-            addHome()
-        }else if (lesson_type == Keys.LESSON_SEVEN){
-            addSchool()
-        }else if (lesson_type == Keys.LESSON_EIGHT){
-            addSefat()
-        }else if (lesson_type == Keys.LESSON_NINE){
-            addPrepositions()
-        }
-        else if (lesson_type == Keys.LESSON_TEN){
-            addPronouns()
-        }else if (lesson_type == Keys.LESSON_ELEVEN){
-            addClothes()
-        }else if (lesson_type == Keys.LESSON_TWELVE){
-            addVerps()
-        }else if (lesson_type == Keys.LESSON_THIRTEEN){
-            addPresent()
+        when (lessonType) {
+            Keys.LESSON_ONE -> addLetters()
+            Keys.LESSON_TWO -> addWords()
+            Keys.LESSON_THREE -> addNumbers()
+            Keys.LESSON_FOUR -> addColors()
+            Keys.LESSON_FIVE -> addParts()
+            Keys.LESSON_SIX -> addHome()
+            Keys.LESSON_SEVEN -> addSchool()
+            Keys.LESSON_EIGHT -> addSefat()
+            Keys.LESSON_NINE -> addPrepositions()
+            Keys.LESSON_TEN -> addPronouns()
+            Keys.LESSON_ELEVEN -> addClothes()
+            Keys.LESSON_TWELVE -> addVerbs()
+            Keys.LESSON_THIRTEEN -> addPresent()
         }
 
     }
 
-    fun initLearnLettersRV(){
-        learn_letters_rv.layoutManager  =LinearLayoutManager(
+    private fun initLearnLettersRV() {
+        learn_letters_rv.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
             false
@@ -84,17 +70,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON ONE
-    fun addLetters(){
+    private fun addLetters() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الحروف ثم انتقل الى الاختبار", R.drawable.letters_icon,
                 this, Keys.LESSON_ONE
             )
         )
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "A",
                 "a",
                 "alaska",
@@ -103,7 +89,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "B",
                 "b",
                 "bravo",
@@ -112,19 +98,19 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "C",
                 "c",
-                "chat",
+                "Chat",
                 R.raw.c_char,
                 this@LearnListen
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Ç",
                 "ç",
                 "çay",
@@ -133,7 +119,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "D",
                 "d",
                 "david",
@@ -142,7 +128,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "E",
                 "e",
                 "emma",
@@ -151,10 +137,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "F",
                 "f",
                 "cafe",
@@ -163,7 +149,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "G",
                 "g",
                 "gym",
@@ -172,7 +158,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Ğ",
                 "ğ",
                 "yağmur",
@@ -181,7 +167,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "H",
                 "h",
                 "havlu",
@@ -190,7 +176,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "I",
                 "i",
                 "ıspanak",
@@ -199,7 +185,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "J",
                 "j",
                 "jimnastik ",
@@ -208,7 +194,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "K",
                 "k",
                 "kitap ",
@@ -217,10 +203,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "L",
                 "l",
                 "limon",
@@ -229,7 +215,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "M",
                 "m",
                 "masa ",
@@ -238,7 +224,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "N",
                 "n",
                 "Namaz",
@@ -247,7 +233,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "O",
                 "o",
                 "okul",
@@ -256,7 +242,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Ö",
                 "ö",
                 "ördek",
@@ -265,7 +251,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "P",
                 "p",
                 "parmak",
@@ -274,10 +260,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "R",
                 "r",
                 "resim",
@@ -286,7 +272,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "S",
                 "s",
                 "su",
@@ -295,7 +281,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Ş",
                 "ş",
                 "şeker",
@@ -304,7 +290,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "T",
                 "t",
                 "top",
@@ -313,7 +299,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "U",
                 "u",
                 "uçak",
@@ -322,7 +308,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Ü",
                 "ü",
                 "ülke",
@@ -331,10 +317,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            letter_item(
+            LetterItem(
                 "V",
                 "v",
                 "vazo",
@@ -343,7 +329,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Y",
                 "y",
                 "yemek",
@@ -352,7 +338,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            letter_item(
+            LetterItem(
                 "Z",
                 "z",
                 "zambak",
@@ -363,19 +349,19 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON TWO
-    fun addWords(){
+    private fun addWords() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.chat_icon,
                 this, Keys.LESSON_TWO
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Baba",
                 "أب",
                 R.raw.word_4,
@@ -383,7 +369,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Anne",
                 "أم",
                 R.raw.word_3,
@@ -391,7 +377,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Erkek kardeş",
                 "أخ",
                 R.raw.word_9,
@@ -399,7 +385,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Kız kardeş",
                 "أخت",
                 R.raw.word_12,
@@ -407,7 +393,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Amca",
                 "عم",
                 R.raw.word_2,
@@ -415,10 +401,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Hala",
                 "عمه",
                 R.raw.word_10,
@@ -426,7 +412,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Dayı",
                 "خال",
                 R.raw.word_8,
@@ -434,7 +420,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Teyze",
                 "خاله",
                 R.raw.word_13,
@@ -442,7 +428,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yenge",
                 "الكنه",
                 R.raw.word_15,
@@ -450,7 +436,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "çocuk",
                 "طفل",
                 R.raw.word_7,
@@ -458,7 +444,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "aile",
                 "اسره",
                 R.raw.word_1,
@@ -466,7 +452,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "büyükanne",
                 "جدة",
                 R.raw.word_5,
@@ -474,7 +460,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "büyükbaba",
                 "جد",
                 R.raw.word_6,
@@ -482,7 +468,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "torun",
                 "حفيد",
                 R.raw.word_14,
@@ -490,7 +476,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ikiz",
                 "توأم",
                 R.raw.word_11,
@@ -498,7 +484,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add( // quiz point
-            word_item(
+            WordItem(
                 "Yer",
                 "أرض",
                 R.raw.word_16,
@@ -506,7 +492,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Deniz",
                 "بحر",
                 R.raw.word_17,
@@ -514,7 +500,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Toprak",
                 "تراب",
                 R.raw.word_18,
@@ -522,7 +508,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Dağ",
                 "جبل",
                 R.raw.word_19,
@@ -530,10 +516,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Ada",
                 "جزيرة",
                 R.raw.word_20,
@@ -541,7 +527,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Bulut",
                 "سحاب",
                 R.raw.word_21,
@@ -549,7 +535,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gök",
                 "سماء",
                 R.raw.word_22,
@@ -557,7 +543,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Güneş",
                 "شمس",
                 R.raw.word_23,
@@ -565,7 +551,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ay",
                 "قمر",
                 R.raw.word_24,
@@ -573,7 +559,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Su",
                 "مـاء",
                 R.raw.word_25,
@@ -581,7 +567,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Hava ",
                 "هواء",
                 R.raw.word_26,
@@ -589,7 +575,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Aslan",
                 "أسد",
                 R.raw.word_27,
@@ -597,10 +583,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "inek",
                 "بقرة",
                 R.raw.word_28,
@@ -608,7 +594,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Deve",
                 "جمل",
                 R.raw.word_29,
@@ -616,7 +602,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "At",
                 "حصان",
                 R.raw.word_30,
@@ -624,7 +610,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Eşek",
                 "حمار",
                 R.raw.word_31,
@@ -632,7 +618,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Hayvan",
                 "حيوان",
                 R.raw.word_32,
@@ -640,7 +626,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Tavuk",
                 "دجاجة",
                 R.raw.word_33,
@@ -648,7 +634,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Kelebek",
                 "فراشة",
                 R.raw.word_34,
@@ -656,7 +642,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Maymun",
                 "قرد",
                 R.raw.word_35,
@@ -664,10 +650,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Arı",
                 "نحلة",
                 R.raw.word_36,
@@ -675,7 +661,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Kedi",
                 "قطة",
                 R.raw.word_37,
@@ -683,7 +669,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ne",
                 "ماذا",
                 R.raw.word_38,
@@ -691,7 +677,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Nasıl",
                 "كيف؟",
                 R.raw.word_39,
@@ -699,7 +685,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sabah",
                 "صباح",
                 R.raw.word_40,
@@ -707,7 +693,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "akşam",
                 "مساء",
                 R.raw.word_41,
@@ -715,7 +701,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gece",
                 "الليل",
                 R.raw.word_42,
@@ -723,7 +709,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gündüz",
                 "",
                 R.raw.word_43,
@@ -731,7 +717,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Oğle",
                 "الظهر",
                 R.raw.word_44,
@@ -739,7 +725,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sabahleyin",
                 "في صباح",
                 R.raw.word_45,
@@ -747,7 +733,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "akşamleyin",
                 "في المساء",
                 R.raw.word_46,
@@ -755,7 +741,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "şimdi",
                 "الآن",
                 R.raw.word_47,
@@ -763,7 +749,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sonra",
                 "لاحقا",
                 R.raw.word_48,
@@ -771,7 +757,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "önce",
                 "قبل",
                 R.raw.word_49,
@@ -779,10 +765,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Erken",
                 "مبكرا",
                 R.raw.word_50,
@@ -790,7 +776,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Geç",
                 "متأخر",
                 R.raw.word_51,
@@ -798,7 +784,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bugün",
                 "اليوم",
                 R.raw.word_52,
@@ -806,7 +792,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yarın",
                 "غداً",
                 R.raw.word_53,
@@ -814,7 +800,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dün",
                 "أمس",
                 R.raw.word_54,
@@ -822,7 +808,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sağda",
                 "على اليمين",
                 R.raw.word_55,
@@ -830,7 +816,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "solda",
                 "على اليسار",
                 R.raw.word_56,
@@ -838,7 +824,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "içerde",
                 "في الداخل",
                 R.raw.word_57,
@@ -846,7 +832,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dışarda",
                 "في الخارج",
                 R.raw.word_58,
@@ -854,7 +840,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "gerekir",
                 "يجب",
                 R.raw.word_59,
@@ -862,7 +848,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "gerekmez",
                 "لايجب",
                 R.raw.word_60,
@@ -870,7 +856,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "burada",
                 "هنـا",
                 R.raw.word_61,
@@ -878,7 +864,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Orada",
                 "هنـاك",
                 R.raw.word_62,
@@ -886,10 +872,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "yakın",
                 "قريب",
                 R.raw.word_63,
@@ -897,7 +883,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "uzak",
                 "بعيد",
                 R.raw.word_64,
@@ -905,7 +891,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "erkek",
                 "ذكر",
                 R.raw.word_65,
@@ -913,7 +899,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kadın",
                 "انثى",
                 R.raw.word_66,
@@ -921,7 +907,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ne zaman",
                 "متى؟",
                 R.raw.word_67,
@@ -929,7 +915,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "nasıl",
                 "كيف؟",
                 R.raw.word_68,
@@ -937,7 +923,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "istiyorum",
                 "أريد",
                 R.raw.word_69,
@@ -945,7 +931,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "istemiyorum",
                 "لا اريد",
                 R.raw.word_70,
@@ -953,7 +939,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "beğendim",
                 "أعجبني",
                 R.raw.word_71,
@@ -961,10 +947,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "alt",
                 "تحت",
                 R.raw.word_72,
@@ -972,7 +958,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "üst",
                 "فوق",
                 R.raw.word_73,
@@ -982,17 +968,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON THREE
-    fun addNumbers(){
+    private fun addNumbers() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.time_icon,
                 this, Keys.LESSON_THREE
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "sıfır",
                 "صفر",
                 R.raw.zero,
@@ -1000,7 +986,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bir",
                 "واحد",
                 R.raw.one,
@@ -1008,10 +994,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "iki",
                 "اثنين",
                 R.raw.two,
@@ -1019,7 +1005,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "üç ",
                 "ثلاث",
                 R.raw.three,
@@ -1027,7 +1013,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dört ",
                 "اربعة",
                 R.raw.four,
@@ -1035,7 +1021,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "beş ",
                 "خمسة",
                 R.raw.five,
@@ -1043,7 +1029,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "altı ",
                 "ستة",
                 R.raw.six,
@@ -1051,7 +1037,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yedi ",
                 "سبعة",
                 R.raw.seven,
@@ -1059,7 +1045,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sekiz ",
                 "ثمانية",
                 R.raw.eight,
@@ -1067,7 +1053,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dokuz ",
                 "تسعة",
                 R.raw.nine,
@@ -1075,7 +1061,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "on ",
                 "عشرة",
                 R.raw.ten,
@@ -1083,10 +1069,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Cumarttesi",
                 "السبت",
                 R.raw.saturday,
@@ -1094,7 +1080,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Pazar ",
                 "الاحد",
                 R.raw.sunday,
@@ -1102,7 +1088,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Pazartesi ",
                 "الاثنين",
                 R.raw.monday,
@@ -1110,7 +1096,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Salı ",
                 "الثلاثاء",
                 R.raw.tuesday,
@@ -1118,7 +1104,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "çarşamba ",
                 "الاربعاء",
                 R.raw.wednesday,
@@ -1126,7 +1112,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Perşembe ",
                 "الخميس",
                 R.raw.thursday,
@@ -1134,7 +1120,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Cuma ",
                 "الجمعة",
                 R.raw.friday,
@@ -1142,7 +1128,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gün ",
                 "يوم",
                 R.raw.day,
@@ -1150,7 +1136,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Hafta ",
                 "اسبوع",
                 R.raw.week,
@@ -1158,10 +1144,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Ay ",
                 "شهر",
                 R.raw.month,
@@ -1169,7 +1155,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sene ",
                 "سنة",
                 R.raw.year,
@@ -1177,7 +1163,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Yaz",
                 "صيف",
                 R.raw.summer,
@@ -1185,7 +1171,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kış",
                 "شتاء",
                 R.raw.winter,
@@ -1193,7 +1179,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sonbahar",
                 "خريف",
                 R.raw.autumn,
@@ -1201,7 +1187,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ilkbahar",
                 "ربيع",
                 R.raw.spring,
@@ -1209,7 +1195,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ocak",
                 "كانون ثاني",
                 R.raw.january,
@@ -1217,7 +1203,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Şubat",
                 "شباط",
                 R.raw.february,
@@ -1225,7 +1211,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Mart",
                 "اذار",
                 R.raw.march,
@@ -1233,7 +1219,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Nisan",
                 "نيسان",
                 R.raw.april,
@@ -1241,7 +1227,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Mayıs",
                 "أيّار",
                 R.raw.may,
@@ -1249,7 +1235,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Haziran",
                 "حزيران",
                 R.raw.june,
@@ -1257,10 +1243,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Temmuz",
                 "تمّوز",
                 R.raw.july,
@@ -1268,7 +1254,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ağustos",
                 "آب",
                 R.raw.august,
@@ -1276,7 +1262,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Eylül",
                 "أيلول",
                 R.raw.september,
@@ -1284,7 +1270,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ekim",
                 "تشرين أول",
                 R.raw.october,
@@ -1292,7 +1278,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Kasım",
                 "تشرين ثاني",
                 R.raw.november,
@@ -1300,7 +1286,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Aralık",
                 "كانون أول",
                 R.raw.december,
@@ -1308,7 +1294,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Zaman",
                 "وقت",
                 R.raw.time,
@@ -1316,7 +1302,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Saat",
                 "ساعة",
                 R.raw.hour,
@@ -1324,7 +1310,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Dakika",
                 "دقيقة",
                 R.raw.minute,
@@ -1332,7 +1318,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Saniye",
                 "ثانية",
                 R.raw.second,
@@ -1343,19 +1329,19 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON FOUR
-    fun addColors(){
+    private fun addColors() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.colors,
                 this, Keys.LESSON_FOUR
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "renk",
                 "لون",
                 R.raw.color,
@@ -1363,7 +1349,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "mavi",
                 "ازرق",
                 R.raw.blue,
@@ -1371,7 +1357,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "gri",
                 "رمادي",
                 R.raw.grey,
@@ -1379,7 +1365,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sarı",
                 "اصفر",
                 R.raw.yellow,
@@ -1387,7 +1373,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "siyah",
                 "أسود",
                 R.raw.black,
@@ -1395,7 +1381,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "turuncu",
                 "برتقالي",
                 R.raw.orange,
@@ -1403,7 +1389,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "pembe",
                 "وردي",
                 R.raw.pink,
@@ -1411,7 +1397,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kırmızı",
                 "احمر",
                 R.raw.red,
@@ -1419,10 +1405,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "yeşil",
                 "اخضر",
                 R.raw.green,
@@ -1430,7 +1416,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "mor",
                 "ارجواني",
                 R.raw.purple,
@@ -1438,7 +1424,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "beyaz",
                 "ابيض",
                 R.raw.white,
@@ -1446,7 +1432,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "açık",
                 "فاتح",
                 R.raw.lighter,
@@ -1454,7 +1440,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "koyu",
                 "غامق",
                 R.raw.darker,
@@ -1462,7 +1448,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "parlak",
                 "لامع",
                 R.raw.bright,
@@ -1472,17 +1458,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON FIVE
-    fun addParts(){
+    private fun addParts() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.brain_icon,
                 this, Keys.LESSON_FIVE
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "vucut",
                 "جسم",
                 R.raw.body,
@@ -1490,7 +1476,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "baş",
                 "راس",
                 R.raw.head,
@@ -1498,7 +1484,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "saç",
                 "شغر",
                 R.raw.hair,
@@ -1506,10 +1492,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "beyin",
                 "عقل",
                 R.raw.brian,
@@ -1517,7 +1503,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "alın",
                 "جبين",
                 R.raw.front,
@@ -1525,7 +1511,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kulak",
                 "اذن",
                 R.raw.ear,
@@ -1533,7 +1519,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "göz",
                 "عين",
                 R.raw.eye,
@@ -1541,7 +1527,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kirpik",
                 "رمش",
                 R.raw.eyelash,
@@ -1549,7 +1535,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kaş",
                 "حاجب",
                 R.raw.eyebrow,
@@ -1557,7 +1543,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "burun",
                 "انف",
                 R.raw.nose,
@@ -1565,7 +1551,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yanak",
                 "خد",
                 R.raw.cheek,
@@ -1573,10 +1559,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "yüz",
                 "وجه",
                 R.raw.face,
@@ -1584,7 +1570,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "omuz",
                 "كتف",
                 R.raw.shoulder,
@@ -1592,7 +1578,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "boyun",
                 "رقبه",
                 R.raw.neck,
@@ -1600,7 +1586,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kol",
                 "ذراع",
                 R.raw.arm,
@@ -1608,7 +1594,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "el",
                 "يد",
                 R.raw.hand,
@@ -1616,7 +1602,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "parmak",
                 "اصبح",
                 R.raw.finger,
@@ -1624,7 +1610,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "tırnak",
                 "اظفر",
                 R.raw.nail,
@@ -1632,7 +1618,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sırt",
                 "ظهر",
                 R.raw.back,
@@ -1640,7 +1626,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "göğüs",
                 "صدر",
                 R.raw.breast,
@@ -1648,10 +1634,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "karın",
                 "بطن",
                 R.raw.abdomen,
@@ -1659,7 +1645,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yürek",
                 "قلب",
                 R.raw.heart,
@@ -1667,7 +1653,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kara ciğer",
                 "كبد",
                 R.raw.liver,
@@ -1675,7 +1661,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ak ciğer",
                 "رئة",
                 R.raw.lungs,
@@ -1683,7 +1669,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bıyık",
                 "شارب",
                 R.raw.whiskers,
@@ -1691,7 +1677,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sakal",
                 "لحية",
                 R.raw.beard,
@@ -1699,7 +1685,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dudak",
                 "شفّة",
                 R.raw.lip,
@@ -1707,7 +1693,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ağız",
                 "فم",
                 R.raw.month,
@@ -1715,7 +1701,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "diş ",
                 "سن",
                 R.raw.tooth,
@@ -1723,7 +1709,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dil",
                 "لسان",
                 R.raw.tongue,
@@ -1731,10 +1717,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "ayak",
                 "قدم",
                 R.raw.foot,
@@ -1742,7 +1728,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kan",
                 "دم",
                 R.raw.blood,
@@ -1750,7 +1736,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "deri ",
                 "جلد",
                 R.raw.skin,
@@ -1760,17 +1746,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON SIX
-    fun addHome(){
+    private fun addHome() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.tools_icon,
                 this, Keys.LESSON_SIX
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "kapı",
                 "باب",
                 R.raw.door,
@@ -1778,7 +1764,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "masa",
                 "طاولة",
                 R.raw.table,
@@ -1786,10 +1772,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "telefon",
                 "هاتف",
                 R.raw.phone,
@@ -1797,7 +1783,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "radyo",
                 "راديو",
                 R.raw.radio,
@@ -1805,7 +1791,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sandalye",
                 "كرسي",
                 R.raw.chair,
@@ -1813,7 +1799,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ocak",
                 "فرن الغاز",
                 R.raw.furnace,
@@ -1821,7 +1807,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "koltuk",
                 "كنب",
                 R.raw.armchair,
@@ -1829,7 +1815,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bulaşık yıkama makinesi",
                 "غسالة صحون",
                 R.raw.dish_washing_machine,
@@ -1837,7 +1823,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yatak",
                 "سرير",
                 R.raw.bed,
@@ -1845,7 +1831,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "buzdolabı",
                 "ثلاجة",
                 R.raw.refrigerator,
@@ -1853,7 +1839,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "daire",
                 "شقة",
                 R.raw.apartment,
@@ -1861,7 +1847,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kablo",
                 "كابل",
                 R.raw.cabel,
@@ -1869,10 +1855,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "merdiven",
                 "درج",
                 R.raw.stairs,
@@ -1880,7 +1866,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "mum",
                 "شمعة",
                 R.raw.candle,
@@ -1888,7 +1874,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "halı",
                 "سجادة",
                 R.raw.carpet,
@@ -1896,7 +1882,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "çöp",
                 "نفايات",
                 R.raw.garbage,
@@ -1904,7 +1890,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "televizyon",
                 "تلفاز",
                 R.raw.telev,
@@ -1912,7 +1898,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "resim",
                 "صورة",
                 R.raw.picture,
@@ -1920,7 +1906,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "balkon",
                 "بلكونة",
                 R.raw.balkon,
@@ -1928,7 +1914,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "pencere",
                 "نافذة",
                 R.raw.window,
@@ -1936,7 +1922,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yatak odası",
                 "غرفة النوم",
                 R.raw.bedroom,
@@ -1944,7 +1930,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "mutfak",
                 "مطبخ",
                 R.raw.kitchen,
@@ -1952,7 +1938,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ev",
                 "بيت",
                 R.raw.home,
@@ -1960,10 +1946,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "yemek odası",
                 "غرفة الطعام",
                 R.raw.diningroom,
@@ -1971,7 +1957,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "salon",
                 "صالون",
                 R.raw.salon,
@@ -1979,7 +1965,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "tabak",
                 "طبق",
                 R.raw.plate,
@@ -1987,7 +1973,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "duş",
                 "دُش",
                 R.raw.shower,
@@ -1995,7 +1981,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ayna ",
                 "مرآة",
                 R.raw.mirror,
@@ -2003,7 +1989,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yastık",
                 "وسادة",
                 R.raw.pillow,
@@ -2011,7 +1997,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "perde",
                 "ستارة",
                 R.raw.curtain,
@@ -2019,7 +2005,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "alet",
                 "أداة",
                 R.raw.tool,
@@ -2027,7 +2013,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kürek",
                 "مجرفة",
                 R.raw.shovel,
@@ -2035,7 +2021,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "iğne ",
                 "إبرة",
                 R.raw.needle,
@@ -2043,7 +2029,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "çekiç",
                 "مطرقة",
                 R.raw.hammer,
@@ -2051,10 +2037,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "testere",
                 "منشار",
                 R.raw.saw,
@@ -2062,7 +2048,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "makas",
                 "مقص",
                 R.raw.cuter,
@@ -2072,17 +2058,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON SEVEN
-    fun addSchool(){
+    private fun addSchool() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.school,
                 this, Keys.LESSON_SEVEN
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "öğrenci",
                 "طالب",
                 R.raw.student,
@@ -2090,7 +2076,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "hoca",
                 "معلم",
                 R.raw.teacher,
@@ -2098,10 +2084,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "okul",
                 "مدرسة",
                 R.raw.school,
@@ -2109,7 +2095,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "üniversite",
                 "جامعة",
                 R.raw.university,
@@ -2117,7 +2103,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ilk okul",
                 "المدرسة الابتدائية",
                 R.raw.primary_school,
@@ -2125,7 +2111,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "lise",
                 "ثانوية",
                 R.raw.high_school,
@@ -2133,7 +2119,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "öğretmek",
                 "التعليم",
                 R.raw.teach,
@@ -2141,7 +2127,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bilgisayar",
                 "حاسوب",
                 R.raw.computer,
@@ -2149,7 +2135,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "hesap makinesi",
                 "الة حاسبة",
                 R.raw.calculator,
@@ -2157,7 +2143,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kitap",
                 "كتاب",
                 R.raw.book,
@@ -2165,10 +2151,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "defter",
                 "دفتر",
                 R.raw.book_2,
@@ -2176,7 +2162,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kalem",
                 "قلم",
                 R.raw.pen,
@@ -2184,7 +2170,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "silgi",
                 "ممحاة",
                 R.raw.eraser,
@@ -2192,7 +2178,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ödev",
                 "واجب",
                 R.raw.homework,
@@ -2200,7 +2186,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sınıf",
                 "قاعة الدرس",
                 R.raw.school_class,
@@ -2208,7 +2194,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sözlük",
                 "قاموس",
                 R.raw.dictionary,
@@ -2216,7 +2202,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kütüphane",
                 "مكتبة",
                 R.raw.library,
@@ -2224,7 +2210,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sınav",
                 "امتحان",
                 R.raw.exam,
@@ -2232,10 +2218,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "alıştırma",
                 "تمرين",
                 R.raw.exercise,
@@ -2243,7 +2229,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dönem",
                 "فصل دراسي",
                 R.raw.period,
@@ -2251,7 +2237,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yorum",
                 "تعليق",
                 R.raw.comment,
@@ -2259,7 +2245,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kolej",
                 "كلية",
                 R.raw.college,
@@ -2269,17 +2255,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON EIGHT
-    fun addSefat(){
+    private fun addSefat() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.adjectives,
                 this, Keys.LESSON_EIGHT
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "uzun",
                 "طويل",
                 R.raw.long_word,
@@ -2287,7 +2273,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kısa",
                 "قصير",
                 R.raw.short_word,
@@ -2295,10 +2281,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "büyük",
                 "كبير",
                 R.raw.big,
@@ -2306,7 +2292,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "geniş",
                 "واسع",
                 R.raw.broad,
@@ -2314,7 +2300,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "küçük",
                 "صفير",
                 R.raw.small,
@@ -2322,7 +2308,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kalın",
                 "سميك",
                 R.raw.thick,
@@ -2330,7 +2316,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ince",
                 "رقيق",
                 R.raw.thin,
@@ -2338,7 +2324,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yeni",
                 "جديد",
                 R.raw.new_word,
@@ -2346,7 +2332,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "eski",
                 "قديم",
                 R.raw.old,
@@ -2354,7 +2340,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ucuz",
                 "رخيص",
                 R.raw.cheap,
@@ -2362,10 +2348,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "pahalı",
                 "غالي",
                 R.raw.expensive,
@@ -2373,7 +2359,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "genç",
                 "شاب",
                 R.raw.young,
@@ -2381,7 +2367,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Yaşlı",
                 "عجوز",
                 R.raw.old_2,
@@ -2389,7 +2375,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yanlış",
                 "خاطئ",
                 R.raw.false_word,
@@ -2397,7 +2383,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "doğru",
                 "صحيح",
                 R.raw.true_word,
@@ -2405,7 +2391,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "iyi",
                 "جيد",
                 R.raw.good,
@@ -2413,7 +2399,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kötü",
                 "سيئ",
                 R.raw.bad,
@@ -2421,10 +2407,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "zor",
                 "صعب",
                 R.raw.difficult,
@@ -2432,7 +2418,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kolay",
                 "سهل",
                 R.raw.easy,
@@ -2442,10 +2428,10 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON NINE
-    fun addPrepositions(){
+    private fun addPrepositions() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار",
                 R.drawable.prepositions_icon,
                 this,
@@ -2454,7 +2440,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "önünde",
                 "امام",
                 R.raw.in_front_of,
@@ -2462,7 +2448,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "arkasında",
                 "خلف",
                 R.raw.behind,
@@ -2470,10 +2456,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "önce",
                 "قبل",
                 R.raw.before,
@@ -2481,7 +2467,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sonra",
                 "بعد",
                 R.raw.after,
@@ -2489,7 +2475,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "içinde",
                 "داخل",
                 R.raw.in_word,
@@ -2497,7 +2483,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ile",
                 "مع",
                 R.raw.with,
@@ -2505,7 +2491,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "olmadan",
                 "بدون",
                 R.raw.without,
@@ -2513,7 +2499,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "dışında",
                 "خارج",
                 R.raw.outside,
@@ -2521,7 +2507,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "üzerinde",
                 "فوق",
                 R.raw.over,
@@ -2529,7 +2515,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "altında",
                 "تحت",
                 R.raw.under,
@@ -2537,7 +2523,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "hakkında",
                 "حول",
                 R.raw.about,
@@ -2545,7 +2531,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "karşısında",
                 "ضد",
                 R.raw.against,
@@ -2553,10 +2539,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "ve",
                 "و",
                 R.raw.and,
@@ -2564,7 +2550,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "gibi",
                 "مثل",
                 R.raw.as_word,
@@ -2572,7 +2558,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "arasında",
                 "بين",
                 R.raw.between,
@@ -2580,7 +2566,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "ama",
                 "لكن",
                 R.raw.but,
@@ -2588,7 +2574,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "için",
                 "لـ (من اجل )",
                 R.raw.for_word,
@@ -2596,7 +2582,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "itibaren",
                 "من",
                 R.raw.day,
@@ -2604,7 +2590,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "içinde",
                 "في",
                 R.raw.in_2,
@@ -2612,7 +2598,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yerine",
                 "بدلا من",
                 R.raw.instead,
@@ -2620,7 +2606,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "yakınında",
                 "قرب",
                 R.raw.near,
@@ -2628,10 +2614,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Veya",
                 "أو",
                 R.raw.or,
@@ -2639,7 +2625,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "kadar",
                 "حتى",
                 R.raw.until,
@@ -2647,7 +2633,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Böylece",
                 "لكي",
                 R.raw.thus,
@@ -2655,7 +2641,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "beri",
                 "منذ",
                 R.raw.since,
@@ -2665,17 +2651,17 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON TEN
-    fun addPronouns(){
+    private fun addPronouns() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
                 this, Keys.LESSON_TEN
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "ben",
                 "أنا",
                 R.raw.i_word,
@@ -2683,7 +2669,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "sen",
                 "أنت",
                 R.raw.you,
@@ -2691,10 +2677,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "o",
                 "هو",
                 R.raw.he_she_is,
@@ -2702,7 +2688,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "o",
                 "هي",
                 R.raw.he_she_is,
@@ -2710,7 +2696,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "biz",
                 "نحن",
                 R.raw.we,
@@ -2718,7 +2704,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Siz",
                 "انتم",
                 R.raw.you_siz,
@@ -2726,7 +2712,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onlar",
                 "هم",
                 R.raw.them,
@@ -2734,7 +2720,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Seni seviyorum",
                 "أنا أحبك",
                 R.raw.i_love_you,
@@ -2742,7 +2728,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "O güzel",
                 "هي جميلة",
                 R.raw.she_is_beautiful,
@@ -2750,7 +2736,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Mutluyuz",
                 "نحن سعداء",
                 R.raw.we_are_happy,
@@ -2758,10 +2744,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "beni, bana",
                 "ني( مثال اعطني )",
                 R.raw.beni_bana,
@@ -2769,7 +2755,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "seni, sana",
                 "ك ( مثال اعطاك )",
                 R.raw.seni_sana,
@@ -2777,7 +2763,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onu, ona",
                 "ه ( مثال اعطاها )",
                 R.raw.onu_ona,
@@ -2785,7 +2771,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onu, ona",
                 "ها",
                 R.raw.onu_ona,
@@ -2793,7 +2779,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bizi, bize",
                 "نا ( مثال اعطانا )",
                 R.raw.bizi_bize,
@@ -2801,7 +2787,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sizi, size",
                 "كم ( مثال اعطاكم )",
                 R.raw.sizi_size,
@@ -2809,7 +2795,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onları, onlara",
                 "هم ( مثال اعطاهم )",
                 R.raw.onlari_onlara,
@@ -2817,10 +2803,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Bizi arayablir misin?",
                 "هل يمكنك الاتصال بنا؟",
                 R.raw.can_you_call_us,
@@ -2828,7 +2814,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Bana telefon numaranı ver",
                 "أعطني رقم هاتفك",
                 R.raw.give_me_your_phone_number,
@@ -2836,7 +2822,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Ona beni aramasını söyle",
                 "قل له أن يتصل بي",
                 R.raw.tell_her_him_to_call_me,
@@ -2844,7 +2830,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "benim",
                 "ي ( مثال بلدك )",
                 R.raw.benim,
@@ -2852,7 +2838,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "senin",
                 "ك ( مثال بلدك )",
                 R.raw.your,
@@ -2860,7 +2846,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onun",
                 "ه ( مثال بلده )",
                 R.raw.his_her,
@@ -2868,10 +2854,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "onun",
                 "ها ( مثال بلدها )",
                 R.raw.his_her,
@@ -2879,7 +2865,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bizim",
                 "نا ( مثال بلدنا )",
                 R.raw.our,
@@ -2887,7 +2873,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sizin",
                 "كم ( مثال بلدكم )",
                 R.raw.sizin,
@@ -2895,7 +2881,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onların",
                 "هم ( مثال بلدهم )",
                 R.raw.onlarin,
@@ -2903,7 +2889,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Onun e-postası...",
                 "بريده الاركتروني هو...",
                 R.raw.her_his_email,
@@ -2911,7 +2897,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Benim telefon numaram...",
                 "رقهم هاتفي...",
                 R.raw.my_phone_number_is,
@@ -2919,7 +2905,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Hayalimiz jordan ziyaret etmek",
                 "حلمنا زيارة الاردن",
                 R.raw.our_dream_is_to_visit_jordan,
@@ -2927,7 +2913,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "benimki",
                 "لي ( مثال كتاب لي )",
                 R.raw.benimki,
@@ -2935,10 +2921,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "seninki",
                 "لك ( مثال كتاب لك )",
                 R.raw.seninki,
@@ -2946,7 +2932,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onunki",
                 "له ( مثال كتاب لك )",
                 R.raw.onunki,
@@ -2954,7 +2940,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onunki",
                 "له ( مثال كتاب له )",
                 R.raw.onunki,
@@ -2962,7 +2948,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "bizimki",
                 "لنا ( مثال حلوة لنا )",
                 R.raw.bizimki,
@@ -2970,7 +2956,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sizinki",
                 "لكم ( مثال دروس لكم )",
                 R.raw.sizinki,
@@ -2978,7 +2964,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "onlarinki",
                 "لهم ( مثال دروس لهم )",
                 R.raw.onlarinki,
@@ -2986,7 +2972,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Bu kalem seninki mi?",
                 "هل هذا القلم لك؟",
                 R.raw.is_this_your_pencil,
@@ -2994,7 +2980,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Bu kitap benimki",
                 "الكتاب هو لي",
                 R.raw.this_book_is_for_me,
@@ -3002,7 +2988,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "zafer bizimki",
                 "النصر لنا",
                 R.raw.zafer_bizimdir,
@@ -3012,146 +2998,146 @@ class LearnListen : AppCompatActivity() {
     }
 
     // LESSON ELEVEN
-    fun addClothes(){
+    private fun addClothes() {
 
         adapter.add(
-            start_quiz(
+            StartQuiz(
                 "استمع الى جميع الكلمات ثم انتقل الى الاختبار", R.drawable.pronouns,
                 this, Keys.LESSON_ELEVEN
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kemer", "حزام", R.raw.belt, this
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Elbiseler", "ملابس", R.raw.clothes, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Palto", "معطف", R.raw.coat, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Elbise", "فستان", R.raw.dress, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Gözlük", "نظارات", R.raw.glasses, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Eldiven", "قفازات", R.raw.glove, this
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Şapka", "قبعة", R.raw.hat, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Ceket", "معطف", R.raw.jacket, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Pantolon", "بنطلون", R.raw.trousers, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Yüzük", "خاتم", R.raw.ring, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Gömlek", "قميص", R.raw.shirt, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Ayakkabı", "احذية", R.raw.shoes, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Çorap", "جوارب ", R.raw.socks, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Takım elbise", "بذلة", R.raw.suit, this
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Süveter", "سترة", R.raw.sweater, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kravat", "ربطة عنق", R.raw.tie, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Şemsiye", "شمسية", R.raw.umbrella, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "İç çamaşırı", "ملابس داخلية", R.raw.underwear, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Cüzdan", "شمسية", R.raw.wallet, this
             )
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kol saati", "ساعة يد", R.raw.watch, this
             )
         )
     }
 
     // LESSON TWELVE
-    fun addVerps(){
+    private fun addVerbs() {
         adapter.add(
-            word_item(
+            WordItem(
                 "Sürmek",
                 "الدفع",
                 R.raw.lead,
@@ -3159,7 +3145,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Bulmak",
                 "العثور على",
                 R.raw.find,
@@ -3167,7 +3153,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Vermek",
                 "منح",
                 R.raw.give,
@@ -3175,7 +3161,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sahip olmak",
                 "الامتلاك",
                 R.raw.have,
@@ -3183,10 +3169,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Bilmek",
                 "المعرفة",
                 R.raw.know,
@@ -3194,7 +3180,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Öğrenmek",
                 "التعلم",
                 R.raw.learn,
@@ -3202,7 +3188,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Sevmek",
                 "حب",
                 R.raw.love,
@@ -3210,10 +3196,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Oynamak",
                 "لعب",
                 R.raw.play,
@@ -3221,7 +3207,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Okumak",
                 "القراءة",
                 R.raw.read,
@@ -3229,7 +3215,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Görmek",
                 "رؤية",
                 R.raw.see,
@@ -3237,7 +3223,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gülümsemek",
                 "الابتسامة",
                 R.raw.smile,
@@ -3245,10 +3231,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Konuşmak",
                 "التكلم",
                 R.raw.talk,
@@ -3256,7 +3242,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Düşünmek",
                 "التفكير",
                 R.raw.think,
@@ -3264,7 +3250,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Anlamak",
                 "الفهم",
                 R.raw.understand,
@@ -3272,7 +3258,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Çalışmak",
                 "العمل",
                 R.raw.work,
@@ -3280,10 +3266,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Yazmak",
                 "الكتابة",
                 R.raw.write,
@@ -3292,9 +3278,9 @@ class LearnListen : AppCompatActivity() {
         )
     }
 
-    fun addPresent(){
+    private fun addPresent() {
         adapter.add(
-            word_item(
+            WordItem(
                 "Seni görüyorum",
                 "أنا أراك",
                 R.raw.he_she_knows_my_friend,
@@ -3303,7 +3289,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kalemle yazarım",
                 "أنا أكتب بالقلم",
                 R.raw.i_write_with_pencil,
@@ -3312,7 +3298,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Elmaları seviyorsun",
                 "أنت تحب التفاح",
                 R.raw.you_love_apples,
@@ -3321,7 +3307,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Para verirsin",
                 "أنت تعطي المال",
                 R.raw.you_give_a_money,
@@ -3329,10 +3315,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Tenis oynarsın",
                 "أنت تلعب كرة المضرب",
                 R.raw.you_play_tennis,
@@ -3341,7 +3327,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kitap okur",
                 "هو يقرأ كتاب",
                 R.raw.reading_a_book,
@@ -3350,7 +3336,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Beni anlıyor",
                 "هو يفهمني",
                 R.raw.understand_me,
@@ -3358,10 +3344,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Kedisi var",
                 "هي لديها قطة",
                 R.raw.she_has_a_cat,
@@ -3370,7 +3356,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Arkadaşımı tanıyor",
                 "هي تعرف صديقي",
                 R.raw.he_she_knows_my_friend,
@@ -3379,7 +3365,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Öğrenmek istiyoruz",
                 "نحن نريد أن نتعلم",
                 R.raw.we_want_to_learn,
@@ -3388,7 +3374,7 @@ class LearnListen : AppCompatActivity() {
         )
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Burada çalışıyorsunuz",
                 "أنتم تعملون هنا",
                 R.raw.you_work_here,
@@ -3396,10 +3382,10 @@ class LearnListen : AppCompatActivity() {
             )
         )
 
-        adapter.add(native_ad_item(this))
+        adapter.add(NativeAdItem(this))
 
         adapter.add(
-            word_item(
+            WordItem(
                 "Fransızca konuşuyorsunuz",
                 "أنتم تتكلمون الفرنسية",
                 R.raw.you_speak_french,
@@ -3407,7 +3393,7 @@ class LearnListen : AppCompatActivity() {
             )
         )
         adapter.add(
-            word_item(
+            WordItem(
                 "Gülümsüyorlar",
                 "هم يتبسمون",
                 R.raw.they_smiles,

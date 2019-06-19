@@ -10,7 +10,10 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.word_item.view.*
 import com.lemonlab.learnturkish.R
 
-class word_item(var text:String, var arabic:String, var sound:Int, var activity:Activity):Item<ViewHolder>() {
+class WordItem(
+    var text: String, private var arabic: String,
+    var sound: Int, private var activity: Activity
+) : Item<ViewHolder>() {
 
     override fun getLayout(): Int {
         return R.layout.word_item
@@ -25,14 +28,14 @@ class word_item(var text:String, var arabic:String, var sound:Int, var activity:
         viewHolder.itemView.play_sound_letter_btn.progress = 0.0f
 
         viewHolder.itemView.play_sound_letter_btn.setOnClickListener {
-            if (activity.applicationContext != null){
+            if (activity.applicationContext != null) {
                 val player = MediaPlayer.create(activity.applicationContext, sound)
                 player.start()
                 viewHolder.itemView.play_sound_letter_btn.playAnimation()
                 player.setOnCompletionListener {
                     it.release()
                     viewHolder.itemView.play_sound_letter_btn.reverseAnimationSpeed()
-                    Log.i("word_item", "player released")
+                    Log.i("WordItem", "player released")
                 }
             }
         }

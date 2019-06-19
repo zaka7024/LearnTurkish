@@ -11,12 +11,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/correct_animation"
+            app:lottie_loop="true"
             app:layout_constraintEnd_toEndOf="@+id/result_text_view"
             app:layout_constraintStart_toStartOf="@+id/result_text_view"
             android:layout_marginTop="120dp"
             app:layout_constraintTop_toBottomOf="@+id/result_text_view"
             android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="0.475"/>
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,8 +33,9 @@
             android:fontFamily="@font/cairo"
             android:textStyle="bold"
             android:textColor="@color/deepBlue"
-            android:text="احسنت لقد انهيت المسار وحصلت على"
+            android:text="@string/testFinished"
             android:gravity="center"/>
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,19 +47,23 @@
             android:textSize="24sp"
             android:fontFamily="@font/cairo"
             tools:text="10"
-            android:textColor="@color/deepBlue" android:textStyle="bold" android:layout_marginStart="32dp"/>
+            android:textColor="@color/deepBlue"
+            android:textStyle="bold"
+            android:layout_marginStart="32dp"/>
+
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="50dp"
             android:layout_height="0dp"
             app:lottie_fileName="score.json"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:layout_constraintEnd_toStartOf="@+id/score_text_view_result_activity" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/score_text_view_result_activity"
+            android:layout_marginEnd="8dp"
             app:layout_constraintTop_toTopOf="@+id/score_text_view_result_activity"
             app:layout_constraintBottom_toBottomOf="@+id/score_text_view_result_activity"/>
 
     <Button
-            android:text="الرئيسية"
+            android:text="@string/home"
             android:id="@+id/home_btn"
             android:fontFamily="@font/cairo"
             android:layout_width="160dp"

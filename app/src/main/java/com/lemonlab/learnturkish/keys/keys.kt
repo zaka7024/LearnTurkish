@@ -1,6 +1,6 @@
 package com.lemonlab.learnturkish.keys
 
-class Keys{
+class Keys {
     companion object {
         var SCORE = "USER_SCORE"
         var RESULT_SCORE = "RESULT"

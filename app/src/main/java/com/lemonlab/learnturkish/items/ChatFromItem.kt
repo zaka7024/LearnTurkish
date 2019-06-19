@@ -4,24 +4,24 @@ import android.animation.Animator
 import android.content.Context
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
+import com.lemonlab.learnturkish.R
+import com.lemonlab.learnturkish.module.Chat
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.chat_to_item.view.*
-import com.lemonlab.learnturkish.R
-import com.lemonlab.learnturkish.module.chat
+import kotlinx.android.synthetic.main.chat_from_item.view.*
 
-class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>() {
+class ChatFromItem(var chat_item: Chat, var context: Context) : Item<ViewHolder>() {
 
     var isTurkey = true
 
     override fun getLayout(): Int {
-        return R.layout.chat_to_item
+        return R.layout.chat_from_item
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.chat_text_view.text = chat_item.text
 
-        viewHolder.itemView.chat_to_image.setImageResource(R.drawable.girl_1)
+        viewHolder.itemView.chat_from_image.setImageResource(R.drawable.girl_2)
 
         // auto play sound
         YoYo.with(Techniques.Pulse).duration((500).toLong()).playOn(viewHolder.itemView)
@@ -29,12 +29,13 @@ class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>()
         // change text from tu to ar OR at to tu
         viewHolder.itemView.setOnClickListener {
 
-            YoYo.with(Techniques.FadeOut).withListener(object :Animator.AnimatorListener{
+            YoYo.with(Techniques.FadeOut).withListener(object : Animator.AnimatorListener {
                 override fun onAnimationRepeat(animation: Animator?) {
 
                 }
 
                 override fun onAnimationEnd(animation: Animator?) {
+
                     isTurkey = !isTurkey
 
                     if (isTurkey)
@@ -56,6 +57,7 @@ class chat_to_item(var chat_item: chat, var context: Context):Item<ViewHolder>()
             }).duration(200).playOn(viewHolder.itemView.chat_text_view)
 
         }
+
     }
 
 }

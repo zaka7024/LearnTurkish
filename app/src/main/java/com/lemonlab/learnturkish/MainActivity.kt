@@ -3,20 +3,16 @@ package com.lemonlab.learnturkish
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.Slide
-import android.transition.TransitionInflater
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import com.lemonlab.learnturkish.keys.Keys
-import com.lemonlab.learnturkish.R
 import kotlinx.android.synthetic.main.dialog_layout.view.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var dialog:Dialog
+    private lateinit var dialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,35 +25,38 @@ class MainActivity : AppCompatActivity() {
         * Check if user does not log in_word using preferences from registration activity
         * */
 
-        if(!CheckIfNotLoged()){
-            StartRegisterActivity()
+        if (!checkIfNotLoged()) {
+            startRegisterActivity()
         }
 
         initData()
 
         username_textview.text = getUserName()
-        score_text_view.text = getUserScore().toString() + " كأس "
+        score_text_view.text = getString(R.string.cup, getUserScore().toString())
 
         start_btn.setOnClickListener {
             startLearn()
         }
 
         rate_btn.setOnClickListener {
-            var intent = Intent(Intent.ACTION_VIEW)
+            val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("market://details?id=com.lemonlab.learnturkish")
             startActivity(intent)
         }
 
         share_btn.setOnClickListener {
-            var intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_TEXT, "تظبيق تعلم التركية مجانا - تطبيق يساعدك على تعلم اللغة التركية بطريقة تفعالية - يحتوي التطبيق على الكثير من المفردات و الاختبارات والمحادثات التي تساعد في رحلة تعلمك للغة\n" +
-                    "https://bit.ly/2MpcpLW")
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(
+                Intent.EXTRA_TEXT,
+                "تظبيق تعلم التركية مجانا - تطبيق يساعدك على تعلم اللغة التركية بطريقة تفعالية - يحتوي التطبيق على الكثير من المفردات و الاختبارات والمحادثات التي تساعد في رحلة تعلمك للغة\n" +
+                        "https://bit.ly/2MpcpLW"
+            )
             intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent,"مشاركة الى"))
+            startActivity(Intent.createChooser(intent, "مشاركة الى"))
         }
 
         settings_btn.setOnClickListener {
-            var intent = Intent(this, SettingsActivity::class.java)
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
@@ -68,38 +67,38 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun CheckIfNotLoged():Boolean{
-        var pref = getSharedPreferences("app_data",0)
-        var result = pref.getBoolean("LOGED",false)
-        return result
+    private fun checkIfNotLoged(): Boolean {
+        val pref = getSharedPreferences("app_data", 0)
+        return pref.getBoolean("LOGED", false)
     }
 
-    fun StartRegisterActivity(){
-        var intent = Intent(this, RegistrationActivity::class.java)
+    private fun startRegisterActivity() {
+        val intent = Intent(this, RegistrationActivity::class.java)
         startActivity(intent)
         this.finish()
     }
 
-    fun getUserName():String{
+    private fun getUserName(): String {
         val shared = getSharedPreferences("app_data", 0)
-        var name = shared.getString("USER_NAME", "USER")
-        return name
+        return shared.getString("USER_NAME", "USER")!!
     }
 
-    fun startLearn(){
-        var intent = Intent(this, SubjectActivity::class.java)
+    private fun startLearn() {
+        val intent = Intent(this, SubjectActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
 
-    fun getUserScore():Int{
+    private fun getUserScore(): Int {
         val ref = getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
     }
 
-    fun showDialog(){
-        val view = layoutInflater.inflate(R.layout.dialog_layout,null, false)
-        view.message_text_view.text = "يمثل هذا الرقم عدد النقاط التي تمتلكها، من خلال اكمالك للاختبارات سوف تحصل على النقاط، كلما حصلت على نقاط اكثر سوف تتمكن من فتح الدروس المقفلة"
+    private fun showDialog() {
+        val nullParent = null
+        val view = layoutInflater.inflate(R.layout.dialog_layout, nullParent, false)
+        view.message_text_view.text =
+            "يمثل هذا الرقم عدد النقاط التي تمتلكها، من خلال اكمالك للاختبارات سوف تحصل على النقاط، كلما حصلت على نقاط اكثر سوف تتمكن من فتح الدروس المقفلة"
         view.exit_btn.setOnClickListener {
             dialog.dismiss()
         }
@@ -107,11 +106,11 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
-    fun initData(){
-        val ref = getSharedPreferences("app_data",0)
+    private fun initData() {
+        val ref = getSharedPreferences("app_data", 0)
         val saved = ref.getBoolean("init_data", false)
-        if (!saved){
-            with(ref.edit()){
+        if (!saved) {
+            with(ref.edit()) {
                 putBoolean("init_data", true)
                 /*putBoolean(Keys.LESSON_QUIZ_ONE_LOCKED, false)
                 putBoolean(Keys.LESSON_QUIZ_TWO_LOCKED, true)

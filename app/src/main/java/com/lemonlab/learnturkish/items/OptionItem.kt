@@ -1,7 +1,6 @@
 package com.lemonlab.learnturkish.items
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -12,7 +11,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.option_item.view.*
 
-class option_item(
+class OptionItem(
     private var title: String, private var type: String,
     private var activity: Activity, private var icon: Int
 ) : Item<ViewHolder>() {
@@ -72,11 +71,16 @@ class option_item(
         dialog.show()
     }
 
-    private fun moreApps(){
-        activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=Lemon+Lab")))
+    private fun moreApps() {
+        activity.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/developer?id=Lemon+Lab")
+            )
+        )
     }
 
-    private fun whyAds(){
+    private fun whyAds() {
         val dialog: AlertDialog.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AlertDialog.Builder(activity, android.R.style.Theme_Material_Dialog_Alert)
         } else {
@@ -91,7 +95,7 @@ class option_item(
         dialog.show()
     }
 
-    private fun creditsDialog(){
+    private fun creditsDialog() {
         val dialog: AlertDialog.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AlertDialog.Builder(activity, android.R.style.Theme_Material_Dialog_Alert)
         } else {
@@ -109,10 +113,10 @@ class option_item(
     override fun createViewHolder(itemView: View): ViewHolder {
         itemView.setOnClickListener {
             when (type) {
-                "ABOUT_US" ->  aboutUs()
-                "MORE_APPS" ->  moreApps()
-                "PRIVACY" ->  privacyPolicy()
-                "WHY_ADS" ->  whyAds()
+                "ABOUT_US" -> aboutUs()
+                "MORE_APPS" -> moreApps()
+                "PRIVACY" -> privacyPolicy()
+                "WHY_ADS" -> whyAds()
                 "CREDITS" -> creditsDialog()
             }
         }

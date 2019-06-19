@@ -7,7 +7,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.native_ad_layout.view.*
 
-class native_ad_item(var context: Context):Item<ViewHolder>() {
+class NativeAdItem(var context: Context) : Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.native_ad_layout
     }

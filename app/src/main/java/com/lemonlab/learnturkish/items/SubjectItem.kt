@@ -3,24 +3,28 @@ package com.lemonlab.learnturkish.items
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
-import android.util.Log
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
-import com.squareup.picasso.Picasso
-import com.xwray.groupie.Item
-import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.subject_item.view.*
 import com.lemonlab.learnturkish.ChatActivity
 import com.lemonlab.learnturkish.LearnListen
 import com.lemonlab.learnturkish.R
 import com.lemonlab.learnturkish.keys.Keys
+import com.squareup.picasso.Picasso
+import com.xwray.groupie.Item
+import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.dialog_layout.view.*
+import kotlinx.android.synthetic.main.subject_item.view.*
 
-class subject_item(var title:String, var description:String,var image:Int, var type:String, var activity: Activity?
-, var min_score:Int = 0):Item<ViewHolder>() {
+class SubjectItem(
+    private var title: String, private var description: String,
+    private var image: Int, var type: String, var activity: Activity?
+    , var min_score: Int = 0
+) : Item<ViewHolder>() {
 
-
-    var quiz_name_locked = ""
+    //redundant variable
+    //var quizNameLocked = ""
 
     override fun getLayout(): Int {
         return R.layout.subject_item
@@ -35,7 +39,7 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         viewHolder.itemView.subject_description.text = description
 
         //init
-        viewHolder.itemView.back_layout.setBackgroundColor(activity!!.resources.getColor(R.color.white))
+        viewHolder.itemView.back_layout.setBackgroundColor(ContextCompat.getColor(activity!!, R.color.white))
 
         Picasso.get().load(image).into(viewHolder.itemView.subject_image)
 
@@ -44,28 +48,28 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         YoYo.with(Techniques.FadeInUp).duration(1000).playOn(viewHolder.itemView)
 
         // check if lesson is locked or not
-        if (getUserScore() < min_score){
-            viewHolder.itemView.back_layout.setBackgroundColor(activity!!.resources.getColor(R.color.darkGray))
+        if (getUserScore() < min_score) {
+            viewHolder.itemView.back_layout.setBackgroundColor(ContextCompat.getColor(activity!!, R.color.darkGray))
         }
 
         viewHolder.itemView.setOnClickListener {
 
             // check if subject is special subject
 
-            if (type == Keys.CHAT_LESSON_ONE){
+            if (type == Keys.CHAT_LESSON_ONE) {
 
                 if (checkIfUserReady()) return@setOnClickListener
 
-                var intent = Intent(activity, ChatActivity::class.java)
+                val intent = Intent(activity, ChatActivity::class.java)
                 activity!!.startActivity(intent)
                 activity!!.overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
                 activity!!.finish()
                 return@setOnClickListener
             }
 
-            if(activity != null){
+            if (activity != null) {
 
-                if(checkIfUserReady()) return@setOnClickListener
+                if (checkIfUserReady()) return@setOnClickListener
 
                 val intent = Intent(activity, LearnListen::class.java)
                 intent.putExtra(Keys.LESSON_TYPE, type)
@@ -77,14 +81,13 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         }
     }
 
-    private fun checkIfUserReady():Boolean{
+    private fun checkIfUserReady(): Boolean {
         // check if user has the min score for this lesson
-        if(getUserScore() < min_score){
+        if (getUserScore() < min_score) {
             val dialog = Dialog(activity!!)
-            var view = activity!!.layoutInflater.inflate(R.layout.dialog_layout, null)
-            view.message_text_view.text = "انت لا تمتلك الحد الادنى من النقاط\n" +
-                    "يحتاج هذا الدرس الي: ${min_score}"
-
+            val nullParent: ViewGroup? = null
+            val view = activity!!.layoutInflater.inflate(R.layout.dialog_layout, nullParent)
+            view.message_text_view.text = activity!!.getString(R.string.minimumPoints, min_score)
             view.exit_btn.setOnClickListener { dialog.dismiss() }
 
             dialog.setContentView(view)
@@ -95,66 +98,70 @@ class subject_item(var title:String, var description:String,var image:Int, var t
         return false
     }
 
-    private fun getUserScore():Int{
+    private fun getUserScore(): Int {
         val ref = activity!!.getSharedPreferences("app_data", 0)
         return ref.getInt(Keys.SCORE, 0)
     }
 
-    fun getLesson(){
+    //useless method
+    /*
+        fun getLesson(){
         when(type){
             Keys.LESSON_ONE ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_ONE_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_ONE_LOCKED
             }
 
             Keys.LESSON_TWO ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_TWO_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_TWO_LOCKED
             }
 
             Keys.LESSON_THREE ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_THREE_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_THREE_LOCKED
             }
 
             Keys.LESSON_FOUR ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_FOUR_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_FOUR_LOCKED
             }
 
             Keys.LESSON_FIVE ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_FIVE_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_FIVE_LOCKED
             }
 
             Keys.LESSON_SIX ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_SIX_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_SIX_LOCKED
             }
 
             Keys.LESSON_SEVEN ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_SEVEN_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_SEVEN_LOCKED
             }
             Keys.LESSON_EIGHT ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_EIGHT_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_EIGHT_LOCKED
             }
 
             Keys.LESSON_NINE ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_NINE_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_NINE_LOCKED
             }
 
             Keys.LESSON_TEN ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_TEN_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_TEN_LOCKED
             }
 
             Keys.LESSON_ELEVEN ->{
-                quiz_name_locked = Keys.LESSON_QUIZ_ELEVEN_LOCKED
+                quizNameLocked = Keys.LESSON_QUIZ_ELEVEN_LOCKED
             }
 
             Keys.CHAT_LESSON_ONE ->{
-                quiz_name_locked = Keys.LESSON_CHAT_ONE_LOCKED
+                quizNameLocked = Keys.LESSON_CHAT_ONE_LOCKED
             }
 
             Keys.LESSON_TWELVE ->{
-                quiz_name_locked = Keys.LESSON_CHAT_ONE_LOCKED
+                quizNameLocked = Keys.LESSON_CHAT_ONE_LOCKED
             }
 
 
         }
     }
+
+     */
 
 }

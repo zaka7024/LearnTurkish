@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lemonlab.learnturkish.items.subject_item
+import com.lemonlab.learnturkish.items.SubjectItem
 import com.lemonlab.learnturkish.keys.Keys
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -35,7 +35,7 @@ class SubjectActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)
     }
 
-    private fun initSubjectRV(){
+    private fun initSubjectRV() {
         subject_rv.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
@@ -50,11 +50,11 @@ class SubjectActivity : AppCompatActivity() {
         subject_rv.adapter = adapter
     }
 
-    private fun addSubjectToRV(){
+    private fun addSubjectToRV() {
         adapter.clear()
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الحروف التركية",
                 "تعلم الحروف التركية بطريقة تفاعلية",
                 R.drawable.letters_icon,
@@ -64,7 +64,7 @@ class SubjectActivity : AppCompatActivity() {
             )
         )
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "مفردات اساسية",
                 "تعلم المفردات الاساسية في اللغة",
                 R.drawable.chat_icon,
@@ -74,7 +74,7 @@ class SubjectActivity : AppCompatActivity() {
             )
         )
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الارقام والايام التركية",
                 "تعلم الارقام التركية بطريقة تفاعلية",
                 R.drawable.time_icon,
@@ -84,7 +84,7 @@ class SubjectActivity : AppCompatActivity() {
             )
         )
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الالوان في التركية",
                 "تعلم الالوان الاساسية في اللغة التركية",
                 R.drawable.colors,
@@ -95,7 +95,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "اجزاء الجسم",
                 "تعلم اجزاء جسم الانسان بالتركية",
                 R.drawable.brain_icon,
@@ -106,7 +106,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الادوات في التركية",
                 "تعلم الادوات المنزلية و الزراعية في اللغة التركية",
                 R.drawable.tools_icon,
@@ -117,7 +117,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "المفردات التعليمية",
                 "تعلم المفردات التعليمية في المدرسة والجامعة",
                 R.drawable.school,
@@ -128,7 +128,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الصفات و النعت",
                 "تعلم كيف تصف شخص ما بالتركية",
                 R.drawable.adjectives,
@@ -139,7 +139,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "حروف الجر و الإتجاهات",
                 "تعلم حروف الجر والاتجاهات بطريقة تفاعلية",
                 R.drawable.prepositions_icon,
@@ -150,7 +150,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الضمائر في التركية",
                 "تعلم الضمائر المنفصلة و المتصلة و الملكية في اللغة التركية",
                 R.drawable.pronouns,
@@ -161,7 +161,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "محادثة صوتية 1",
                 "اسمع محادثة صوتية كاملة بين ليلى و رولا",
                 R.drawable.chat_2_icon,
@@ -172,7 +172,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الملابس في التركية",
                 "تعلم مفردات الملابس في التركية بطريقة تفاعلية",
                 R.drawable.clothes,
@@ -183,7 +183,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الافعال في التركية",
                 "تعرف على الافعال الرئيسية في اللغة التركية",
                 R.drawable.idea_icon,
@@ -194,7 +194,7 @@ class SubjectActivity : AppCompatActivity() {
         )
 
         adapter.add(
-            subject_item(
+            SubjectItem(
                 "الفعل المضارع",
                 "تعلم الفعل المضارع في اللغة التركية بطريقة تفاعلية",
                 R.drawable.marketing,

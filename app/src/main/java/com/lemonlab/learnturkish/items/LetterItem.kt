@@ -9,7 +9,10 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.letter_item.view.*
 import com.lemonlab.learnturkish.R
 
-class letter_item(var big:String, var small:String,var examples:String, var sound:Int, var context: Context?):Item<ViewHolder>() {
+class LetterItem(
+    private var big: String,
+    private var small: String, private var examples: String, var sound: Int, var context: Context?
+) : Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.letter_item
     }
@@ -26,9 +29,9 @@ class letter_item(var big:String, var small:String,var examples:String, var soun
         // create sound for_word letter
 
 
-        viewHolder.itemView.play_sound_letter_btn.setOnClickListener{
-            var sound:MediaPlayer = MediaPlayer.create(context, sound)
-            if(context!=null && !sound.isPlaying){
+        viewHolder.itemView.play_sound_letter_btn.setOnClickListener {
+            val sound: MediaPlayer = MediaPlayer.create(context, sound)
+            if (context != null && !sound.isPlaying) {
                 sound.start()
                 viewHolder.itemView.play_sound_letter_btn.playAnimation()
                 sound.setOnCompletionListener {
