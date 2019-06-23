@@ -32,6 +32,15 @@ class ChatActivity : AppCompatActivity() {
 
     }
 
+    override fun onPause() {
+        player!!.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        player!!.start()
+        super.onResume()
+    }
     override fun finish() {
         super.finish()
         overridePendingTransition(R.anim.slide_to_up, R.anim.no_animation)

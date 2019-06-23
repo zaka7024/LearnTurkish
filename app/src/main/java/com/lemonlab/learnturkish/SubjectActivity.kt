@@ -167,7 +167,7 @@ class SubjectActivity : AppCompatActivity() {
                 R.drawable.chat_2_icon,
                 type = Keys.CHAT_LESSON_ONE,
                 activity = this@SubjectActivity,
-                min_score = 130
+                min_score = 0
             )
         )
 

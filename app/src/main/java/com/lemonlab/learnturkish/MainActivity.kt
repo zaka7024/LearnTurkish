@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         rate_btn.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("market://details?id=com.lemonlab.learnturkish")
+            intent.data = Uri.parse("https://play.google.com/store/apps/details?id=com.lemonlab.learnturkish")
             startActivity(intent)
         }
 
