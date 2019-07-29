@@ -9,36 +9,36 @@ object ChatData {
         add(
             Chat(
                 "Merhaba Rola. Nasılsınız?",
-                "مرحبا رولا، كيف حالك انتي؟",
+                "مرحبا رولا، كيف حالك أنتِ؟",
                 R.raw.chat_2
             )
         )
         add(
             Chat(
                 "Çok iyi teşekkür ederim. Son görüşmemizden çok zaman geçti.",
-                "بخير شكرًا لك، مر وقت طويل على اخر لقاء لنا",
+                "بخير شكرًا لك، مر وقت طويل على آخر لقاء لنا",
                 R.raw.chat_3
             )
         )
         add(
             Chat(
                 "Doğru. Uzun zaman sonra görmek güzel.",
-                "صحيح، رويتك بعد وقت طويل جميلة جدًا",
+                "صحيح، رؤيتك بعد وقت طويل جميلة جدًا",
                 R.raw.chat_4
             )
         )
-        add(Chat("Gerçekten seni görmek güzel", "حقًا رويتك انتي جميلة", R.raw.chat_5))
+        add(Chat("Gerçekten seni görmek güzel", "حقًا رويتك أنتِ جميلة", R.raw.chat_5))
         add(
             Chat(
                 "Buraya yeni bir bilgisayar almaya geldim. Neden buraya geldin?",
-                "انا اتيت الى هنا لشراء حاسوب جديد، لماذا انتي هنا؟",
+                "أنا أتيت إلى هنا لشراء حاسوب جديد، لماذا أنتِ هنا؟",
                 R.raw.chat_6
             )
         )
         add(
             Chat(
                 "Ailem beni onlara katılmaya zorladı. Yani, onlarla buradayım.",
-                "عائلني اخذوني غصبًا معهم، لذلك انا هنا",
+                "عائلني أخذوني غصبًا معهم، لذلك أنا هنا",
                 R.raw.chat_7
             )
         )
@@ -46,57 +46,57 @@ object ChatData {
         add(
             Chat(
                 "Hayır. Evlenmek için daha yaşlı değilim.",
-                "لا، لست متعدة لزواج بعد",
+                "لا، لست مستعدة للزواج بعد",
                 R.raw.chat_9
             )
         )
         add(
             Chat(
                 "Ben bir trene bineceğim. Bana katılacak mısın?",
-                "انا اريد ركوب قطار، هل سوف تنضمي الي؟",
+                "أنا أريد ركوب قطار، هل سوف تنضمي إلي؟",
                 R.raw.chat_10
             )
         )
-        add(Chat("Yok hayır . İlgilenmiyorum.", "لا لا، لا اهتم", R.raw.chat_11))
+        add(Chat("Yok hayır . İlgilenmiyorum.", "لا لا، لا أهتم", R.raw.chat_11))
         add(
             Chat(
                 "Senin ailen nerede? Onlarla tanışmama izin ver.",
-                "اين هي عائلتك؟، دعيني التقي بهم",
+                "أين هي عائلتك؟، دعيني ألتقي بهم",
                 R.raw.chat_12
             )
         )
         add(
             Chat(
                 "Nerede olduklarını bilmiyorum. Ne yapıyorsun?",
-                "لا اعلم اين هم، انتي ماذا تفعلي؟",
+                "لا أعلم أين هم، أنتِ ماذا تفعلي؟",
                 R.raw.chat_13
             )
         )
         add(
             Chat(
                 "Şu anda bilgisayar bilimi okuyorum",
-                "حاليًا ادرس علوم الحاسوب",
+                "حاليًا أدرس علوم الحاسوب",
                 R.raw.chat_14
             )
         )
         add(
             Chat(
                 "Ah! Kulağa hoş geliyor. Ben matematik okuyorum",
-                "اووو، تبدو جيدة، انا ادرس الرياضيات",
+                "اووو، تبدو جيدة، أنا أدرس الرياضيات",
                 R.raw.chat_15
             )
         )
         add(
             Chat(
                 "Bu harika. Babam çağırıyor",
-                "هذا جميل جدا...، ابي يناديني",
+                "هذا جميل جدًا...، أبي يناديني",
                 R.raw.chat_16
             )
         )
         add(
             Chat(
                 "Annem aniden eve gitmek istiyor. Sonra görüşürüz. Hoşçakal",
-                "وامي تريد الذهاب الى المنزل، نلتقي فيما بعد، مع السلامة",
+                "وأمي تريد الذهاب الى المنزل، نلتقي فيما بعد، مع السلامة",
                 R.raw.chat_17
             )
         )
