@@ -12,6 +12,11 @@ import kotlinx.android.synthetic.main.dialog_layout.view.*
 
 class MainActivity : AppCompatActivity() {
 
+    override fun onResume() {
+        super.onResume()
+        score_text_view.text = getString(R.string.cup, getUserScore().toString())
+    }
+
     private lateinit var dialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -74,7 +74,7 @@ class ListenQuiz : AppCompatActivity() {
 
             if (index < questionData.size) {
                 if (checkIfCorrect(index)) {
-                    Toast.makeText(this, "True", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "True", Toast.LENGTH_SHORT).show()
                     score++
                     letter_quiz_progress.progress = letter_quiz_progress.progress + progChange
                     letter_quiz_progress.secondaryProgress += progChange

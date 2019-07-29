@@ -18,20 +18,6 @@ class QuizData {
             add(QuestionsLetterWord(R.raw.f_char, arrayListOf("P", "R", "L", "F"), 3))
             add(QuestionsLetterWord(R.raw.g_char, arrayListOf("Z", "G", "L", "A"), 1))
             add(QuestionsLetterWord(R.raw.g__char, arrayListOf("Ğ", "C", "E", "T"), 0))
-            add(QuestionsLetterWord(R.raw.h_char, arrayListOf("S", "R", "H", "A"), 2))
-            add(QuestionsLetterWord(R.raw.i_char, arrayListOf("I", "D", "M", "N"), 0))
-            add(QuestionsLetterWord(R.raw.j_char, arrayListOf("T", "V", "C", "J"), 3))
-            add(QuestionsLetterWord(R.raw.k_char, arrayListOf("K", "B", "Ö", "V"), 0))
-            add(QuestionsLetterWord(R.raw.l_char, arrayListOf("Z", "C", "L", "F"), 2))
-            add(QuestionsLetterWord(R.raw.m_char, arrayListOf("E", "A", "Ş", "M"), 3))
-            add(QuestionsLetterWord(R.raw.n_char, arrayListOf("N", "Ğ", "D", "Ü"), 0))
-            add(QuestionsLetterWord(R.raw.o_char, arrayListOf("E", "O", "Ö", "U"), 1))
-            add(QuestionsLetterWord(R.raw.o__char, arrayListOf("Ö", "O", "F", "R"), 0))
-            add(QuestionsLetterWord(R.raw.p_char, arrayListOf("P", "H", "Ğ", "T"), 0))
-            add(QuestionsLetterWord(R.raw.r_char, arrayListOf("V", "R", "W", "Z"), 1))
-            add(QuestionsLetterWord(R.raw.s_char, arrayListOf("Ç", "S", "Ş", "C"), 1))
-            add(QuestionsLetterWord(R.raw.s__char, arrayListOf("Ş", "J", "S", "K"), 0))
-            add(QuestionsLetterWord(R.raw.t_char, arrayListOf("T", "U", "E", "F"), 0))
             add(QuestionsLetterWord(R.raw.u_char, arrayListOf("R", "U", "P", "R"), 1))
             add(QuestionsLetterWord(R.raw.u__char, arrayListOf("L", "J", "Ü", "A"), 2))
             add(QuestionsLetterWord(R.raw.v_char, arrayListOf("V", "M", "I", "Y"), 0))
@@ -52,27 +38,6 @@ class QuizData {
                 QuestionsLetterWord(
                     R.raw.word_3,
                     arrayListOf("أب", "أم", "طفل", "أخ"),
-                    1
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_9,
-                    arrayListOf("أب", "أم", "طفل", "أخ"),
-                    3
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_10,
-                    arrayListOf("أخ", "أم", "عمه", "عم"),
-                    2
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_2,
-                    arrayListOf("جدة", "عم", "عمة", "جد"),
                     1
                 )
             )
@@ -144,27 +109,6 @@ class QuizData {
                     R.raw.word_11,
                     arrayListOf("اخي", "طفل", "أخت", "توام"),
                     3
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_23,
-                    arrayListOf("شاب", "ارض", "شمس", "قمر"),
-                    2
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_24,
-                    arrayListOf("شاب", "قمر", "شمس", "ارض"),
-                    1
-                )
-            )
-            add(
-                QuestionsLetterWord(
-                    R.raw.word_25,
-                    arrayListOf("ماء", "عصير", "ارض", "شمس"),
-                    0
                 )
             )
             add(
